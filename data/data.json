@@ -328,7 +328,7 @@
         "entities": []
       },
       {
-        "text": "i don't think so.",
+        "text": "i do not think so.",
         "intent": "deny",
         "entities": []
       },
@@ -358,384 +358,384 @@
         "entities": []
       },
       {
-        "text": "i don't want either of those",
+        "text": "i do not want either of those",
         "intent": "deny",
         "entities": []
       },
       {
-        "text": "email : maxmeier@firma.de",
+        "text": "email maxmeier@firma.de",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 8,
-            "end": 25,
+            "start": 6,
+            "end": 23,
             "value": "maxmeier@firma.de",
             "entity": "email"
           }
         ]
       },
       {
-        "text": "mail : bot-fan@bots.com",
+        "text": "mail bot-fan@bots.com",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 7,
-            "end": 23,
+            "start": 5,
+            "end": 21,
             "value": "bot-fan@bots.com",
             "entity": "email"
           }
         ]
       },
       {
-        "text": "my email is email@rasa.com",
+        "text": "email is email@rasa.com",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 12,
-            "end": 26,
+            "start": 9,
+            "end": 23,
             "value": "email@rasa.com",
             "entity": "email"
           }
         ]
       },
       {
-        "text": "my email is markjobs@ibm.com",
+        "text": "email is markjobs@ibm.com",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 12,
-            "end": 28,
+            "start": 9,
+            "end": 25,
             "value": "markjobs@ibm.com",
             "entity": "email"
           }
         ]
       },
       {
-        "text": "my email is khardik.kmosu@bol.net.in",
+        "text": "email is khardik.kmosu@bol.net.in",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 12,
-            "end": 36,
+            "start": 9,
+            "end": 33,
             "value": "khardik.kmosu@bol.net.in",
             "entity": "email"
           }
         ]
       },
       {
-        "text": "my business mail is mikemiller@sales.apple.com",
+        "text": "business mail is mikemiller@sales.apple.com",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 20,
-            "end": 46,
+            "start": 17,
+            "end": 43,
             "value": "mikemiller@sales.apple.com",
             "entity": "email"
           }
         ]
       },
       {
-        "text": "email = stephanywhite@microsoft.com",
+        "text": "email stephanywhite@microsoft.com",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 8,
-            "end": 35,
+            "start": 6,
+            "end": 33,
             "value": "stephanywhite@microsoft.com",
             "entity": "email"
           }
         ]
       },
       {
-        "text": "mail: julianfrank@hotmail.com",
+        "text": "mail julianfrank@hotmail.com",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 6,
-            "end": 29,
+            "start": 5,
+            "end": 28,
             "value": "julianfrank@hotmail.com",
             "entity": "email"
           }
         ]
       },
       {
-        "text": " my email is santaklaus@googlemail.com",
+        "text": "email is santaklaus@googlemail.com",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 13,
-            "end": 38,
+            "start": 9,
+            "end": 34,
             "value": "santaklaus@googlemail.com",
             "entity": "email"
           }
         ]
       },
       {
-        "text": "my email is saswatkarhar@rediffmail.com",
+        "text": "email is saswatkarhar@rediffmail.com",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 12,
-            "end": 39,
+            "start": 9,
+            "end": 36,
             "value": "saswatkarhar@rediffmail.com",
             "entity": "email"
           }
         ]
       },
       {
-        "text": "my email is nerd@stanford.edu",
+        "text": "email is nerd@stanford.edu",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 12,
-            "end": 29,
+            "start": 9,
+            "end": 26,
             "value": "nerd@stanford.edu",
             "entity": "email"
           }
         ]
       },
       {
-        "text": "my email is alexander.denker@tu-berlin.de",
+        "text": "email is alexander.denker@tu-berlin.de",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 12,
-            "end": 41,
+            "start": 9,
+            "end": 38,
             "value": "alexander.denker@tu-berlin.de",
             "entity": "email"
           }
         ]
       },
       {
-        "text": "my email is  sislawawa@india.com",
+        "text": "email is  sislawawa@india.com",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 13,
-            "end": 32,
+            "start": 10,
+            "end": 29,
             "value": "sislawawa@india.com",
             "entity": "email"
           }
         ]
       },
       {
-        "text": "my email is  chengming@aliyun.com",
+        "text": "email is  chengming@aliyun.com",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 13,
-            "end": 33,
+            "start": 10,
+            "end": 30,
             "value": "chengming@aliyun.com",
             "entity": "email"
           }
         ]
       },
       {
-        "text": "my email is solomq122@qq.mail.com",
+        "text": "email is solomq122@qq.mail.com",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 12,
-            "end": 33,
+            "start": 9,
+            "end": 30,
             "value": "solomq122@qq.mail.com",
             "entity": "email"
           }
         ]
       },
       {
-        "text": "My name is Max Meier.",
+        "text": "name is Max Meier.",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 11,
-            "end": 20,
+            "start": 8,
+            "end": 17,
             "value": "Max Meier",
             "entity": "name"
           }
         ]
       },
       {
-        "text": "I'm Max Meier",
+        "text": "name is Max Meier",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 4,
-            "end": 13,
+            "start": 8,
+            "end": 17,
             "value": "Max Meier",
             "entity": "name"
           }
         ]
       },
       {
-        "text": "I'm Ralph White",
+        "text": "name is Ralph White",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 4,
-            "end": 15,
+            "start": 8,
+            "end": 19,
             "value": "Ralph White",
             "entity": "name"
           }
         ]
       },
       {
-        "text": "I'm Tom Miller.",
+        "text": "i am  Tom Miller",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 4,
-            "end": 14,
+            "start": 6,
+            "end": 16,
             "value": "Tom Miller",
             "entity": "name"
           }
         ]
       },
       {
-        "text": "I'm Ann Snyder",
+        "text": "i am Ann Snyder",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 4,
-            "end": 14,
+            "start": 5,
+            "end": 15,
             "value": "Ann Snyder",
             "entity": "name"
           }
         ]
       },
       {
-        "text": "I'm Victoria McMillan",
+        "text": "I am Victoria McMillan",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 4,
-            "end": 21,
+            "start": 5,
+            "end": 22,
             "value": "Victoria McMillan",
             "entity": "name"
           }
         ]
       },
       {
-        "text": "I'm Denise Perry",
+        "text": "I am Denise Perry",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 4,
-            "end": 16,
+            "start": 5,
+            "end": 17,
             "value": "Denise Perry",
             "entity": "name"
           }
         ]
       },
       {
-        "text": "I'm Bob Geldorf",
+        "text": "I am Bob Geldorf",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 4,
-            "end": 15,
+            "start": 5,
+            "end": 16,
             "value": "Bob Geldorf",
             "entity": "name"
           }
         ]
       },
       {
-        "text": "my name Susan Catterfeld",
+        "text": "name Susan Catterfeld",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 8,
-            "end": 24,
+            "start": 5,
+            "end": 21,
             "value": "Susan Catterfeld",
             "entity": "name"
           }
         ]
       },
       {
-        "text": "my name Taylor Shwed",
+        "text": "name Taylor Shwed",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 8,
-            "end": 20,
+            "start": 5,
+            "end": 17,
             "value": "Taylor Shwed",
             "entity": "name"
           }
         ]
       },
       {
-        "text": "my name Meredith Grey",
+        "text": "name Meredith Grey",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 8,
-            "end": 21,
+            "start": 5,
+            "end": 18,
             "value": "Meredith Grey",
             "entity": "name"
           }
         ]
       },
       {
-        "text": "my name Alex Karev",
+        "text": "name Alex Karev",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 8,
-            "end": 18,
+            "start": 5,
+            "end": 15,
             "value": "Alex Karev",
             "entity": "name"
           }
         ]
       },
       {
-        "text": "my name is linda.",
+        "text": "name is linda.",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 11,
-            "end": 17,
+            "start": 8,
+            "end": 14,
             "value": "linda.",
             "entity": "name"
           }
         ]
       },
       {
-        "text": "My email is linda@linda.linda",
+        "text": "email is linda@linda.linda",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 12,
-            "end": 29,
+            "start": 9,
+            "end": 26,
             "value": "linda@linda.linda",
             "entity": "email"
           }
         ]
       },
       {
-        "text": "my name is loretta meier",
+        "text": "name is loretta meier",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 11,
-            "end": 24,
+            "start": 8,
+            "end": 21,
             "value": "loretta meier",
             "entity": "name"
           }
         ]
       },
       {
-        "text": "i'm a dev",
+        "text": "i am dev",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 6,
-            "end": 9,
+            "start": 5,
+            "end": 8,
             "value": "dev",
             "entity": "name"
           }
         ]
       },
       {
-        "text": "i don't have it",
+        "text": "i do not have it",
         "intent": "deny",
         "entities": []
       },
@@ -1050,24 +1050,24 @@
         ]
       },
       {
-        "text": "It's TR00909",
+        "text": "It is TR00909",
         "intent": "service_detail",
         "entities": [
           {
-            "start": 5,
-            "end": 12,
+            "start": 6,
+            "end": 13,
             "value": "TR00909",
             "entity": "track_id"
           }
         ]
       },
       {
-        "text": "It's TR10909",
+        "text": "It is TR10909",
         "intent": "service_detail",
         "entities": [
           {
-            "start": 5,
-            "end": 12,
+            "start": 6,
+            "end": 13,
             "value": "TR10909",
             "entity": "track_id"
           }
@@ -1086,12 +1086,12 @@
         ]
       },
       {
-        "text": "When is the scheduled appointment with tracking ID = TR00151?",
+        "text": "When is the scheduled appointment with tracking ID TR00151?",
         "intent": "service_query_time",
         "entities": [
           {
-            "start": 53,
-            "end": 61,
+            "start": 51,
+            "end": 59,
             "value": "TR00151?",
             "entity": "track_id"
           }
@@ -1103,12 +1103,12 @@
         "entities": []
       },
       {
-        "text": "Hi, please track my appointment.It's track id is TR45678.",
+        "text": "Hi, please track my appointment.It is track id is TR45678.",
         "intent": "service_query",
         "entities": [
           {
-            "start": 49,
-            "end": 56,
+            "start": 50,
+            "end": 57,
             "value": "TR45678",
             "entity": "track_id"
           }
@@ -1396,24 +1396,24 @@
         ]
       },
       {
-        "text": "My name is Anthony Benoit",
+        "text": "name is Anthony Benoit",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 11,
-            "end": 25,
+            "start": 8,
+            "end": 22,
             "value": "Anthony Benoit",
             "entity": "name"
           }
         ]
       },
       {
-        "text": "My name is Michael Watts",
+        "text": "name is Michael Watts",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 11,
-            "end": 24,
+            "start": 8,
+            "end": 21,
             "value": "Michael Watts",
             "entity": "name"
           }
@@ -1821,36 +1821,36 @@
         ]
       },
       {
-        "text": "My washing machine's washer is spinning incorrectly",
+        "text": " washing machine washer is spinning incorrectly",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 21,
-            "end": 51,
+            "start": 17,
+            "end": 47,
             "value": "washer is spinning incorrectly",
             "entity": "issue"
           },
           {
-            "start": 3,
-            "end": 20,
-            "value": "washing machine's",
+            "start": 1,
+            "end": 16,
+            "value": "washing machine",
             "entity": "appliance"
           }
         ]
       },
       {
-        "text": "The washing machine is making noises and moving around.",
+        "text": " washing machine is making noises and moving around.",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 4,
-            "end": 19,
+            "start": 1,
+            "end": 16,
             "value": "washing machine",
             "entity": "appliance"
           },
           {
-            "start": 23,
-            "end": 55,
+            "start": 20,
+            "end": 52,
             "value": "making noises and moving around.",
             "entity": "issue"
           }
@@ -2064,7 +2064,7 @@
       },
       {
         "text": "tv is noisy",
-        "intent": "",
+        "intent": "log_complain",
         "entities": [
           {
             "start": 0,
@@ -2087,28 +2087,52 @@
       },
       {
         "text": "register complaint",
-        "intent": "",
+        "intent": "log_complain",
         "entities": []
       },
       {
         "text": "complaint",
-        "intent": "",
+        "intent": "log_complain",
         "entities": []
       },
       {
         "text": "change the appointment date with technician",
-        "intent": "",
+        "intent": "service_modify_time",
         "entities": []
       },
       {
         "text": "reschedule appointment",
-        "intent": "",
+        "intent": "service_modify_timeslots",
         "entities": []
       },
       {
         "text": "cancel appointment",
         "intent": "service_modify_cancel",
         "entities": []
+      },
+      {
+        "text": "my name is xyz",
+        "intent": "log_complain",
+        "entities": [
+          {
+            "start": 11,
+            "end": 14,
+            "value": "xyz",
+            "entity": "name"
+          }
+        ]
+      },
+      {
+        "text": "name xyz",
+        "intent": "log_complain",
+        "entities": [
+          {
+            "start": 5,
+            "end": 8,
+            "value": "xyz",
+            "entity": "name"
+          }
+        ]
       }
     ]
   }

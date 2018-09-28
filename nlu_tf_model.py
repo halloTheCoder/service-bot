@@ -39,19 +39,19 @@ def run_nlu(file):
 		print(intent)
 		print(entity)
 
-		if text not in added_texts:
-			f.write(text + '\n')
-			data['rasa_nlu_data']['common_examples'].append({"text" : text, 
-														 	 "intent" : intent, 
-														 	 "entities" : entity})
+		# if text not in added_texts:
+		f.write(text + '\n')
+		data['rasa_nlu_data']['common_examples'].append({"text" : text, 
+														 "intent" : intent, 
+														 "entities" : entity})
 	
 	read = 'w'
-	if os.path.exists('test.json'):
+	if os.path.exists('test_tf.json'):
 		read = 'a'
-	with open('test.json', read) as f:
+	with open('test_tf.json', read) as f:
 		json.dump(data, f, indent = 4)
 
 	
 if __name__ == '__main__':
-	train_nlu('./data/data.json', 'config_tensorflow.yml', './models/nlu_tf')
-	run_nlu('all_texts.txt')
+	# train_nlu('./data/data.json', 'config_tensorflow.yml', './models/nlu_tf')
+	run_nlu('all_texts_tf.txt')

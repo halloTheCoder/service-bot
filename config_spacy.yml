@@ -8,6 +8,6 @@ pipeline:
 - name: "ner_crf"
 - name: "ner_synonyms"
 - name: "intent_classifier_sklearn"
-# - name: "ner_duckling_http"
+- name: "ner_duckling_http"
   # dimensions to extract
   # dimensions: ["time", "number", "amount-of-money", "distance", "email", ""]

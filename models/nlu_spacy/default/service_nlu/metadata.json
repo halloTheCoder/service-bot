@@ -76,9 +76,17 @@
             "name": "intent_classifier_sklearn",
             "classifier_file": "intent_classifier_sklearn.pkl",
             "class": "rasa_nlu.classifiers.sklearn_intent_classifier.SklearnIntentClassifier"
+        },
+        {
+            "dimensions": null,
+            "url": null,
+            "locale": null,
+            "timezone": null,
+            "name": "ner_duckling_http",
+            "class": "rasa_nlu.extractors.duckling_http_extractor.DucklingHTTPExtractor"
         }
     ],
     "training_data": "training_data.json",
-    "trained_at": "20180928-195029",
+    "trained_at": "20180928-202728",
     "rasa_nlu_version": "0.13.4"
 }
