@@ -1,0 +1,110 @@
+slots:
+  model_number:
+    type:text
+  serial_number:
+    type:text
+  track_id:
+    type:text
+  pincode:
+    type:text
+  timeslots:
+    type:text
+  date:
+    type:text
+  appliance:
+    type:text
+  issue:
+    type:text
+  email:
+    type:text
+  name:
+    type:text
+  address:
+    type:text
+
+
+intents:
+  -greet
+  -goodbye
+  -thank_you
+  -log_complain
+  -service_query
+  -service_query_time
+  -service_query_timeslots
+  -service_detail
+  -serive_modify
+  -serive_modify_time
+  -serive_modify_timeslots
+  -serive_modify_cancel
+  -deny
+  -affirm
+
+
+entities:
+  -issue
+  -appliance
+  -model_number
+  -serial_number
+  -track_id
+  -email
+  -address
+  -pincode
+  -name
+  -date
+  -timeslots
+
+
+templates:
+    utter_greet:
+      - "Hello! How can I help?"
+    utter_goodbye:
+      - "Goodbye."
+      - "Talk to you later."
+      - "Bye bye :("
+    utter_default:
+      - "I did not understand you."
+    utter_youarewelcome:
+      - "You're very welcome :)"
+    utter_askproblem:
+      - "May I ask your problem?"
+    utter_askissue:
+      - "Please tell me the issue of the appliance."
+    utter_askmodelserial:
+      - "Please provide the model and the serial number of the appliance."
+    utter_askmodel:
+      - "Please provide the model number of the appliance."
+    utter_askserial:
+      - "Please provide the serial number of the appliance."
+    utter_incorrectmodel:
+      - "The model number is incorrect. Please give the corret model and serial number."
+    utter_incorrectserial:
+      - "The serial number is incorrect. Please give the corret model and serial number."
+    utter_askname:
+      - "Could you provide me with your name?"
+    utter_askaddressemail:
+      - "Please provide me the neccessary details.Your address and your email."
+    utter_asktimeslot:
+      - "PLease select a suitable time slot according to your convinence."
+    utter_askdate:
+      - "PLease select a date of the appoinment."
+    utter_asktrackid:
+      - "Please provide your tracking ID number."
+    utter_askservicechange:
+      - "What would you like to change about your appoinment?"
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_default
+  - utter_youarewelcome
+  - utter_askproblem
+  - utter_askissue
+  - utter_askmodelserial
+  - utter_incorrectmodel
+  - utter_incorrectserial
+  - utter_askname
+  - utter_askaddressemail
+  - utter_asktimeslot
+  - utter_askdate
+  - utter_asktrackid
+  - utter_askservicechange
