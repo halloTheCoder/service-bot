@@ -1,6 +1,0 @@
-hello
-fridge is not working
-my name is xyz
-my email is xyz@abc
-modify my details
-bye
