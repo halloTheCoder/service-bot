@@ -107,6 +107,21 @@ templates:
       #     payload: "/affirm"
       #   - title: "No"
       #     payload: "/deny"
+  utter_ask_change_name:
+    - "Oh on it! Please provide your name."
+  utter_ask_change_email:
+    - "Oh on it! Please provide your email."
+  utter_ask_change_address:
+    - "Oh on it! Please provide your address."
+  utter_ask_change_pincode:
+    - "Oh on it! Please provide your pincode."
+  utter_ask_change_timeslots:
+    - "Oh on it! Please provide the time slots."
+  utter_ask_change_date:
+    - "Oh on it! Please provide the date."
+  utter_provide_servicedetail:
+    - "Your appointment detail with tracking ID number {trackid} is - Complaint: {name}, {email} Address: {address},
+     {pincode} Complain : (appliance_type: {appliance}, issue: {issue}) Date : {date} Time : {timeslots}."
   utter_ask_trackid:
     - "Please provide your tracking ID number."
   # utter_incorrectmodel:
@@ -157,6 +172,13 @@ actions:
   - utter_ask_trackid
   - utter_ask_moreupdates
   - action_get_complaint_detail
+  - utter_ask_change_name
+  - utter_ask_change_email
+  - utter_ask_change_date
+  - utter_ask_change_address
+  - utter_ask_change_pincode
+  - utter_ask_change_timeslots
+  - utter_provide_servicedetail
   # - utter_incorrectmodel
   # - utter_incorrectserial
   # - utter_askservicechange
