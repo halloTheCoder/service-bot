@@ -1,9 +1,9 @@
 slots:
-  model_number:
+  modelnumber:
     type: text
-  serial_number:
+  serialnumber:
     type: text
-  track_id:
+  trackid:
     type: text
   pincode:
     type: text
@@ -22,7 +22,9 @@ slots:
   address:
     type: text
     # initial_value: "ad"    # can set initial value using this
-  confirm_complain:
+  confirmcomplain:
+    type: text
+  requested_slot:
     type: text
 
 
@@ -46,9 +48,9 @@ intents:
 entities:
   - issue
   - appliance
-  - model_number
-  - serial_number
-  - track_id
+  - modelnumber
+  - serialnumber
+  - trackid
   - email
   - address
   - pincode
@@ -72,21 +74,21 @@ templates:
     - "What is your appliance?"
   utter_ask_issue:
     - "Please tell me the issue."
-  utter_ask_model_number:
+  utter_ask_modelnumber:
     - "Please provide the model number of the appliance."
-  utter_ask_serial_number:
+  utter_ask_serialnumber:
     - "Please provide the serial number of the appliance."
   utter_ask_name:
     - "Could you provide me with your name?"
   utter_ask_address:
-    - "Please provide me the neccessary details.Your address."
+    - "Please provide me the neccessary details.Your address with pincode."
   utter_ask_email:
     - "Please provide me the neccessary details.Your email."
   utter_ask_timeslots:
     - "PLease select a suitable time slot according to your convinence."
   utter_ask_date:
     - "PLease select a date of the appoinment."
-  utter_ask_track_id:
+  utter_ask_trackid:
     - "Please provide your tracking ID number."
   utter_incorrectmodel:
     - "The model number is incorrect. Please give the corret model and serial number."
@@ -94,6 +96,8 @@ templates:
     - "The serial number is incorrect. Please give the corret model and serial number."
   utter_askservicechange:
     - "What would you like to change about your appoinment?"
+  utter_confirm_complain:
+    - "Do you confirm th complaint."
 
 actions:
   - utter_greet
@@ -102,16 +106,16 @@ actions:
   - utter_youarewelcome
   - utter_ask_appliance
   - utter_ask_issue
-  - utter_ask_model_number
-  - utter_ask_serial_number
+  - utter_ask_modelnumber
+  - utter_ask_serialnumber
   - utter_ask_name
   - utter_ask_email
   - utter_ask_address
   - utter_ask_timeslots
   - utter_ask_date
-  - utter_ask_track_id
+  - utter_ask_trackid
   - utter_confirm_complain
-  - action_get_complaint_details
+  - action_get_complaint_detail
   # - utter_incorrectmodel
   # - utter_incorrectserial
   # - utter_askservicechange

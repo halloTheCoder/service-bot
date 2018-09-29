@@ -56,21 +56,23 @@ class ActionSearchRestaurants(FormAction):
             FreeTextFormField("appliance"),
             FreeTextFormField("issue"),
 #             BooleanFormField("vegetarian", "affirm", "deny")
-            FreeTextFormField("model_number"),
-            FreeTextFormField("serial_number"),
+            FreeTextFormField("modelnumber"),
+            FreeTextFormField("serialnumber"),
             FreeTextFormField("name"),
             FreeTextFormField("email"),
             FreeTextFormField("address"),
             FreeTextFormField("pincode"),
             FreeTextFormField("date"),
             FreeTextFormField("timeslots"),
-            BooleanFormField("confirm_complain", "affirm", "deny")
+            BooleanFormField("confirmcomplain", "affirm", "deny")
         ]
 
     def name(self):
-        return 'action_get_complaint_details'
+        return 'action_get_complaint_detail'
 
     def submit(self, dispatcher, tracker, domain):
         dispatcher.utter_message("Your complaint has been logged successfully !!!!. Thank you for using our service.")
 #         dispatcher // padho
         return []
+
+# class GenerateTrackID

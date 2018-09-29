@@ -31,7 +31,7 @@ def train_dialogue(domain_file = 'domain.yml',
 	
 def run_weather_bot(serve_forever=True):
 	interpreter = RasaNLUInterpreter('./models/nlu_tf/default/service_nlu')
-	action_endpoint = EndpointConfig(url="http://localhost:5050/webhook")
+	action_endpoint = EndpointConfig(url="http://localhost:5055/webhook")
 	agent = Agent.load('./models/dialogue', interpreter=interpreter, action_endpoint=action_endpoint)
 	rasa_core.run.serve_application(agent ,channel='cmdline')
 		

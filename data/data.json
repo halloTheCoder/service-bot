@@ -92,13 +92,13 @@
             "start": 16,
             "end": 26,
             "value": "CFE28USHSS",
-            "entity": "model_number"
+            "entity": "modelnumber"
           },
           {
             "start": 52,
             "end": 60,
             "value": "RFAZ3345",
-            "entity": "serial_number"
+            "entity": "serialnumber"
           }
         ]
       },
@@ -115,7 +115,7 @@
             "start": 19,
             "end": 26,
             "value": "TR00001",
-            "entity": "track_id"
+            "entity": "trackid"
           }
         ]
       },
@@ -937,7 +937,7 @@
             "start": 5,
             "end": 12,
             "value": "TR00003",
-            "entity": "track_id"
+            "entity": "trackid"
           }
         ]
       },
@@ -954,7 +954,7 @@
             "start": 15,
             "end": 22,
             "value": "TR00089",
-            "entity": "track_id"
+            "entity": "trackid"
           }
         ]
       },
@@ -966,7 +966,7 @@
             "start": 61,
             "end": 68,
             "value": "TR00067",
-            "entity": "track_id"
+            "entity": "trackid"
           }
         ]
       },
@@ -1023,7 +1023,7 @@
             "start": 15,
             "end": 22,
             "value": "TR00078",
-            "entity": "track_id"
+            "entity": "trackid"
           }
         ]
       },
@@ -1045,7 +1045,7 @@
             "start": 55,
             "end": 62,
             "value": "TR00078",
-            "entity": "track_id"
+            "entity": "trackid"
           }
         ]
       },
@@ -1057,7 +1057,7 @@
             "start": 6,
             "end": 13,
             "value": "TR00909",
-            "entity": "track_id"
+            "entity": "trackid"
           }
         ]
       },
@@ -1069,7 +1069,7 @@
             "start": 6,
             "end": 13,
             "value": "TR10909",
-            "entity": "track_id"
+            "entity": "trackid"
           }
         ]
       },
@@ -1081,7 +1081,7 @@
             "start": 6,
             "end": 14,
             "value": "TR00909.",
-            "entity": "track_id"
+            "entity": "trackid"
           }
         ]
       },
@@ -1093,7 +1093,7 @@
             "start": 51,
             "end": 59,
             "value": "TR00151?",
-            "entity": "track_id"
+            "entity": "trackid"
           }
         ]
       },
@@ -1110,7 +1110,7 @@
             "start": 50,
             "end": 57,
             "value": "TR45678",
-            "entity": "track_id"
+            "entity": "trackid"
           }
         ]
       },
@@ -1934,7 +1934,7 @@
       },
       {
         "text": "I need service of my appliance.",
-        "intent": "",
+        "intent": "log_complain",
         "entities": []
       },
       {
@@ -1981,13 +1981,13 @@
             "start": 21,
             "end": 30,
             "value": "AJCQ10ACG",
-            "entity": "model_number"
+            "entity": "modelnumber"
           },
           {
             "start": 52,
             "end": 60,
             "value": "ACZN9073",
-            "entity": "serial_number"
+            "entity": "serialnumber"
           }
         ]
       },
@@ -1999,13 +1999,13 @@
             "start": 37,
             "end": 44,
             "value": "AEE24DT",
-            "entity": "model_number"
+            "entity": "modelnumber"
           },
           {
             "start": 66,
             "end": 74,
             "value": "ACZN9002",
-            "entity": "serial_number"
+            "entity": "serialnumber"
           }
         ]
       },

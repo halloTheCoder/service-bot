@@ -33,7 +33,7 @@ def preprocess_text(text, remove_stopwords=True):
         text = text[:-1]
         
     # Clean the text
-    text = re.sub(r"[^A-Za-z0-9^,!.\/'+=]", " ", text)
+    text = re.sub(r"[^A-Za-z0-9^,!.\/'+=@]", " ", text)
     text = re.sub(r"what's", "what is ", text)
     text = re.sub(r"\'s", " ", text)
     text = re.sub(r" n ", " and ", text)
@@ -45,7 +45,7 @@ def preprocess_text(text, remove_stopwords=True):
     text = re.sub(r"\'d", " would ", text)
     text = re.sub(r"\'ll", " will ", text)
     text = re.sub(r",", " ", text)
-    text = re.sub(r"\.", " ", text)
+    # text = re.sub(r"\.", " ", text)
     text = re.sub(r"!", " ", text)
     text = re.sub(r"\/", " ", text)
     text = re.sub(r"\^", " ^ ", text)
@@ -92,6 +92,10 @@ def run_nlu(file):
 		text = input('Enter text (Press \'q\' to continue) :: \n')
 		if text == 'q':
 			break
+
+        text = preprocess_text(text)
+        print(text)
+
 		nlu = interpreter.parse(text)
 		# print(interpreter.parse(text))
 		intent = nlu['intent']['name']
@@ -114,5 +118,5 @@ def run_nlu(file):
 
 	
 if __name__ == '__main__':
-	train_nlu('./data/data.json', 'config_spacy.yml', './models/nlu_spacy')
+	# train_nlu('./data/data.json', 'config_spacy.yml', './models/nlu_spacy')
 	run_nlu('all_texts_spacy.txt')
