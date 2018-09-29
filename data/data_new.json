@@ -251,12 +251,12 @@
       },
       {
         "text": "I want to reschedule my appointment",
-        "intent": "service_modify_time",
+        "intent": "service_modify",
         "entities": []
       },
       {
         "text": "i wish to reschedule my service appointment",
-        "intent": "service_modify_time",
+        "intent": "service_modify",
         "entities": []
       },
       {
@@ -281,7 +281,7 @@
       },
       {
         "text": "Please change the time slots of the appointment.",
-        "intent": "service_modify_time",
+        "intent": "service_modify_timeslots",
         "entities": []
       },
       {
@@ -1130,12 +1130,12 @@
       },
       {
         "text": "Reschedule my appointment",
-        "intent": "service_modify_time",
+        "intent": "service_modify",
         "entities": []
       },
       {
         "text": "Please reschedule my appointment",
-        "intent": "service_modify_time",
+        "intent": "service_modify",
         "entities": []
       },
       {
@@ -1160,22 +1160,22 @@
       },
       {
         "text": "Change my time slots of the appointment",
-        "intent": "service_modify_time",
+        "intent": "service_modify_timeslots",
         "entities": []
       },
       {
         "text": "Please change the scheduled timing of my appointment",
-        "intent": "service_modify_time",
+        "intent": "service_modify",
         "entities": []
       },
       {
         "text": "Change time slots",
-        "intent": "service_modify_time",
+        "intent": "service_modify_timeslots",
         "entities": []
       },
       {
-        "text": "Change the timings",
-        "intent": "service_modify_time",
+        "text": "Change the time",
+        "intent": "service_modify",
         "entities": []
       },
       {
@@ -1185,7 +1185,7 @@
       },
       {
         "text": "Hi, please reschedule my appointment",
-        "intent": "service_modify_time",
+        "intent": "service_modify",
         "entities": []
       },
       {
@@ -1435,7 +1435,7 @@
       },
       {
         "text": "Please change the time slots of the appointment",
-        "intent": "service_modify_time",
+        "intent": "service_modify_timeslots",
         "entities": []
       },
       {
@@ -1450,17 +1450,17 @@
       },
       {
         "text": "Undo the time slots of the appointment",
-        "intent": "service_modify_time",
+        "intent": "service_modify_timeslots",
         "entities": []
       },
       {
         "text": "Kindly remove the given time slots. I want them changed",
-        "intent": "service_modify_time",
+        "intent": "service_modify_timeslots",
         "entities": []
       },
       {
         "text": "Change my time slots",
-        "intent": "service_modify_time",
+        "intent": "service_modify_timeslots",
         "entities": []
       },
       {
@@ -1510,12 +1510,12 @@
       },
       {
         "text": "Update my scheduled appointment's date",
-        "intent": "service_modify_time",
+        "intent": "service_modify",
         "entities": []
       },
       {
         "text": "Update my scheduled appointment's time slot",
-        "intent": "service_modify_time",
+        "intent": "service_modify_timeslots",
         "entities": []
       },
       {
@@ -1919,7 +1919,7 @@
       },
       {
         "text": "reschedule appointment",
-        "intent": "service_modify_time",
+        "intent": "service_modify",
         "entities": []
       },
       {
@@ -1983,27 +1983,27 @@
       },
       {
         "text": "please cancel",
-        "intent": "service_modify",
+        "intent": "service_modify_cancel",
         "entities": []
       },
       {
         "text": "i want to cancel",
-        "intent": "service_modify",
+        "intent": "service_modify_cancel",
         "entities": []
       },
       {
         "text": "unbook appointment",
-        "intent": "service_modify",
+        "intent": "service_modify_cancel",
         "entities": []
       },
       {
         "text": "unbook my appointment",
-        "intent": "service_modify",
+        "intent": "service_modify_cancel",
         "entities": []
       },
       {
         "text": "unregister it",
-        "intent": "service_modify",
+        "intent": "service_modify_cancel",
         "entities": []
       },
       {
@@ -2018,7 +2018,7 @@
       },
       {
         "text": "unregister my appointment",
-        "intent": "service_modify",
+        "intent": "service_modify_cancel",
         "entities": []
       },
       {
@@ -2259,7 +2259,7 @@
       },
       {
         "text": "change timings",
-        "intent": "service_modify_time",
+        "intent": "service_modify",
         "entities": []
       },
       {
@@ -2269,7 +2269,7 @@
       },
       {
         "text": "allot a different time slot",
-        "intent": "service_modify_time",
+        "intent": "service_modify_timeslots",
         "entities": []
       },
       {
@@ -2455,7 +2455,7 @@
       },
       {
         "text": "refrigerator is making strange noises",
-        "intent": "",
+        "intent": "log_complain",
         "entities": [
           {
             "start": 0,
@@ -2678,12 +2678,6 @@
             "end": 13,
             "value": "2-5 PM",
             "entity": "timeslot"
-          },
-          {
-            "start": 7,
-            "end": 13,
-            "value": "2-5 PM",
-            "entity": ""
           }
         ]
       },
@@ -2995,7 +2989,7 @@
       },
       {
         "text": "675 Greenview Ave. Thibodaux, LA 70301",
-        "intent": "",
+        "intent": "log_complain",
         "entities": [
           {
             "start": 33,
@@ -3344,7 +3338,7 @@
       },
       {
         "text": "i need details of complain",
-        "intent": "",
+        "intent": "service_query",
         "entities": []
       },
       {
@@ -3660,6 +3654,16 @@
         "text": "/restart",
         "intent": "restart",
         "entities": []
+      }
+    ],
+    "entity_synonyms" : [
+      {
+        "value": "air conditioner",
+        "synonyms": ["ac"]
+      },
+      {
+        "value": "refrigerator",
+        "synonyms": ["fridge"]
       }
     ]
   }

@@ -65,6 +65,8 @@ templates:
       buttons:
       - title: "Book Complain"
         payload: "/log_complain"
+      - title : "Show complain detail"
+        payload: "/service_query_time"
       - title: "Modify Complain"
         payload: "/service_modify"
       - title: "Cancel Complain"
@@ -76,8 +78,6 @@ templates:
     - "Bye bye :("
   utter_default:
     - "I did not understand you."
-  utter_youarewelcome:
-    - "You're very welcome :)"
   utter_ask_appliance:
     - "What is your appliance?"
   utter_ask_issue:
@@ -99,14 +99,16 @@ templates:
   utter_ask_date:
     - "PLease select a date of the appoinment."
   utter_ask_moreupdates: 
-    - "if you'd like to modify anything else, please tell me what. This is what I currently have: Complaint: {name} , {email} Address: {address} {pincode} Complain : (appliance_type: {appliance}, issue: {issue}) Date : {date} Time : {timeslots}."
+    - "if you'd like to modify anything else, please tell me what. This is what I currently have: Complaint: {name} , {email} Address: {address} {pincode} Complain : (appliance_type: {appliance}, model_number: {modelnumber}, serial_number: {serialnumber}, issue: {issue}) Date : {date} Time : {timeslots}."
   utter_ask_confirmcomplain:
-    - text: "Do you want to confirm the complain? These are your details: Complaint: {name} , {email} Address: {address} {pincode} Complain : (appliance_type: {appliance}, issue: {issue}) Date : {date} Time : {timeslots}."
+    - text: "Do you want to confirm the complain? These are your details: Complaint: {name} , {email} Address: {address} {pincode} Complain : (appliance_type: {appliance}, model_number: {modelnumber}, serial_number: {serialnumber}, issue: {issue}) Date : {date} Time : {timeslots}."
       # buttons:
       #   - title: "Yes"
       #     payload: "/affirm"
       #   - title: "No"
       #     payload: "/deny"
+  utter_ask_cancel_complain_confirm:
+    - text: "Do you really want to delete your complaint with track id : {trackid}"
   utter_youarewelcome:
     - "Thank you for using our service. Taking you to our home page.... :)"
   utter_ask_change_name:
@@ -123,33 +125,27 @@ templates:
     - "Oh on it! Please provide the date."
   utter_provide_servicedetail:
     - "Your appointment detail with tracking ID number {trackid} is - Complaint: {name}, {email} Address: {address},
-     {pincode} Complain : (appliance_type: {appliance}, issue: {issue}) Date : {date} Time : {timeslots}."
+       {pincode} Complain : (appliance_type: {appliance}, model number: {modelnumber}, serial number : {serialnumber}, issue: {issue}) Date : {date} Time : {timeslots}."
+  utter_ask_what_to_modify:
+    - "You can update only day and timeslots. Which would you like to update ???"
   utter_ask_trackid:
     - "Please provide your tracking ID number."
-  
-  # utter_askservicechange:
-  #   - "What would you like to change about your appoinment?"
-  # utter_confirmed:
-  #   - "Your appointment is confirmed. You can track your appointment with tracking ID number {trackid}."
-  # utter_notconfirmed:
-  #   - text : "Appointment not comfirmed."
-  # utter_provide_servicedetail:
-  #   - "Your appointment detail with tracking ID number {trackid} is - Complaint: {name}, {email} Address: {address},
-  #    {pincode} Complain : (appliance_type: {appliance}, issue: {issue}) Date : {date} Time : {timeslots}."
-  # utter_provide_time:
-  #   - "Your appointment tracking ID number {trackid} date is {date} and the time slots is {timeslots}."
-  # utter_provide_timeslots:
-  #   - "Your appointment tracking ID number {trackid} time slots is {timeslots}."
-  # utter_modified_time:
-  #    - "Your appointment tracking ID number {trackid} date has been changed to {date} with time slots {timeslots}."
+  utter_notconfirmed:
+    - text : "Your Appointment is not comfirmed."
+  utter_ask_new_time:
+    - "What is the new time ??"
+  utter_ask_modify_time_confirm:
+    - text: "Do you really want to modify day of your complaint to {date} with track id : {trackid}"
+  utter_ask_modify_timeslots_confirm:
+    - text: "Do you really want to modify timeslot of your complaint to {timeslots} with track id : {trackid}"
+  utter_ask_new_timeslots:
+    - "What is the new timeslot ??"
   # utter_modified_timeslots:
   #   - "Your appointment tracking ID number {trackid} time slots has been changed to {timeslots}."
-  # utter_cancelled:
-  #   - "Your scheduled appointment has been cancelled."
+  
   # utter_pincode_unavailable:
   #   - "The provided pincode is unavailable for service."
-  # utter_ask_alternative_pincode:
-  #   - "Do you want to change your provided pincode ?"
+  
   
 
 actions:
@@ -168,18 +164,35 @@ actions:
   - utter_ask_timeslots
   - utter_ask_confirmcomplain
   - utter_ask_date
-  - utter_ask_trackid
+  - utter_notconfirmed
   - utter_ask_moreupdates
-  - action_get_complaint_detail
-  - action_store_details
-  - action_cancel_complain
   - utter_ask_change_name
   - utter_ask_change_email
   - utter_ask_change_date
   - utter_ask_change_address
   - utter_ask_change_pincode
   - utter_ask_change_timeslots
+  - action_get_complaint_detail
+  - action_store_details
+  
+  - utter_ask_trackid
+
+  
+  - action_query_detail
+  - action_query_time_detail
+  - action_query_timeslots_detail
+  
+  - utter_ask_cancel_complain_confirm
+  - action_cancel_complain
+
   - utter_provide_servicedetail
+  - utter_ask_what_to_modify
+  - utter_ask_new_time
+  - utter_ask_modify_time_confirm
+  - utter_ask_new_timeslots
+  - utter_ask_modify_timeslots_confirm
+  - action_complain_modify_change_time
+  - action_complain_modify_change_timeslots
   # - utter_incorrectmodel
   # - utter_incorrectserial
   # - utter_askservicechange

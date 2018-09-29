@@ -47,7 +47,7 @@ def preprocess_text(text, remove_stopwords=True):
     text = re.sub(r",", " ", text)
     # text = re.sub(r"\.", " ", text)
     text = re.sub(r"!", " ", text)
-    text = re.sub(r"\/", " ", text)
+    # text = re.sub(r"\/", " ", text)
     text = re.sub(r"\^", " ^ ", text)
     text = re.sub(r"\+", " + ", text)
     text = re.sub(r"\-", " - ", text)
@@ -118,5 +118,5 @@ def run_nlu(file):
 
 	
 if __name__ == '__main__':
-	# train_nlu('./data/data.json', 'config_spacy.yml', './models/nlu_spacy')
+	# train_nlu('./data/data_new.json', 'config_spacy.yml', './models/nlu_spacy')
 	run_nlu('all_texts_spacy.txt')

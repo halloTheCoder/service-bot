@@ -224,27 +224,201 @@ class GenerateTrackID(Action):
         dispatcher.utter_message(tracker.get_slot("trackid"))
         return [] 
 
-# class GenerateTimeSlots(Action):
-#     def name(self):
-#         return 'action_generate_time_slots'
+##############################################################################################################################
+
+
+class ActionQueryDetail(Action):
+    def name(self):
+        return 'action_query_detail'
+
+    def run(self, dispatcher, tracker, domain):
+        track_id = tracker.get_slot("trackid")
+
+        df = pd.read_csv('complaints.csv', sep = '\t')
+
+        if track_id is None:
+            dispatcher.utter_message("Please enter track-id !!!")
+
+        elif not os.path.exists('complaints.csv') or not any(df.loc[:, 'TrackID'] == track_id.upper()):
+            dispatcher.utter_message("Your trackid is not registred with us !!!\nSorry if it is our fault...")
         
-#     def run(self, dispatcher, tracker, domain):
-#         import random
-#         [random.randint()] 
-        # dispatcher.utter_message("looking for restaurants")
-#         restaurant_api = RestaurantAPI()
-#         restaurants = restaurant_api.search(tracker.get_slot("cuisine"))
-#         return [SlotSet("matches", restaurants)]
+        else:
+            if any(df.loc[:, 'TrackID'] == track_id.upper()):
+                idx = df.index[df.loc[:, 'TrackID'] == track_id.upper()].tolist()[0]
+                
+                dispatcher.utter_message("Your complaint with track id: ")
+                dispatcher.utter_message(tracker.get_slot("trackid"))
+                dispatcher.utter_message("has following details ::\n")
+                dispatcher.utter_message("Complaint: {%s} , {%s} Address: {%s} {%s} Complain : (appliance_type: {%s}, Model Number: {%s}, Serial Number: {%s}, issue: {%s}) Date : {%s} Time : {%s}." % 
+                    (df.loc[idx, 'Name'], df.loc[idx, 'Email'], df.loc[idx, 'Address'], df.loc[idx, 'Pincode'], df.loc[idx, 'Appliance'], df.loc[idx, 'ModelNumber'], df.loc[idx, 'SerialNumber'], 
+                     df.loc[idx, 'Issue'], df.loc[idx, 'Date'], df.loc[idx, 'TimeSlots']))
 
 
-# class ActionSuggest(Action):
-#     def name(self):
-#         return 'action_suggest'
+        return [SlotSet("trackid", None)]
 
-#     def run(self, dispatcher, tracker, domain):
-#         dispatcher.utter_message("here's what I found:")
-#         dispatcher.utter_message(tracker.get_slot("matches"))
-#         dispatcher.utter_message("is it ok for you? "
-#                                  "hint: I'm not going to "
-#                                  "find anything else :)")
-#         return []
+
+class ActionQueryTimeDetail(Action):
+    def name(self):
+        return 'action_query_time_detail'
+
+    def run(self, dispatcher, tracker, domain):
+        track_id = tracker.get_slot("trackid")
+
+        df = pd.read_csv('complaints.csv', sep = '\t')
+
+        if track_id is None:
+            dispatcher.utter_message("Please enter track-id !!!")
+
+        elif not os.path.exists('complaints.csv') or not any(df.loc[:, 'TrackID'] == track_id.upper()):
+            dispatcher.utter_message("Your trackid is not registred with us !!!\nSorry if it is our fault...")
+        
+        else:
+            if any(df.loc[:, 'TrackID'] == track_id.upper()):
+                idx = df.index[df.loc[:, 'TrackID'] == track_id.upper()].tolist()[0]
+                
+                dispatcher.utter_message("Your complaint with track id: ")
+                dispatcher.utter_message(tracker.get_slot("trackid"))
+                dispatcher.utter_message("has timeslots ::\n")
+                dispatcher.utter_message(df.loc[idx, 'Date'])
+
+        return []
+
+
+class ActionQueryTimeSlotsDetail(Action):
+    def name(self):
+        return 'action_query_timeslots_detail'
+
+    def run(self, dispatcher, tracker, domain):
+        track_id = tracker.get_slot("trackid")
+
+        df = pd.read_csv('complaints.csv', sep = '\t')
+
+        if track_id is None:
+            dispatcher.utter_message("Please enter track-id !!!")
+
+        elif not os.path.exists('complaints.csv') or not any(df.loc[:, 'TrackID'] == track_id.upper()):
+            dispatcher.utter_message("Your trackid is not registred with us !!!\nSorry if it is our fault...")
+        
+        else:
+            if any(df.loc[:, 'TrackID'] == track_id.upper()):
+                idx = df.index[df.loc[:, 'TrackID'] == track_id.upper()].tolist()[0]
+                
+                dispatcher.utter_message("Your complaint with track id: ")
+                dispatcher.utter_message(tracker.get_slot("trackid"))
+                dispatcher.utter_message("has timeslots ::\n")
+                dispatcher.utter_message(df.loc[idx, 'TimeSlots'])
+
+        return []
+
+
+##############################################################################################################################
+
+
+class CancelComplain(Action):
+    def name(self):
+        return 'action_cancel_complain'
+        
+    def run(self, dispatcher, tracker, domain):
+        track_id = tracker.get_slot("trackid")
+        df = pd.read_csv('complaints.csv', sep = '\t')
+
+        if track_id is None:
+            dispatcher.utter_message("Please enter track-id !!!")
+        
+        elif not os.path.exists('complaints.csv') or not any(df.loc[:, 'TrackID'] == track_id.upper()):
+            dispatcher.utter_message("Your trackid is not registred with us !!!\nSorry if it is our fault...")
+        
+        else:
+            if any(df.loc[:, 'TrackID'] == track_id.upper()):
+                idx = df.index[df.loc[:, 'TrackID'] == track_id.upper()].tolist()[0]
+                df.drop(index = idx, inplace = True)
+                df.to_csv('complaints.csv', sep = '\t', index = False)
+                dispatcher.utter_message("Your complaint with track id: ")
+                dispatcher.utter_message(tracker.get_slot("trackid"))
+                dispatcher.utter_message("has been successfully deleted !!!")
+
+        return [SlotSet("trackid", None)]
+
+
+##############################################################################################################################
+
+
+class ComplainModifyCheckTrackID(Action):
+    def name(self):
+        return 'action_complain_modify_check_track_id'
+
+    def run(self, dispatcher, tracker, domain):
+        track_id = tracker.get_slot("trackid")
+        df = pd.read_csv('complaints.csv', sep = '\t')
+
+        if track_id is None:
+            dispatcher.utter_message("Please enter track-id !!!")
+        
+        elif not os.path.exists('complaints.csv') or not any(df.loc[:, 'TrackID'] == track_id.upper()):
+            dispatcher.utter_message("Your trackid is not registred with us !!!\nSorry if it is our fault...")
+            return [SlotSet("trackid", None)]
+
+        else:
+            dispatcher.utter_message("Your complaint with track id: ")
+            dispatcher.utter_message(tracker.get_slot("trackid"))
+            dispatcher.utter_message("has following details ::\n")
+            dispatcher.utter_message("Complaint: {%s} , {%s} Address: {%s} {%s} Complain : (appliance_type: {%s}, Model Number: {%s}, Serial Number: {%s}, issue: {%s}) Date : {%s} Time : {%s}." % 
+                (df.loc[idx, 'Name'], df.loc[idx, 'Email'], df.loc[idx, 'Address'], df.loc[idx, 'Pincode'], df.loc[idx, 'Appliance'], df.loc[idx, 'ModelNumber'], df.loc[idx, 'SerialNumber'], 
+                 df.loc[idx, 'Issue'], df.loc[idx, 'Date'], df.loc[idx, 'TimeSlots']))
+
+
+        return []   
+
+
+class ComplainModifyTime(Action):
+    def name(self):
+        return 'action_complain_modify_change_time'
+
+    def run(self, dispatcher, tracker, domain):
+        track_id = tracker.get_slot("trackid")
+        df = pd.read_csv('complaints.csv', sep = '\t')
+
+        if track_id is None:
+            dispatcher.utter_message("Please enter track-id !!!")
+        
+        elif not os.path.exists('complaints.csv') or not any(df.loc[:, 'TrackID'] == track_id.upper()):
+            dispatcher.utter_message("Your trackid is not registred with us !!!\nSorry if it is our fault...")
+            return [SlotSet("trackid", None)]
+
+        else:
+            if any(df.loc[:, 'TrackID'] == track_id.upper()):
+                idx = df.index[df.loc[:, 'TrackID'] == track_id.upper()].tolist()[0]
+                df.loc[idx, 'Date'] = tracker.get_slot('date')
+                df.to_csv('complaints.csv', sep = '\t', index = False)
+                dispatcher.utter_message("Your complaint with track id: ")
+                dispatcher.utter_message(tracker.get_slot("trackid"))
+                dispatcher.utter_message("has been successfully updated !!!")
+
+        return []   
+
+
+class ComplainModifyTimeSlots(Action):
+    def name(self):
+        return 'action_complain_modify_change_timeslots'
+
+    def run(self, dispatcher, tracker, domain):
+        track_id = tracker.get_slot("trackid")
+        df = pd.read_csv('complaints.csv', sep = '\t')
+
+        if track_id is None:
+            dispatcher.utter_message("Please enter track-id !!!")
+        
+        elif not os.path.exists('complaints.csv') or not any(df.loc[:, 'TrackID'] == track_id.upper()):
+            dispatcher.utter_message("Your trackid is not registred with us !!!\nSorry if it is our fault...")
+            return [SlotSet("trackid", None)]
+
+        else:
+            if any(df.loc[:, 'TrackID'] == track_id.upper()):
+                idx = df.index[df.loc[:, 'TrackID'] == track_id.upper()].tolist()[0]
+                df.loc[idx, 'TimeSlots'] = tracker.get_slot('timeslots')
+                df.to_csv('complaints.csv', sep = '\t', index = False)
+                dispatcher.utter_message("Your complaint with track id: ")
+                dispatcher.utter_message(tracker.get_slot("trackid"))
+                dispatcher.utter_message("has been successfully updated !!!")
+
+        return []   
