@@ -1,14 +1,9 @@
-﻿{
+{
   "rasa_nlu_data": {
     "common_examples": [
       {
         "text": "Hello",
         "intent": "greet",
-        "entities": []
-      },
-      {
-        "text": "goodbye",
-        "intent": "goodbye",
         "entities": []
       },
       {
@@ -67,25 +62,25 @@
         "entities": []
       },
       {
-        "text": "my AC is not working properly and is noisy.I want to register a complaint.",
+        "text": "my air conditioner is not working properly and is noisy.I want to register a complaint",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 3,
-            "end": 5,
-            "value": "AC",
-            "entity": "appliance"
-          },
-          {
-            "start": 37,
-            "end": 42,
+            "start": 50,
+            "end": 55,
             "value": "noisy",
             "entity": "issue"
+          },
+          {
+            "start": 3,
+            "end": 18,
+            "value": "air conditioner",
+            "entity": "appliance"
           }
         ]
       },
       {
-        "text": "model number is CFE28USHSS and the serial number is RFAZ3345.",
+        "text": "model number is CFE28USHSS and the serial number is RFAZ3345 ",
         "intent": "log_complain",
         "entities": [
           {
@@ -103,7 +98,7 @@
         ]
       },
       {
-        "text": "Hi, please track my appointment.",
+        "text": "Hi, please track my appointment",
         "intent": "service_query",
         "entities": []
       },
@@ -130,12 +125,12 @@
         "entities": []
       },
       {
-        "text": "Thanks a lot.",
+        "text": "Thanks a lot",
         "intent": "thank_you",
         "entities": []
       },
       {
-        "text": "thanks!",
+        "text": "thanks !",
         "intent": "thank_you",
         "entities": []
       },
@@ -150,12 +145,12 @@
         "entities": []
       },
       {
-        "text": "I need to file a complain.",
+        "text": "I need to file a complain",
         "intent": "log_complain",
         "entities": []
       },
       {
-        "text": "I have an issue with my fridge. I need some help.",
+        "text": "I have an issue with my fridge. I need some help",
         "intent": "log_complain",
         "entities": [
           {
@@ -167,7 +162,7 @@
         ]
       },
       {
-        "text": "My fridge is not working.",
+        "text": "My fridge is not working",
         "intent": "log_complain",
         "entities": [
           {
@@ -179,12 +174,12 @@
         ]
       },
       {
-        "text": "Can you help me out?",
+        "text": "Can you help me out ?",
         "intent": "log_complain",
         "entities": []
       },
       {
-        "text": "I need service for my fridge. It is not working since Monday.",
+        "text": "I need service for my fridge. It is not working since Monday",
         "intent": "log_complain",
         "entities": [
           {
@@ -192,11 +187,17 @@
             "end": 28,
             "value": "fridge",
             "entity": "appliance"
+          },
+          {
+            "start": 36,
+            "end": 47,
+            "value": "not working",
+            "entity": "issue"
           }
         ]
       },
       {
-        "text": "Can you help me with my fridge? It's malfunctioning.",
+        "text": "Can you help me with my fridge? It is malfunctioning.",
         "intent": "log_complain",
         "entities": [
           {
@@ -206,15 +207,15 @@
             "entity": "appliance"
           },
           {
-            "start": 37,
-            "end": 51,
+            "start": 38,
+            "end": 52,
             "value": "malfunctioning",
             "entity": "issue"
           }
         ]
       },
       {
-        "text": "I am having some issue with my fridge.",
+        "text": "I am having some issue with my fridge",
         "intent": "log_complain",
         "entities": [
           {
@@ -226,7 +227,7 @@
         ]
       },
       {
-        "text": "I am facing some problem with my fridge.",
+        "text": "I am facing some problem with my fridge",
         "intent": "log_complain",
         "entities": [
           {
@@ -238,43 +239,43 @@
         ]
       },
       {
-        "text": "I need help.",
+        "text": "I need help",
         "intent": "log_complain",
         "entities": []
       },
       {
-        "text": "I want to reschedule my appointment.",
+        "text": "I want to reschedule my appointment",
         "intent": "service_modify_time",
         "entities": []
       },
       {
-        "text": "i wish to reschedule my service appointment.",
+        "text": "i wish to reschedule my service appointment",
         "intent": "service_modify_time",
         "entities": []
       },
       {
-        "text": "I would like to change the appointment date with the technician.",
+        "text": "I would like to change the appointment date with the technician",
         "intent": "service_modify_time",
         "entities": []
       },
       {
-        "text": "I want the technician to come on a different date.",
+        "text": "I want the technician to come on a different date",
         "intent": "service_modify_time",
         "entities": []
       },
       {
-        "text": "I want to cancel the appointment.",
+        "text": "I want to cancel the appointment",
         "intent": "service_modify_cancel",
         "entities": []
       },
       {
-        "text": "I want to cancel my appointment with technician.",
+        "text": "I want to cancel my appointment with technician",
         "intent": "service_modify_cancel",
         "entities": []
       },
       {
         "text": "Please change the time slots of the appointment.",
-        "intent": "service_modify_timeslots",
+        "intent": "service_modify_time",
         "entities": []
       },
       {
@@ -298,7 +299,7 @@
         "entities": []
       },
       {
-        "text": "help?",
+        "text": "help ?",
         "intent": "log_complain",
         "entities": []
       },
@@ -328,17 +329,17 @@
         "entities": []
       },
       {
-        "text": "i do not think so.",
+        "text": "i do not think so",
         "intent": "deny",
         "entities": []
       },
       {
-        "text": "No, not really.",
+        "text": "No, not really",
         "intent": "deny",
         "entities": []
       },
       {
-        "text": "no thanks.",
+        "text": "no thanks",
         "intent": "deny",
         "entities": []
       },
@@ -348,7 +349,7 @@
         "entities": []
       },
       {
-        "text": "i'm not sure",
+        "text": "i am not sure",
         "intent": "deny",
         "entities": []
       },
@@ -411,12 +412,12 @@
         ]
       },
       {
-        "text": "email is khardik.kmosu@bol.net.in",
+        "text": " khardik.kmosu@bol.net.in",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 9,
-            "end": 33,
+            "start": 1,
+            "end": 25,
             "value": "khardik.kmosu@bol.net.in",
             "entity": "email"
           }
@@ -483,12 +484,12 @@
         ]
       },
       {
-        "text": "email is nerd@stanford.edu",
+        "text": " nerd@stanford.edu",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 9,
-            "end": 26,
+            "start": 1,
+            "end": 18,
             "value": "nerd@stanford.edu",
             "entity": "email"
           }
@@ -507,24 +508,24 @@
         ]
       },
       {
-        "text": "email is  sislawawa@india.com",
+        "text": " sislawawa@india.com",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 10,
-            "end": 29,
-            "value": "sislawawa@india.com",
+            "start": 0,
+            "end": 20,
+            "value": " sislawawa@india.com",
             "entity": "email"
           }
         ]
       },
       {
-        "text": "email is  chengming@aliyun.com",
+        "text": "chengming@aliyun.com",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 10,
-            "end": 30,
+            "start": 0,
+            "end": 20,
             "value": "chengming@aliyun.com",
             "entity": "email"
           }
@@ -555,12 +556,12 @@
         ]
       },
       {
-        "text": "name is Max Meier",
+        "text": " Max Meier",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 8,
-            "end": 17,
+            "start": 1,
+            "end": 10,
             "value": "Max Meier",
             "entity": "name"
           }
@@ -603,12 +604,12 @@
         ]
       },
       {
-        "text": "I am Victoria McMillan",
+        "text": " Victoria McMillan",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 5,
-            "end": 22,
+            "start": 1,
+            "end": 18,
             "value": "Victoria McMillan",
             "entity": "name"
           }
@@ -627,24 +628,24 @@
         ]
       },
       {
-        "text": "I am Bob Geldorf",
+        "text": " Bob Geldorf",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 5,
-            "end": 16,
+            "start": 1,
+            "end": 12,
             "value": "Bob Geldorf",
             "entity": "name"
           }
         ]
       },
       {
-        "text": "name Susan Catterfeld",
+        "text": " Susan Catterfeld",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 5,
-            "end": 21,
+            "start": 1,
+            "end": 17,
             "value": "Susan Catterfeld",
             "entity": "name"
           }
@@ -675,25 +676,25 @@
         ]
       },
       {
-        "text": "name Alex Karev",
+        "text": " Alex Karev",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 5,
-            "end": 15,
+            "start": 1,
+            "end": 11,
             "value": "Alex Karev",
             "entity": "name"
           }
         ]
       },
       {
-        "text": "name is linda.",
+        "text": "my name is linda",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 8,
-            "end": 14,
-            "value": "linda.",
+            "start": 11,
+            "end": 16,
+            "value": "linda",
             "entity": "name"
           }
         ]
@@ -765,7 +766,7 @@
         "entities": []
       },
       {
-        "text": "hi?",
+        "text": "hi ?",
         "intent": "greet",
         "entities": []
       },
@@ -870,7 +871,7 @@
         "entities": []
       },
       {
-        "text": "ok thanks!",
+        "text": "ok thanks !",
         "intent": "thank_you",
         "entities": []
       },
@@ -900,7 +901,7 @@
         "entities": []
       },
       {
-        "text": "That's right",
+        "text": "That is right",
         "intent": "affirm",
         "entities": []
       },
@@ -915,39 +916,39 @@
         "entities": []
       },
       {
-        "text": "That's all thanks.",
+        "text": "That is all thanks",
         "intent": "thank_you",
         "entities": []
       },
       {
-        "text": "thats all thanks",
+        "text": "that is all thank you ",
         "intent": "thank_you",
         "entities": []
       },
       {
-        "text": "I need details of my appointment.",
+        "text": "I need details of my appointment",
         "intent": "service_query",
         "entities": []
       },
       {
-        "text": "It's TR00003.",
+        "text": "It is TR00003",
         "intent": "service_detail",
         "entities": [
           {
-            "start": 5,
-            "end": 12,
+            "start": 6,
+            "end": 13,
             "value": "TR00003",
             "entity": "trackid"
           }
         ]
       },
       {
-        "text": "Can you please let me know the details of the appointment?",
+        "text": "Can you please let me know the details of the appointment ?",
         "intent": "service_query",
         "entities": []
       },
       {
-        "text": "Tracking ID is TR00089.",
+        "text": "Tracking ID is TR00089",
         "intent": "service_detail",
         "entities": [
           {
@@ -971,49 +972,56 @@
         ]
       },
       {
-        "text": "Tell me the details of the scheduled appointment.",
+        "text": "Tell me the details of the scheduled appointment",
         "intent": "service_query",
         "entities": []
       },
       {
-        "text": "I need to know the details of service appointment.",
+        "text": "I need to know the details of service appointment",
         "intent": "service_query",
         "entities": []
       },
       {
-        "text": "When is the scheduled appointment?",
+        "text": "When is the scheduled appointment ?",
         "intent": "service_query_time",
         "entities": []
       },
       {
-        "text": "What are the time slots of my appointment?",
+        "text": "What are the time slots of my appointment ?",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "Tell me the timings of my appointment ?",
         "intent": "service_query_time",
         "entities": []
       },
       {
-        "text": "Tell me the timings of my appointment?",
-        "intent": "service_query_time",
-        "entities": []
-      },
-      {
-        "text": "Let me know the details of the scheduled appointment.",
+        "text": "Let me know the details of the scheduled appointment",
         "intent": "service_query",
         "entities": []
       },
       {
-        "text": "Timings of the appointment?",
+        "text": "Timings of the appointment ?",
         "intent": "service_query_time",
         "entities": []
       },
       {
-        "text": "When is the appointment?",
+        "text": "When is the appointment ?",
         "intent": "service_query_time",
         "entities": []
       },
       {
-        "text": "My tracking ID number is TR00054.",
+        "text": "My tracking ID number is TR00054",
         "intent": "service_detail",
-        "entities": []
+        "entities": [
+          {
+            "start": 25,
+            "end": 32,
+            "value": "TR00054",
+            "entity": "trackid"
+          }
+        ]
       },
       {
         "text": "Tracking ID is TR00078",
@@ -1028,22 +1036,22 @@
         ]
       },
       {
-        "text": "Appointment details?",
+        "text": "Appointment details ?",
         "intent": "service_query",
         "entities": []
       },
       {
-        "text": "I want to know my appointment date.",
+        "text": "I want to know my appointment date",
         "intent": "service_query_time",
         "entities": []
       },
       {
-        "text": "I want to know my appointment date.It's tracking ID is TR00078.",
+        "text": "I want to know my appointment date with tracking ID  TR00078",
         "intent": "service_query_time",
         "entities": [
           {
-            "start": 55,
-            "end": 62,
+            "start": 53,
+            "end": 60,
             "value": "TR00078",
             "entity": "trackid"
           }
@@ -1074,48 +1082,48 @@
         ]
       },
       {
-        "text": "it is TR00909.",
+        "text": "it is TR00976",
         "intent": "service_detail",
         "entities": [
           {
             "start": 6,
-            "end": 14,
-            "value": "TR00909.",
+            "end": 13,
+            "value": "TR00976",
             "entity": "trackid"
           }
         ]
       },
       {
-        "text": "When is the scheduled appointment with tracking ID TR00151?",
+        "text": "When is the scheduled appointment with tracking ID TR00151 ?",
         "intent": "service_query_time",
         "entities": [
           {
             "start": 51,
-            "end": 59,
-            "value": "TR00151?",
+            "end": 58,
+            "value": "TR00151",
             "entity": "trackid"
           }
         ]
       },
       {
-        "text": "Hi, please tell me details of my appointment.",
+        "text": "Hi, please tell me details of my appointment",
         "intent": "service_query",
         "entities": []
       },
       {
-        "text": "Hi, please track my appointment.It is track id is TR45678.",
+        "text": "Hi, please track my appointment. The track id is TR45678",
         "intent": "service_query",
         "entities": [
           {
-            "start": 50,
-            "end": 57,
+            "start": 49,
+            "end": 56,
             "value": "TR45678",
             "entity": "trackid"
           }
         ]
       },
       {
-        "text": "Details of my appoinment?",
+        "text": "Details of my appoinment ?",
         "intent": "service_query",
         "entities": []
       },
@@ -1125,80 +1133,80 @@
         "entities": []
       },
       {
-        "text": "Please reschedule my appointment.",
+        "text": "Please reschedule my appointment",
         "intent": "service_modify_time",
         "entities": []
       },
       {
-        "text": "Cancel my appointment.",
+        "text": "Cancel my appointment",
         "intent": "service_modify_cancel",
         "entities": []
       },
       {
-        "text": "I no longer need the service booked.Cancel it.",
+        "text": "I no longer need the service booked. Cancel it",
         "intent": "service_modify_cancel",
         "entities": []
       },
       {
-        "text": "Cancel the booked appointment.",
+        "text": "Cancel the booked appointment",
         "intent": "service_modify_cancel",
         "entities": []
       },
       {
-        "text": "Modify my appointment details.",
+        "text": "Modify my appointment details",
         "intent": "service_modify",
         "entities": []
       },
       {
-        "text": "Change my time slots of the appointment.",
-        "intent": "service_modify_timeslots",
-        "entities": []
-      },
-      {
-        "text": "Please change the scheduled timing of my appointment.",
+        "text": "Change my time slots of the appointment",
         "intent": "service_modify_time",
         "entities": []
       },
       {
-        "text": "Change time slots.",
-        "intent": "service_modify_timeslots",
-        "entities": []
-      },
-      {
-        "text": "Change the timings.",
+        "text": "Please change the scheduled timing of my appointment",
         "intent": "service_modify_time",
         "entities": []
       },
       {
-        "text": "Cancel it.",
+        "text": "Change time slots",
+        "intent": "service_modify_time",
+        "entities": []
+      },
+      {
+        "text": "Change the timings",
+        "intent": "service_modify_time",
+        "entities": []
+      },
+      {
+        "text": "Cancel it",
         "intent": "service_modify_cancel",
         "entities": []
       },
       {
-        "text": "Hi, please reschedule my appointment.",
+        "text": "Hi, please reschedule my appointment",
         "intent": "service_modify_time",
         "entities": []
       },
       {
-        "text": "This is my address : 132, My Street, Kingston, New York 12401 United States.",
+        "text": "The address : 132, My Street, Kingston, New York  United States 12401",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 56,
-            "end": 61,
+            "start": 64,
+            "end": 69,
             "value": "12401",
             "entity": "pincode"
           },
           {
-            "start": 21,
-            "end": 75,
-            "value": "132, My Street, Kingston, New York 12401 United States",
+            "start": 14,
+            "end": 63,
+            "value": "132, My Street, Kingston, New York  United States",
             "entity": "address"
           }
         ]
       },
       {
-        "text": "The address is 2025 M Street, Northwest, Washington, DC, 20036.",
+        "text": "The address is 2025 M Street, Northwest, Washington, DC, 20036",
         "intent": "log_complain",
         "entities": [
           {
@@ -1209,26 +1217,26 @@
           },
           {
             "start": 15,
-            "end": 63,
-            "value": "2025 M Street, Northwest, Washington, DC, 20036.",
+            "end": 55,
+            "value": "2025 M Street, Northwest, Washington, DC",
             "entity": "address"
           }
         ]
       },
       {
-        "text": "My address is  490 E Main Street Norwich CT 06360",
+        "text": "Address is  490 E Main Street Norwich CT 06360",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 43,
-            "end": 49,
-            "value": " 06360",
+            "start": 41,
+            "end": 46,
+            "value": "06360",
             "entity": "pincode"
           },
           {
-            "start": 15,
-            "end": 49,
-            "value": "490 E Main Street Norwich CT 06360",
+            "start": 12,
+            "end": 40,
+            "value": "490 E Main Street Norwich CT",
             "entity": "address"
           }
         ]
@@ -1245,8 +1253,8 @@
           },
           {
             "start": 15,
-            "end": 50,
-            "value": "70 Cliff Avenue New London CT 06320",
+            "end": 44,
+            "value": "70 Cliff Avenue New London CT",
             "entity": "address"
           }
         ]
@@ -1263,8 +1271,8 @@
           },
           {
             "start": 10,
-            "end": 41,
-            "value": "50 Water Street Mystic CT 06355",
+            "end": 35,
+            "value": "50 Water Street Mystic CT",
             "entity": "address"
           }
         ]
@@ -1281,8 +1289,8 @@
           },
           {
             "start": 14,
-            "end": 47,
-            "value": "15 Cliff Street Griswold CT 06351",
+            "end": 41,
+            "value": "15 Cliff Street Griswold CT",
             "entity": "address"
           }
         ]
@@ -1299,8 +1307,8 @@
           },
           {
             "start": 15,
-            "end": 49,
-            "value": "233 River Road New London CT 06320",
+            "end": 43,
+            "value": "233 River Road New London CT",
             "entity": "address"
           }
         ]
@@ -1317,8 +1325,8 @@
           },
           {
             "start": 11,
-            "end": 48,
-            "value": "61 Greenhaven Road Pawcatuck CT 06379",
+            "end": 42,
+            "value": "61 Greenhaven Road Pawcatuck CT",
             "entity": "address"
           }
         ]
@@ -1328,16 +1336,16 @@
         "intent": "log_complain",
         "entities": [
           {
-            "start": 15,
-            "end": 47,
-            "value": "3 Cardinal Drive Groton CT 06340",
-            "entity": "address"
-          },
-          {
             "start": 42,
             "end": 47,
             "value": "06340",
             "entity": "pincode"
+          },
+          {
+            "start": 15,
+            "end": 41,
+            "value": "3 Cardinal Drive Groton CT",
+            "entity": "address"
           }
         ]
       },
@@ -1346,16 +1354,16 @@
         "intent": "log_complain",
         "entities": [
           {
-            "start": 15,
-            "end": 50,
-            "value": "104 Thomaston Road Preston CT 06365",
-            "entity": "address"
-          },
-          {
             "start": 45,
             "end": 50,
             "value": "06365",
             "entity": "pincode"
+          },
+          {
+            "start": 15,
+            "end": 44,
+            "value": "104 Thomaston Road Preston CT",
+            "entity": "address"
           }
         ]
       },
@@ -1371,8 +1379,8 @@
           },
           {
             "start": 15,
-            "end": 48,
-            "value": "33 Paula Lane Uncasville CT 06385",
+            "end": 42,
+            "value": "33 Paula Lane Uncasville CT",
             "entity": "address"
           }
         ]
@@ -1389,8 +1397,8 @@
           },
           {
             "start": 15,
-            "end": 55,
-            "value": "574 New London Turnpike Norwich CT 06360",
+            "end": 49,
+            "value": "574 New London Turnpike Norwich CT",
             "entity": "address"
           }
         ]
@@ -1420,67 +1428,67 @@
         ]
       },
       {
-        "text": "When is my booked service scheduled at?",
+        "text": "When is my booked service scheduled at ?",
         "intent": "service_query_time",
         "entities": []
       },
       {
-        "text": "Please change the time slots of the appointment.",
-        "intent": "service_modify_timeslots",
+        "text": "Please change the time slots of the appointment",
+        "intent": "service_modify_time",
         "entities": []
       },
       {
-        "text": "Please modify the time slots of the appointment.",
+        "text": "Please modify the time slots of the appointment",
         "intent": "service_query_timeslots",
         "entities": []
       },
       {
-        "text": "Undo the time slots of the appointment.I want them changed.",
+        "text": "Undo the time slots of the appointment. I want them changed",
         "intent": "service_query_timeslots",
         "entities": []
       },
       {
-        "text": "Undo the time slots of the appointment.",
-        "intent": "service_modify_timeslots",
+        "text": "Undo the time slots of the appointment",
+        "intent": "service_modify_time",
         "entities": []
       },
       {
-        "text": "Kindly remove the given time slots.I want them changed.",
-        "intent": "service_modify_timeslots",
+        "text": "Kindly remove the given time slots. I want them changed",
+        "intent": "service_modify_time",
         "entities": []
       },
       {
-        "text": "Change my time slots.",
-        "intent": "service_modify_timeslots",
+        "text": "Change my time slots",
+        "intent": "service_modify_time",
         "entities": []
       },
       {
-        "text": "Please cancel my appointment with the technician.",
+        "text": "Please cancel my appointment with the technician",
         "intent": "service_modify_cancel",
         "entities": []
       },
       {
-        "text": "I want my appointment cancelled.",
+        "text": "I want my appointment cancelled",
         "intent": "service_modify_cancel",
         "entities": []
       },
       {
-        "text": "I want my appointment with technician cancelled.",
+        "text": "I want my appointment with technician cancelled",
         "intent": "service_modify_cancel",
         "entities": []
       },
       {
-        "text": "Change my appointment details.",
+        "text": "Change my appointment details",
         "intent": "service_modify",
         "entities": []
       },
       {
-        "text": "Undo my appointment details.",
+        "text": "Undo my appointment details",
         "intent": "service_modify",
         "entities": []
       },
       {
-        "text": "unregister my appointment.",
+        "text": "unregister my appointment",
         "intent": "service_modify_cancel",
         "entities": []
       },
@@ -1490,27 +1498,27 @@
         "entities": []
       },
       {
-        "text": "Please unregister my fixed appointment.",
+        "text": "Please unregister my fixed appointment",
         "intent": "service_modify_cancel",
         "entities": []
       },
       {
-        "text": "Update my appointment details. ",
+        "text": "Update my appointment details",
         "intent": "service_modify",
         "entities": []
       },
       {
-        "text": "Update my scheduled appointment's date.",
+        "text": "Update my scheduled appointment's date",
         "intent": "service_modify_time",
         "entities": []
       },
       {
-        "text": "Update my scheduled appointment's time slot.",
-        "intent": "service_modify_timeslots",
+        "text": "Update my scheduled appointment's time slot",
+        "intent": "service_modify_time",
         "entities": []
       },
       {
-        "text": "Please book my appointment on Tuesday.",
+        "text": "Please book my appointment on Tuesday",
         "intent": "log_complain",
         "entities": [
           {
@@ -1534,7 +1542,7 @@
         ]
       },
       {
-        "text": "Book it on Monday.",
+        "text": "Book it on Monday",
         "intent": "log_complain",
         "entities": [
           {
@@ -1546,67 +1554,55 @@
         ]
       },
       {
-        "text": "Book it on next Monday.",
+        "text": "Book it on next Monday",
         "intent": "log_complain",
         "entities": [
           {
             "start": 16,
-            "end": 23,
-            "value": "Monday.",
+            "end": 22,
+            "value": "Monday",
             "entity": "date"
           }
         ]
       },
       {
-        "text": "Register my appointment on 13 August.",
+        "text": "Register  appointment on 13 August",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 27,
-            "end": 37,
-            "value": "13 August.",
-            "entity": "date"
-          }
-        ]
-      },
-      {
-        "text": "Schedule my appointment on 12 July.",
-        "intent": "log_complain",
-        "entities": [
-          {
-            "start": 27,
+            "start": 25,
             "end": 34,
+            "value": "13 August",
+            "entity": "date"
+          }
+        ]
+      },
+      {
+        "text": "Schedule  appointment on 12 July",
+        "intent": "log_complain",
+        "entities": [
+          {
+            "start": 25,
+            "end": 32,
             "value": "12 July",
             "entity": "date"
           }
         ]
       },
       {
-        "text": "I want to schedule my appointment on 13 December",
+        "text": "I want to schedule  appointment on 13 December",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 37,
-            "end": 48,
+            "start": 35,
+            "end": 46,
             "value": "13 December",
             "entity": "date"
           }
         ]
       },
       {
-        "text": "Select the date as 14 November.",
-        "intent": "log_complain",
-        "entities": [
-          {
-            "start": 19,
-            "end": 31,
-            "value": "14 November.",
-            "entity": "date"
-          }
-        ]
-      },
-      {
-        "text": "Please select 14 September as the date of the appointment.",
+        "text": "Please select 14 September as the date of the appointment",
         "intent": "log_complain",
         "entities": [
           {
@@ -1635,14 +1631,14 @@
         "entities": [
           {
             "start": 0,
-            "end": 9,
-            "value": "14 April ",
+            "end": 8,
+            "value": "14 April",
             "entity": "date"
           }
         ]
       },
       {
-        "text": "Schedule it on 13 August.",
+        "text": "Schedule it on 13 August",
         "intent": "log_complain",
         "entities": [
           {
@@ -1654,25 +1650,25 @@
         ]
       },
       {
-        "text": "My fridge’s temperature isn’t cold enough.",
+        "text": " fridge temperature is not cold enough",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 3,
-            "end": 11,
-            "value": "fridge’s",
+            "start": 1,
+            "end": 7,
+            "value": "fridge",
             "entity": "appliance"
           },
           {
-            "start": 12,
-            "end": 41,
-            "value": "temperature isn’t cold enough",
-            "entity": "issue"
+            "start": 8,
+            "end": 38,
+            "value": "temperature is not cold enough",
+            "entity": ""
           }
         ]
       },
       {
-        "text": "The fridge ice maker isn’t working.",
+        "text": "The fridge ice maker is not working",
         "intent": "log_complain",
         "entities": [
           {
@@ -1683,8 +1679,8 @@
           },
           {
             "start": 11,
-            "end": 34,
-            "value": "ice maker isn’t working",
+            "end": 35,
+            "value": "ice maker is not working",
             "entity": "issue"
           }
         ]
@@ -1708,36 +1704,36 @@
         ]
       },
       {
-        "text": "My refrigerator is not dispensing water or ice",
+        "text": " refrigerator is not dispensing water or ice",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 3,
-            "end": 15,
+            "start": 1,
+            "end": 13,
             "value": "refrigerator",
             "entity": "appliance"
           },
           {
-            "start": 18,
-            "end": 46,
-            "value": " not dispensing water or ice",
+            "start": 17,
+            "end": 44,
+            "value": "not dispensing water or ice",
             "entity": "issue"
           }
         ]
       },
       {
-        "text": "My fridge does not start.",
+        "text": " fridge does not start",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 3,
-            "end": 9,
+            "start": 1,
+            "end": 7,
             "value": "fridge",
             "entity": "appliance"
           },
           {
-            "start": 10,
-            "end": 24,
+            "start": 8,
+            "end": 22,
             "value": "does not start",
             "entity": "issue"
           }
@@ -1755,14 +1751,14 @@
           },
           {
             "start": 10,
-            "end": 27,
-            "value": "not getting cold.",
+            "end": 26,
+            "value": "not getting cold",
             "entity": "issue"
           }
         ]
       },
       {
-        "text": "There is frost in the Freezer of the fridge.",
+        "text": "There is frost in the freezer of the fridge",
         "intent": "log_complain",
         "entities": [
           {
@@ -1774,36 +1770,36 @@
           {
             "start": 9,
             "end": 29,
-            "value": "frost in the Freezer",
+            "value": "frost in the freezer",
             "entity": "issue"
           }
         ]
       },
       {
-        "text": "I want my appliance to be fixed.",
+        "text": "I want my appliance to be fixed",
         "intent": "log_complain",
         "entities": []
       },
       {
-        "text": "The washing machine's washer won't turn on.",
+        "text": "The washing machine washer would not turn on",
         "intent": "log_complain",
         "entities": [
           {
             "start": 4,
-            "end": 21,
-            "value": "washing machine's",
+            "end": 19,
+            "value": "washing machine",
             "entity": "appliance"
           },
           {
-            "start": 22,
-            "end": 42,
-            "value": "washer won't turn on",
+            "start": 20,
+            "end": 44,
+            "value": "washer would not turn on",
             "entity": "issue"
           }
         ]
       },
       {
-        "text": "The washing machine is not draining properly.",
+        "text": "The washing machine is not draining properly",
         "intent": "log_complain",
         "entities": [
           {
@@ -1839,7 +1835,7 @@
         ]
       },
       {
-        "text": " washing machine is making noises and moving around.",
+        "text": " washing machine is making noises and moving around ",
         "intent": "log_complain",
         "entities": [
           {
@@ -1850,8 +1846,8 @@
           },
           {
             "start": 20,
-            "end": 52,
-            "value": "making noises and moving around.",
+            "end": 51,
+            "value": "making noises and moving around",
             "entity": "issue"
           }
         ]
@@ -1875,37 +1871,37 @@
         ]
       },
       {
-        "text": "Hi, I need to register a complain.",
+        "text": "Hi , I need to register a complain ",
         "intent": "log_complain",
         "entities": []
       },
       {
-        "text": "I am having some trouble with my microwave.",
+        "text": "I am having some trouble with my microwave ",
         "intent": "log_complain",
         "entities": [
           {
             "start": 33,
-            "end": 43,
-            "value": "microwave.",
+            "end": 42,
+            "value": "microwave",
             "entity": "appliance"
           }
         ]
       },
       {
-        "text": "The microwave light-bulb does not turn on during operation.",
+        "text": "The microwave light-bulb does not turn on during operation",
         "intent": "log_complain",
         "entities": [
-          {
-            "start": 4,
-            "end": 14,
-            "value": "microwave ",
-            "entity": "appliance"
-          },
           {
             "start": 14,
             "end": 58,
             "value": "light-bulb does not turn on during operation",
             "entity": "issue"
+          },
+          {
+            "start": 4,
+            "end": 13,
+            "value": "microwave",
+            "entity": "appliance"
           }
         ]
       },
@@ -1928,12 +1924,12 @@
         ]
       },
       {
-        "text": "There is some problem with my purchased appliance.",
+        "text": "There is some problem with my purchased appliance",
         "intent": "log_complain",
         "entities": []
       },
       {
-        "text": "I need service of my appliance.",
+        "text": "I need service of my appliance",
         "intent": "log_complain",
         "entities": []
       },
@@ -1949,8 +1945,8 @@
           },
           {
             "start": 23,
-            "end": 44,
-            "value": "not cooling properly.",
+            "end": 43,
+            "value": "not cooling properly",
             "entity": "issue"
           }
         ]
@@ -1974,55 +1970,55 @@
         ]
       },
       {
-        "text": "It's model number is AJCQ10ACG and serial number is ACZN9073.",
+        "text": "The model number is AJCQ10ACG and serial number is ACZN9073.",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 21,
-            "end": 30,
+            "start": 20,
+            "end": 29,
             "value": "AJCQ10ACG",
             "entity": "modelnumber"
           },
           {
-            "start": 52,
-            "end": 60,
+            "start": 51,
+            "end": 59,
             "value": "ACZN9073",
             "entity": "serialnumber"
           }
         ]
       },
       {
-        "text": "My air conditioner's model number is AEE24DT and serial number is ACZN9002.",
+        "text": "model number is AEE24DT and serial number is ACZN9002.",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 37,
-            "end": 44,
+            "start": 16,
+            "end": 23,
             "value": "AEE24DT",
             "entity": "modelnumber"
           },
           {
-            "start": 66,
-            "end": 74,
+            "start": 45,
+            "end": 53,
             "value": "ACZN9002",
             "entity": "serialnumber"
           }
         ]
       },
       {
-        "text": "I am having trouble with my washer.",
+        "text": "I am having trouble with my washer",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 27,
-            "end": 35,
-            "value": " washer.",
+            "start": 28,
+            "end": 34,
+            "value": "washer",
             "entity": "appliance"
           }
         ]
       },
       {
-        "text": "I am having some problem with my air conditioner.",
+        "text": "I am having some problem with my air conditioner",
         "intent": "log_complain",
         "entities": [
           {
@@ -2034,49 +2030,55 @@
         ]
       },
       {
-        "text": "I need to technician to repair my appliance.",
+        "text": "I need to technician to repair my appliance",
         "intent": "log_complain",
         "entities": []
       },
       {
-        "text": "Help me.I having problems with my washer.",
+        "text": "Help me.I having problems with my dish washer",
         "intent": "log_complain",
         "entities": [
           {
             "start": 34,
-            "end": 41,
-            "value": "washer.",
+            "end": 45,
+            "value": "dish washer",
             "entity": "appliance"
           }
         ]
       },
       {
-        "text": "ac is not working properly",
+        "text": "air conditioner is not working properly",
         "intent": "log_complain",
         "entities": [
           {
             "start": 0,
-            "end": 2,
-            "value": "ac",
-            "entity": "appliance"
-          }
-        ]
-      },
-      {
-        "text": "tv is noisy",
-        "intent": "log_complain",
-        "entities": [
-          {
-            "start": 0,
-            "end": 2,
-            "value": "tv",
+            "end": 15,
+            "value": "air conditioner",
             "entity": "appliance"
           },
           {
-            "start": 6,
-            "end": 11,
+            "start": 19,
+            "end": 39,
+            "value": "not working properly",
+            "entity": "issue"
+          }
+        ]
+      },
+      {
+        "text": "television is noisy",
+        "intent": "log_complain",
+        "entities": [
+          {
+            "start": 14,
+            "end": 19,
             "value": "noisy",
             "entity": "issue"
+          },
+          {
+            "start": 0,
+            "end": 10,
+            "value": "television",
+            "entity": "appliance"
           }
         ]
       },
@@ -2102,7 +2104,7 @@
       },
       {
         "text": "reschedule appointment",
-        "intent": "service_modify_timeslots",
+        "intent": "service_modify_time",
         "entities": []
       },
       {
@@ -2111,12 +2113,12 @@
         "entities": []
       },
       {
-        "text": "my name is xyz",
+        "text": "name is xyz",
         "intent": "log_complain",
         "entities": [
           {
-            "start": 11,
-            "end": 14,
+            "start": 8,
+            "end": 11,
             "value": "xyz",
             "entity": "name"
           }
@@ -2131,6 +2133,489 @@
             "end": 8,
             "value": "xyz",
             "entity": "name"
+          }
+        ]
+      },
+      {
+        "text": "nope",
+        "intent": "deny",
+        "entities": []
+      },
+      {
+        "text": "i accept",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "done",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "update my details",
+        "intent": "service_modify",
+        "entities": []
+      },
+      {
+        "text": "change my details",
+        "intent": "service_modify",
+        "entities": []
+      },
+      {
+        "text": "modify my details",
+        "intent": "service_modify",
+        "entities": []
+      },
+      {
+        "text": "please cancel",
+        "intent": "service_modify",
+        "entities": []
+      },
+      {
+        "text": "i want to cancel",
+        "intent": "service_modify",
+        "entities": []
+      },
+      {
+        "text": "unbook appointment",
+        "intent": "service_modify",
+        "entities": []
+      },
+      {
+        "text": "unbook my appointment",
+        "intent": "service_modify",
+        "entities": []
+      },
+      {
+        "text": "unregister it",
+        "intent": "service_modify",
+        "entities": []
+      },
+      {
+        "text": "unregister appointment",
+        "intent": "service_modify_cancel",
+        "entities": []
+      },
+      {
+        "text": "cancel appointment with technician",
+        "intent": "service_modify_cancel",
+        "entities": []
+      },
+      {
+        "text": "unregister my appointment",
+        "intent": "service_modify",
+        "entities": []
+      },
+      {
+        "text": "track my appointment",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "show details",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "give details of appointment",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "get details",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "give the details",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "provide me the details",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "provide me with the details",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "provide me appointment details",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "tell me details",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "let me know the details",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "need to know the details",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "tell me the details",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "track my appointment with track id TR00089",
+        "intent": "service_query",
+        "entities": [
+          {
+            "start": 35,
+            "end": 42,
+            "value": "TR00089",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "let me know the details",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "let me know the detail TR00089",
+        "intent": "service_query",
+        "entities": [
+          {
+            "start": 23,
+            "end": 30,
+            "value": "TR00089",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "appointment details TR00089",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "appointment tr45789 details",
+        "intent": "service_query",
+        "entities": [
+          {
+            "start": 12,
+            "end": 19,
+            "value": "tr45789",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "track my appointment. tracking id TR12345",
+        "intent": "service_query",
+        "entities": [
+          {
+            "start": 34,
+            "end": 41,
+            "value": "TR12345",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "show me the details",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "what is the appointment details ?",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "what are the details ?",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "track appointment TR56789",
+        "intent": "service_query",
+        "entities": [
+          {
+            "start": 18,
+            "end": 25,
+            "value": "TR56789",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "show me appointment details TR93456",
+        "intent": "service_query",
+        "entities": [
+          {
+            "start": 28,
+            "end": 35,
+            "value": "TR93456",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "show appointment details with track id TR13456 ",
+        "intent": "service_query",
+        "entities": [
+          {
+            "start": 39,
+            "end": 47,
+            "value": "TR13456 ",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "track id : tr56434",
+        "intent": "service_detail",
+        "entities": [
+          {
+            "start": 11,
+            "end": 18,
+            "value": "tr56434",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "track id is tr56745",
+        "intent": "service_detail",
+        "entities": [
+          {
+            "start": 12,
+            "end": 19,
+            "value": "tr56745",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "my track id is TR09000",
+        "intent": "service_detail",
+        "entities": [
+          {
+            "start": 15,
+            "end": 22,
+            "value": "TR09000",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "TR45345",
+        "intent": "service_detail",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "TR45345",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "TR89700",
+        "intent": "service_detail",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "TR89700",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "TR05000",
+        "intent": "service_detail",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "TR05000",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "change timings",
+        "intent": "service_modify_time",
+        "entities": []
+      },
+      {
+        "text": "allot a different date",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "allot a different time slot",
+        "intent": "service_modify_time",
+        "entities": []
+      },
+      {
+        "text": "change the appointment date",
+        "intent": "service_modify_time",
+        "entities": []
+      },
+      {
+        "text": "modify timings",
+        "intent": "service_modify_time",
+        "entities": []
+      },
+      {
+        "text": "show timings",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "provide me the timings ",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "show me timings of the appointment",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "timings of the appointment trackid TR54123",
+        "intent": "service_query_time",
+        "entities": [
+          {
+            "start": 36,
+            "end": 43,
+            "value": "TR54123",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "i want to know the appointment details",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "what is my appointment date ?",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "tell me the schedule details",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "appointment details with tr56733",
+        "intent": "service_query",
+        "entities": [
+          {
+            "start": 25,
+            "end": 32,
+            "value": "tr56733",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "give the timings",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "Timings of the appointment with track id TR50010?",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "Max Meier",
+        "intent": "log_complain",
+        "entities": [
+          {
+            "start": 0,
+            "end": 9,
+            "value": "Max Meier",
+            "entity": "name"
+          }
+        ]
+      },
+      {
+        "text": "facing problems with my microwave",
+        "intent": "log_complain",
+        "entities": [
+          {
+            "start": 24,
+            "end": 33,
+            "value": "microwave",
+            "entity": "appliance"
+          }
+        ]
+      },
+      {
+        "text": "Model number is PYD22KBLTS",
+        "intent": "log_complain",
+        "entities": [
+          {
+            "start": 16,
+            "end": 26,
+            "value": "PYD22KBLTS",
+            "entity": "modelnumber"
+          }
+        ]
+      },
+      {
+        "text": "serial number is ACZN9002.",
+        "intent": "log_complain",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
+            "value": "ACZN9002",
+            "entity": "serialnumber"
+          }
+        ]
+      },
+      {
+        "text": "serial number is ACZN9073",
+        "intent": "log_complain",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
+            "value": "ACZN9073",
+            "entity": "serialnumber"
+          }
+        ]
+      },
+      {
+        "text": "need to book service",
+        "intent": "log_complain",
+        "entities": []
+      },
+      {
+        "text": "dishwasher broken",
+        "intent": "log_complain",
+        "entities": [
+          {
+            "start": 0,
+            "end": 10,
+            "value": "dishwasher",
+            "entity": "appliance"
+          },
+          {
+            "start": 11,
+            "end": 17,
+            "value": "broken",
+            "entity": "issue"
           }
         ]
       }
