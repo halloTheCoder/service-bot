@@ -99,14 +99,14 @@ templates:
   utter_ask_date:
     - "PLease select a date of the appoinment."
   utter_ask_moreupdates: 
-    - "if you'd like to modify anything else, please tell me what. This is what I currently have: {appliance} with {issue} (name: {name}, email: {email}, ) for {people} people."
+    - "if you'd like to modify anything else, please tell me what. This is what I currently have: Complaint: {name} , {email} Address: {address} {pincode} Complain : (appliance_type: {appliance}, issue: {issue}) Date : {date} Time : {timeslots}."
   utter_ask_confirmcomplain:
     - text: "Do you want to confirm the complain? This is what I currently have: Complaint: {name} , {email} Address: {address} {pincode} Complain : (appliance_type: {appliance}, issue: {issue}) Date : {date} Time : {timeslots}."
-      buttons:
-        - title: "Yes"
-          payload: "/affirm"
-        - title: "No"
-          payload: "/deny"
+      # buttons:
+      #   - title: "Yes"
+      #     payload: "/affirm"
+      #   - title: "No"
+      #     payload: "/deny"
   utter_ask_trackid:
     - "Please provide your tracking ID number."
   # utter_incorrectmodel:
@@ -155,6 +155,7 @@ actions:
   - utter_ask_confirmcomplain
   - utter_ask_date
   - utter_ask_trackid
+  - utter_ask_moreupdates
   - action_get_complaint_detail
   # - utter_incorrectmodel
   # - utter_incorrectserial

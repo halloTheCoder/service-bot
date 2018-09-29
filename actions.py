@@ -14,22 +14,22 @@ class CustomFormField(FormField):
         super(self, FormField).__init__()
         
     # noinspection PyMethodMayBeStatic
-    def validate(self, value):
+    def validate(self, entity, value):
         """Check if extracted value for a requested slot is valid.
         Users should override this to implement custom validation logic,
         returning None indicates a negative validation result, and the slot
         will not be set.
         """
         print(value)
-        if value == 'appliance':      ###IMP :: can reduce appliance value to one allowed here
+        if entity == 'appliance':      ###IMP :: can reduce appliance value to one allowed here
             if not any(self.df.loc[:, 'Product Line'] == value):
                 value = None
         
-        if value == 'modelnumber':
+        if entity == 'modelnumber':
             if not any(self.df.loc[:, 'Model Number'] == value):
                 value = None
 
-        if value == 'serialnumber':
+        if entity == 'serialnumber':
             if not any(self.df.loc[:, 'Serial Number'] == value):
                 value = None
 
@@ -92,7 +92,7 @@ class FreeTextFormField(CustomFormField):
         
         for entity in tracker.latest_message.get("entities"):
             if entity["entity"] == self.slot_name: 
-                validated = self.validate(entity["value"])
+                validated = self.validate(entity["entity"], entity["value"])
                 if validated is not None:
                     events_custom.extend([SlotSet(self.slot_name, validated)])
                 # return [SlotSet(self.slot_name, validated)]
@@ -122,7 +122,7 @@ class ActionSearchRestaurants(FormAction):
         return 'action_get_complaint_detail'
 
     def submit(self, dispatcher, tracker, domain):
-        dispatcher.utter_message("Your complaint has been logged successfully !!!!. Thank you for using our service.")
+        dispatcher.utter_message("Your complaint has been logged successfully !!!!.")
 #         dispatcher // padho
         return []
 
