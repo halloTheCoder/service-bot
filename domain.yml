@@ -101,12 +101,14 @@ templates:
   utter_ask_moreupdates: 
     - "if you'd like to modify anything else, please tell me what. This is what I currently have: Complaint: {name} , {email} Address: {address} {pincode} Complain : (appliance_type: {appliance}, issue: {issue}) Date : {date} Time : {timeslots}."
   utter_ask_confirmcomplain:
-    - text: "Do you want to confirm the complain? This is what I currently have: Complaint: {name} , {email} Address: {address} {pincode} Complain : (appliance_type: {appliance}, issue: {issue}) Date : {date} Time : {timeslots}."
+    - text: "Do you want to confirm the complain? These are your details: Complaint: {name} , {email} Address: {address} {pincode} Complain : (appliance_type: {appliance}, issue: {issue}) Date : {date} Time : {timeslots}."
       # buttons:
       #   - title: "Yes"
       #     payload: "/affirm"
       #   - title: "No"
       #     payload: "/deny"
+  utter_youarewelcome:
+    - "Thank you for using our service. Taking you to our home page.... :)"
   utter_ask_change_name:
     - "Oh on it! Please provide your name."
   utter_ask_change_email:
@@ -124,10 +126,7 @@ templates:
      {pincode} Complain : (appliance_type: {appliance}, issue: {issue}) Date : {date} Time : {timeslots}."
   utter_ask_trackid:
     - "Please provide your tracking ID number."
-  # utter_incorrectmodel:
-  #   - "The model number is incorrect. Please give the corret model and serial number."
-  # utter_incorrectserial:
-  #   - "The serial number is incorrect. Please give the corret model and serial number."
+  
   # utter_askservicechange:
   #   - "What would you like to change about your appoinment?"
   # utter_confirmed:
@@ -172,6 +171,8 @@ actions:
   - utter_ask_trackid
   - utter_ask_moreupdates
   - action_get_complaint_detail
+  - action_store_details
+  - action_cancel_complain
   - utter_ask_change_name
   - utter_ask_change_email
   - utter_ask_change_date

@@ -4,6 +4,16 @@ from rasa_core_sdk.forms import FormAction, FormField
 
 import pandas as pd
 import string
+import os
+import logging
+import random
+
+logger = logging.getLogger(__name__)
+
+# this slot is used to store information needed
+# to do the form handling, needs to be part
+# of the domain
+FORM_SLOT_NAME = "requested_slot"
 
 # EntityFormField(entity_name, slot_name), which will look for an entity called entity_name to fill a slot slot_name.
 # BooleanFormField(slot_name, affirm_intent, deny_intent), which looks for the intents affirm_intent and deny_intent to fill a boolean slot called slot_name.
@@ -51,7 +61,7 @@ class BooleanFormField(CustomFormField):
         self.affirm_intent = affirm_intent
         self.deny_intent = deny_intent
 
-    def extract(self, tracker):
+    def extract(self, tracker, dispatcher):
         # type: (Tracker) -> List[EventType]
 
         intent = tracker.latest_message.get("intent", {}).get("name")
@@ -70,30 +80,34 @@ class FreeTextFormField(CustomFormField):
     def __init__(self, slot_name):
         self.slot_name = slot_name
 
-    def extract(self, tracker):
+    def extract(self, tracker, dispatcher):
         # type: (Tracker) -> List[EventType]
 
         print(tracker.latest_message)
 
         events_custom = []
         
-        for entity in tracker.latest_message.get("entities"):
+        for entity in tracker.latest_message.get("entities", {}):
             # if entity["entity"] == self.slot_name: 
             validated = self.validate(entity["entity"], entity["value"])
+            if validated is None:
+                dispatcher.utter_message("Entered information is wrong. Please re-enter!!!!")
                 # if validated is not None:
-            events_custom.extend([SlotSet(entity, validated)])
+            events_custom.extend([SlotSet(entity["entity"], validated)])
                 # return [SlotSet(self.slot_name, validated)]
         return events_custom
+
 
 def trackid_generator(size = 5, chars = string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
 def create_trackid(size = 5):
     trackidnum = trackid_generator(size = size)
-    df = pd.read_csv('complaints.csv')
-    if any(df.loc[:, 'Track ID'] == trackidnum):
-        return create_trackid(size = size)
-    return trackid
+    if os.path.exists('complaints.csv'):
+        df = pd.read_csv('complaints.csv', sep = '\t')
+        if any(df.loc[:, 'TrackID'] == trackidnum):
+            return create_trackid(size = size)
+    return trackidnum
 
 class ActionSearchRestaurants(FormAction):
     RANDOMIZE = False
@@ -117,10 +131,98 @@ class ActionSearchRestaurants(FormAction):
     def name(self):
         return 'action_get_complaint_detail'
 
+    def get_requested_slot(self, tracker, dispatcher):
+        # type: (Tracker) -> List[EventType]
+
+        requested_slot = tracker.get_slot(FORM_SLOT_NAME)
+
+        required = self.required_fields()
+
+        if self.RANDOMIZE:
+            random.shuffle(required)
+
+        if requested_slot is None:
+            return []
+        else:
+            fields = [f
+                      for f in required
+                      if f.slot_name == requested_slot]
+
+            if len(fields) == 1:
+                return fields[0].extract(tracker, dispatcher)
+            else:
+                logger.debug("Unable to extract value "
+                             "for requested slot: {}".format(requested_slot))
+                return []
+
+    def run(self, dispatcher, tracker, domain):
+
+        events = (self.get_requested_slot(tracker, dispatcher) +
+                  self.get_other_slots(tracker))
+
+        temp_tracker = tracker.copy()
+        for e in events:
+            temp_tracker.slots[e["name"]] = e["value"]
+
+        for field in self.required_fields():
+            if self.should_request_slot(temp_tracker, field.slot_name):
+
+                dispatcher.utter_template(
+                        "utter_ask_{}".format(field.slot_name),
+                        tracker)
+
+                events.append(SlotSet(FORM_SLOT_NAME, field.slot_name))
+                return events
+
+        # there is nothing more to request, so we can submit
+        events_from_submit = self.submit(dispatcher, temp_tracker, domain) or []
+
+        return events + events_from_submit
+
     def submit(self, dispatcher, tracker, domain):
-        dispatcher.utter_message("Your complaint has been logged successfully !!!!.")
-#         dispatcher // padho
-        return []
+        dispatcher.utter_message("Your complaint has been logged successfully !!!!. You will be recieving a unique track-id which can be used to modify/cancel the complaint")
+        # return []
+        trackidnum = create_trackid()
+        trackidfinal = "TR" + trackidnum
+        print(trackidnum, trackidfinal)
+
+        # if not os.path.exists('complaints.csv'):
+        #     with open('complaints.csv', 'w') as f:
+        #         f.write('Appliance\tIssue\tModelNumber\tSerialNumber\tName\tEmail\tAddress\tPincode\tDate\tTimeSlots\tTrackID\n')
+        
+        # with open('complaints.csv', 'a') as f:
+        #     f.write('%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' % (tracker.get_slot("appliance"), tracker.get_slot("issue"),
+        #         tracker.get_slot("modelnumber"), tracker.get_slot("serialnumber"), tracker.get_slot("name"), tracker.get_slot("email"),
+        #         tracker.get_slot("address"), tracker.get_slot("pincode"), tracker.get_slot("date"), tracker.get_slot("timeslots"), tracker.get_slot("trackid")))
+
+        # dispatcher.utter_message("Your unique track id is ") 
+        # dispatcher.utter_message(tracker.get_slot("trackid")) 
+        return [SlotSet("trackid", trackidfinal)]
+
+
+##############################################################################################################################
+
+
+
+class GenerateTrackID(Action):
+    def name(self):
+        return 'action_store_details'
+
+    def run(self, dispatcher, tracker, domain):
+        # trackidnum = create_trackid()
+
+        if not os.path.exists('complaints.csv'):
+            with open('complaints.csv', 'w') as f:
+                f.write('Appliance\tIssue\tModelNumber\tSerialNumber\tName\tEmail\tAddress\tPincode\tDate\tTimeSlots\tTrackID\n')
+        
+        with open('complaints.csv', 'a') as f:
+            f.write('%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' % (tracker.get_slot("appliance"), tracker.get_slot("issue"),
+                tracker.get_slot("modelnumber"), tracker.get_slot("serialnumber"), tracker.get_slot("name"), tracker.get_slot("email"),
+                tracker.get_slot("address"), tracker.get_slot("pincode"), tracker.get_slot("date"), tracker.get_slot("timeslots"), tracker.get_slot("trackid")))
+
+        dispatcher.utter_message("Your unique track id is ") 
+        dispatcher.utter_message(tracker.get_slot("trackid"))
+        return [] 
 
 # class GenerateTimeSlots(Action):
 #     def name(self):

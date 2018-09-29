@@ -3,4 +3,6 @@ models/*
 test_tf.json
 test_spacy.json
 .~lock.SampleModelSerialGEA.xlsx#
+.~lock.complaints.csv#
+complaints.csv
 
