@@ -25,7 +25,7 @@ slots:
   confirmcomplain:
     type: text
   requested_slot:
-    type: text
+    type: unfeaturized
 
 
 intents:
@@ -37,10 +37,10 @@ intents:
   - service_query_time
   - service_query_timeslots
   - service_detail
-  - serive_modify
-  - serive_modify_time
-  - serive_modify_timeslots
-  - serive_modify_cancel
+  - service_modify
+  - service_modify_time
+  - service_modify_timeslots
+  - service_modify_cancel
   - deny
   - affirm
 
@@ -61,7 +61,15 @@ entities:
 
 templates:
   utter_greet:
-    - "Hello! How can I help?"
+    - text: "Hello! How can I help?"
+      buttons:
+      - title: "Book Complain"
+        payload: "/log_complain"
+      - title: "Modify Complain"
+        payload: "/service_modify"
+      - title: "Cancel Complain"
+        payload: "/service_modify_cancel"
+
   utter_goodbye:
     - "Goodbye."
     - "Talk to you later."
@@ -80,24 +88,55 @@ templates:
     - "Please provide the serial number of the appliance."
   utter_ask_name:
     - "Could you provide me with your name?"
-  utter_ask_address:
-    - "Please provide me the neccessary details.Your address with pincode."
   utter_ask_email:
     - "Please provide me the neccessary details.Your email."
+  utter_ask_address:
+    - "Please provide me the neccessary details.Your address with pincode."
+  utter_ask_pincode:
+    - "Please provide me the neccessary details.Your pincode."
   utter_ask_timeslots:
     - "PLease select a suitable time slot according to your convinence."
   utter_ask_date:
     - "PLease select a date of the appoinment."
+  utter_ask_moreupdates: 
+    - "if you'd like to modify anything else, please tell me what. This is what I currently have: {appliance} with {issue} (name: {name}, email: {email}, ) for {people} people."
+  utter_ask_confirmcomplain:
+    - text: "Do you want to confirm the complain? This is what I currently have: Complaint: {name} , {email} Address: {address} {pincode} Complain : (appliance_type: {appliance}, issue: {issue}) Date : {date} Time : {timeslots}."
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
   utter_ask_trackid:
     - "Please provide your tracking ID number."
-  utter_incorrectmodel:
-    - "The model number is incorrect. Please give the corret model and serial number."
-  utter_incorrectserial:
-    - "The serial number is incorrect. Please give the corret model and serial number."
-  utter_askservicechange:
-    - "What would you like to change about your appoinment?"
-  utter_confirm_complain:
-    - "Do you confirm th complaint."
+  # utter_incorrectmodel:
+  #   - "The model number is incorrect. Please give the corret model and serial number."
+  # utter_incorrectserial:
+  #   - "The serial number is incorrect. Please give the corret model and serial number."
+  # utter_askservicechange:
+  #   - "What would you like to change about your appoinment?"
+  # utter_confirmed:
+  #   - "Your appointment is confirmed. You can track your appointment with tracking ID number {trackid}."
+  # utter_notconfirmed:
+  #   - text : "Appointment not comfirmed."
+  # utter_provide_servicedetail:
+  #   - "Your appointment detail with tracking ID number {trackid} is - Complaint: {name}, {email} Address: {address},
+  #    {pincode} Complain : (appliance_type: {appliance}, issue: {issue}) Date : {date} Time : {timeslots}."
+  # utter_provide_time:
+  #   - "Your appointment tracking ID number {trackid} date is {date} and the time slots is {timeslots}."
+  # utter_provide_timeslots:
+  #   - "Your appointment tracking ID number {trackid} time slots is {timeslots}."
+  # utter_modified_time:
+  #    - "Your appointment tracking ID number {trackid} date has been changed to {date} with time slots {timeslots}."
+  # utter_modified_timeslots:
+  #   - "Your appointment tracking ID number {trackid} time slots has been changed to {timeslots}."
+  # utter_cancelled:
+  #   - "Your scheduled appointment has been cancelled."
+  # utter_pincode_unavailable:
+  #   - "The provided pincode is unavailable for service."
+  # utter_ask_alternative_pincode:
+  #   - "Do you want to change your provided pincode ?"
+  
 
 actions:
   - utter_greet
@@ -111,10 +150,11 @@ actions:
   - utter_ask_name
   - utter_ask_email
   - utter_ask_address
+  - utter_ask_pincode
   - utter_ask_timeslots
+  - utter_ask_confirmcomplain
   - utter_ask_date
   - utter_ask_trackid
-  - utter_confirm_complain
   - action_get_complaint_detail
   # - utter_incorrectmodel
   # - utter_incorrectserial
