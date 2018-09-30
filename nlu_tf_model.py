@@ -23,7 +23,7 @@ def preprocess_text(text, remove_stopwords=True):
     # Optionally, remove stop words
     if remove_stopwords:
 #         stops = set(stopwords.words("english"))
-        own_stopword = ['the','on','of','a','an','it','be','has','some','my','me']
+        own_stopword = ['the','on','of','a','an','it','be','has','some','my','me', 'i']
         stops = own_stopword
         text = [w for w in text if not w in stops]
     
@@ -118,5 +118,5 @@ def run_nlu(file):
 
 	
 if __name__ == '__main__':
-	# train_nlu('./data/data_new.json', 'config_tensorflow.yml', './models/nlu_tf')
+	train_nlu('./data/data.json', 'config_tensorflow.yml', './models/nlu_tf')
 	run_nlu('all_texts_tf.txt')
