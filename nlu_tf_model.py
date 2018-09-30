@@ -23,14 +23,14 @@ def preprocess_text(text, remove_stopwords=True):
     # Optionally, remove stop words
     if remove_stopwords:
 #         stops = set(stopwords.words("english"))
-        own_stopword = ['the','on','of','a','an','it','be','has','some','my','me', 'i']
+        own_stopword = ['the','on','a','an','it','be','has','some','my','me', 'i']
         stops = own_stopword
         text = [w for w in text if not w in stops]
     
     text = " ".join(text)
     
     if text[-1] in ['.','?']:
-        text = text[:-1]
+        text = text[:-1] + ' ' + text[-1]
         
     # Clean the text
     text = re.sub(r"[^A-Za-z0-9^,:!.\/'+=@-]", " ", text)

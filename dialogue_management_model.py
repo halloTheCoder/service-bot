@@ -16,14 +16,14 @@ logger = logging.getLogger(__name__)
 
 def train_dialogue(domain_file = 'domain.yml',
 					model_path = './models/dialogue',
-					training_data_file = './data/stories.md'):
+					training_data_file = 'stories.md'):
 					
-	agent = Agent(domain_file, policies = [MemoizationPolicy(max_history = 3), KerasPolicy()])
+	agent = Agent(domain_file, policies = [MemoizationPolicy(max_history = 4), KerasPolicy()])
 	data = agent.load_data(training_data_file)	
 	agent.train(
 				data,
-				epochs = 300,
-				batch_size = 50,
+				epochs = 150,
+				batch_size = 4,
 				validation_split = 0.2)
 				
 	agent.persist(model_path)

@@ -62,7 +62,7 @@
         "entities": []
       },
       {
-        "text": " air conditioner is not working properly and is noisy.I want to register a complaint",
+        "text": " air conditioner is not working properly and is noisy.I want to register a complain",
         "intent": "log_complain",
         "entities": [
           {
@@ -888,7 +888,22 @@
         "entities": []
       },
       {
-        "text": "i need details of appointment",
+        "text": "need details of appointment",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "tell details of complain",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "need details of complain",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "tell details of appointment",
         "intent": "service_query",
         "entities": []
       },
@@ -906,6 +921,11 @@
       },
       {
         "text": "can you please let know details of appointment ?",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "can you please let know details of complain ?",
         "intent": "service_query",
         "entities": []
       },
@@ -939,33 +959,183 @@
         "entities": []
       },
       {
+        "text": "tell time of scheduled appointment",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "tell date of scheduled appointment",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "tell time of complain",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "tell date of complain",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "details of scheduled appointment",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "details of appointment",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "details of complain",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
         "text": "i need to know details of service appointment",
         "intent": "service_query",
         "entities": []
       },
       {
-        "text": "When is the scheduled appointment ?",
-        "intent": "service_query_time",
-        "entities": []
-      },
-      {
-        "text": "What are the time slots of my appointment ?",
-        "intent": "service_query_timeslots",
-        "entities": []
-      },
-      {
-        "text": "Tell me the timings of my appointment ?",
-        "intent": "service_query_time",
-        "entities": []
-      },
-      {
-        "text": "let me know the details of the scheduled appointment",
+        "text": "details of service appointment",
         "intent": "service_query",
         "entities": []
       },
       {
-        "text": "Timings of the appointment ?",
+        "text": "details of service complain",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "When is scheduled appointment?",
         "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "What is complain date?",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "Date of complain?",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "What is complain time?",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "Time of complain?",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "What are time slots of appointment ?",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "what is time slots of appointment?",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "What are time slots of complain ?",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "what is time slots of complain?",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "What are date of complain ?",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "what is date of complain?",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "tell date of complain?",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "tell time of complain?",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "time slots of complain ?",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "Tell timings of appointment ?",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "Tell timings of complain ?",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "show date of appointment ?",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "Show date of complain ?",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "show time of appointment ?",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "Show time of complain ?",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "let know details of scheduled appointment",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "let know time of scheduled appointment",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "let know time of scheduled complain",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "let know date of scheduled appointment",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "let know date of scheduled complain",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "Timings of appointment ?",
+        "intent": "service_query_timeslots",
         "entities": []
       },
       {
@@ -1003,17 +1173,29 @@
         "entities": []
       },
       {
-        "text": "I want to know my appointment date",
+        "text": "want to know appointment date",
         "intent": "service_query_time",
         "entities": []
       },
       {
-        "text": "I want to know my appointment date with tracking ID  TR00078",
+        "text": "want to know appointment date with tracking ID TR00078",
         "intent": "service_query_time",
         "entities": [
           {
-            "start": 53,
-            "end": 60,
+            "start": 47,
+            "end": 54,
+            "value": "TR00078",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "tell appointment date with tracking ID TR00078",
+        "intent": "service_query_time",
+        "entities": [
+          {
+            "start": 39,
+            "end": 46,
             "value": "TR00078",
             "entity": "trackid"
           }
@@ -1056,12 +1238,12 @@
         ]
       },
       {
-        "text": "When is the scheduled appointment with tracking ID TR00151 ?",
+        "text": "When is scheduled appointment with tracking ID TR00151 ?",
         "intent": "service_query_time",
         "entities": [
           {
-            "start": 51,
-            "end": 58,
+            "start": 47,
+            "end": 54,
             "value": "TR00151",
             "entity": "trackid"
           }
@@ -1073,7 +1255,46 @@
         "entities": []
       },
       {
+        "text": "tell details of appointment",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "tell details of complain",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "let me know details of complain",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
         "text": "hi, please track appointment. track id is TR45678",
+        "intent": "service_query",
+        "entities": [
+          {
+            "start": 42,
+            "end": 49,
+            "value": "TR45678",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "track appointment with track id TR45678",
+        "intent": "service_query",
+        "entities": [
+          {
+            "start": 32,
+            "end": 39,
+            "value": "TR45678",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "track appointment",
         "intent": "service_query",
         "entities": [
           {
@@ -1125,7 +1346,7 @@
         "entities": []
       },
       {
-        "text": "Change time slots of complaint",
+        "text": "Change time slots of complain",
         "intent": "service_modify_timeslots",
         "entities": []
       },
@@ -1140,7 +1361,7 @@
         "entities": []
       },
       {
-        "text": "change scheduled timing of complaint",
+        "text": "change scheduled timing of complain",
         "intent": "service_modify_timeslots",
         "entities": []
       },
@@ -1455,6 +1676,16 @@
         "entities": []
       },
       {
+        "text": "When is complain scheduled at ?",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "complain scheduled at ?",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
         "text": "select 4-7 pm ",
         "intent": "log_complain",
         "entities": [
@@ -1468,12 +1699,12 @@
       },
       {
         "text": "Please modify the time slots of the appointment",
-        "intent": "service_query_timeslots",
+        "intent": "service_modify_timeslots",
         "entities": []
       },
       {
         "text": "Undo the time slots of the appointment. I want them changed",
-        "intent": "service_query_timeslots",
+        "intent": "service_modify_timeslots",
         "entities": []
       },
       {
@@ -1482,7 +1713,7 @@
         "entities": []
       },
       {
-        "text": "Undo time slots of complaint",
+        "text": "Undo time slots of complain",
         "intent": "service_modify_timeslots",
         "entities": []
       },
@@ -1507,12 +1738,12 @@
         "entities": []
       },
       {
-        "text": "cancel complaint with technician",
+        "text": "cancel complain with technician",
         "intent": "service_modify_cancel",
         "entities": []
       },
       {
-        "text": "cancel complaint",
+        "text": "cancel complain",
         "intent": "service_modify_cancel",
         "entities": []
       },
@@ -1522,12 +1753,12 @@
         "entities": []
       },
       {
-        "text": "delete complaint",
+        "text": "delete complain",
         "intent": "service_modify_cancel",
         "entities": []
       },
       {
-        "text": "delete complaint with technician",
+        "text": "delete complain with technician",
         "intent": "service_modify_cancel",
         "entities": []
       },
@@ -1549,7 +1780,7 @@
         ]
       },
       {
-        "text": "I want complaint tr56766 with technician cancelled",
+        "text": "I want complain tr56766 with technician cancelled",
         "intent": "service_modify_cancel",
         "entities": [
           {
@@ -1561,7 +1792,7 @@
         ]
       },
       {
-        "text": "I want complaint tr56766 cancelled",
+        "text": "I want complain tr56766 cancelled",
         "intent": "service_modify_cancel",
         "entities": [
           {
@@ -1573,7 +1804,7 @@
         ]
       },
       {
-        "text": "I want complaint with track id tr56766 cancelled",
+        "text": "I want complain with track id tr56766 cancelled",
         "intent": "service_modify_cancel",
         "entities": [
           {
@@ -1630,12 +1861,12 @@
         "entities": []
       },
       {
-        "text": "Update scheduled complaint date",
+        "text": "Update scheduled complain date",
         "intent": "service_modify_time",
         "entities": []
       },
       {
-        "text": "Update scheduled complaint time slot",
+        "text": "Update scheduled complain time slot",
         "intent": "service_modify_timeslots",
         "entities": []
       },
@@ -1652,7 +1883,7 @@
         ]
       },
       {
-        "text": "Please book my complaint on Tuesday",
+        "text": "Please book my complain on Tuesday",
         "intent": "log_complain",
         "entities": [
           {
@@ -1748,7 +1979,7 @@
         ]
       },
       {
-        "text": "Please select 14 September as the date of the complaint",
+        "text": "Please select 14 September as the date of the complain",
         "intent": "log_complain",
         "entities": [
           {
@@ -1760,7 +1991,7 @@
         ]
       },
       {
-        "text": "Select 14 September as the date of the complaint",
+        "text": "Select 14 September as the date of the complain",
         "intent": "log_complain",
         "entities": [
           {
@@ -2067,7 +2298,7 @@
         ]
       },
       {
-        "text": "register complaint",
+        "text": "register complain",
         "intent": "log_complain",
         "entities": []
       },
@@ -2454,21 +2685,66 @@
       },
       {
         "text": "show timings",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "show date",
         "intent": "service_query_time",
         "entities": []
       },
       {
-        "text": "provide me the timings ",
+        "text": "provide timings ",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "provide date ",
         "intent": "service_query_time",
         "entities": []
       },
       {
-        "text": "show me timings of the appointment",
+        "text": "show timings of appointment",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "show timings of complain",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "tell timings of appointment",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "tell timings of complain",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "show date of appointment",
         "intent": "service_query_time",
         "entities": []
       },
       {
-        "text": "i want to know appointment details",
+        "text": "show date of complain",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "tell date of appointment",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "tell date of complain",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "want to know appointment details",
         "intent": "service_query",
         "entities": []
       },
@@ -2495,14 +2771,38 @@
         ]
       },
       {
-        "text": "give the timings",
+        "text": "give timings",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "give date",
         "intent": "service_query_time",
         "entities": []
       },
       {
-        "text": "Timings of the appointment with track id TR50010?",
+        "text": "Timings of appointment with track id tr50010?",
+        "intent": "service_query_timeslots",
+        "entities": [
+          {
+            "start": 37,
+            "end": 43,
+            "value": "tr56733",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "Date of appointment with track id tr50010?",
         "intent": "service_query_time",
-        "entities": []
+        "entities": [
+          {
+            "start": 34,
+            "end": 41,
+            "value": "tr56733",
+            "entity": "trackid"
+          }
+        ]
       },
       {
         "text": "Max Meier",
@@ -3411,8 +3711,13 @@
         "entities": []
       },
       {
-        "text": "i need details of complain",
-        "intent": "service_query",
+        "text": "need time of complain",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "need date of complain",
+        "intent": "service_query_time",
         "entities": []
       },
       {
@@ -4069,7 +4374,7 @@
         ]
       },
       {
-        "text": "show",
+        "text": "show details",
         "intent": "service_query",
         "entities": []
       },

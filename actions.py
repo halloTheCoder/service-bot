@@ -5,6 +5,7 @@ from rasa_core_sdk.forms import FormAction, FormField
 import pandas as pd
 import string
 import os
+import datetime
 import logging
 import random
 
@@ -203,7 +204,6 @@ class ActionSearchRestaurants(FormAction):
 ##############################################################################################################################
 
 
-
 class GenerateTrackID(Action):
     def name(self):
         return 'action_store_details'
@@ -223,6 +223,56 @@ class GenerateTrackID(Action):
         dispatcher.utter_message("Your unique track id is ") 
         dispatcher.utter_message(tracker.get_slot("trackid"))
         return [] 
+
+##############################################################################################################################
+
+def generate_timeslots(tracker):
+    time_slots = []
+
+    time_taken_for_diff_appliance = {'refrigerator' : 3, 'fridge' : 3, 'freezer' : 1, 'dishwasher' : 2, 'wall oven' : 1, 'microwave' : 2,
+                             'washer' : 2, 'dryer' : 1, 'air conditioner' : 3, 'ac' : 3, 'a.c.' : 3, 'a.c' : 3}
+
+    day_dict = {0 : 'monday', 1 : 'tuseday', 2 : 'wednesday', 3 : 'thursday', 4 : 'friday', 5 : 'saturday', 6 : 'sunday'}
+
+    for _ in range(3):
+        # day = random.choice(['sunday', 'monday', 'tuseday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'])
+        day = random.choice([day_dict[(datetime.datetime.today().weekday() + 1) % 7], day_dict[(datetime.datetime.today().weekday() + 2) % 7]])
+        
+        time_taken = time_taken_for_diff_appliance[tracker.get_slot('appliance')] if tracker.get_slot('appliance') is not None else None
+
+        am_pm = random.choice([1, 2])
+        
+        time = random.randint(1,9) if am_pm == 1 else random.randint(1, 7)
+        
+        time_slots.append(day + "\t" + str(time) + "-" + str(time + (time_taken if time_taken is not None else str(time + 2))) + (' am' if am_pm == 1 else ' pm'))
+    
+    return time_slots
+
+class GenerateTimeSlot(Action):
+    def name(self):
+        return 'action_get_timeslots'
+
+    def run(self, dispatcher, tracker, domain):
+        time1, time2, time3 = generate_timeslots(tracker)
+        dispatcher.utter_message("These are three recommended timeslots\n-> %s\n-> %s\n-> %s\n" % (time1, time2, time3))
+        # dispatcher.utter_message("You can select one out of these !!!")
+        return [SlotSet("time1", time1), SlotSet("time2", time2), SlotSet("time3", time3)]
+
+class SetTimeSlot(Action):
+    def name(self):
+        return 'action_set_timeslots'
+
+    def run(self, dispatcher, tracker, domain):
+        time = tracker.get_slot('time')
+        if time is not None:
+            day = time.split('\t')[0]
+            time_slot = time.split('\t')[1]
+            dispatcher.utter_message("Your selected timeslot :: %s " % (time))
+            dispatcher.utter_message("has been selected")
+            return [SlotSet("date", day), SlotSet("time_slots", time_slot), SlotSet("time", None)]
+
+        return [SlotSet("time1", None), SlotSet("time2", None), SlotSet("time3", None)]
+
 
 ##############################################################################################################################
 
