@@ -1,9 +1,5 @@
 # ServeMeBot
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-
 Chat Bot built using RASA NLU and RASA CORE, which the consumers can use on their phones to book a service appointment for their Appliances.
 Rasa NLU version: 0.13.2
 Rasa Core version: 0.11.3
