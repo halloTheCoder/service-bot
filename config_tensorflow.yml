@@ -9,8 +9,8 @@ pipeline:
   # nn architecture
   "num_hidden_layers_a": 2
   "hidden_layer_size_a": [256, 256]
-  "num_hidden_layers_b": 0
-  "hidden_layer_size_b": []
+  "num_hidden_layers_b": 2
+  "hidden_layer_size_b": [256, 256]
   "batch_size": 4
   "epochs": 300
   # embedding parameters

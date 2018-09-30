@@ -3658,13 +3658,39 @@
     ],
     "entity_synonyms" : [
       {
-        "value": "air conditioner",
-        "synonyms": ["ac"]
+        "value": "ac",
+        "synonyms": ["air conditioner"]
       },
       {
-        "value": "refrigerator",
-        "synonyms": ["fridge"]
+        "value": "fridge",
+        "synonyms": ["refrigerator"]
       }
-    ]
+    ],
+    "regex_features": [
+            {
+                "name": "pincode",
+                "pattern": "[0-9]{5}"
+            },
+            {
+                "name": "greet",
+                "pattern": "hey[^\\s]*"
+            },
+            {
+                "name": "bye",
+                "pattern": "bye[^\\s]*"
+            },
+            {
+                "name": "goodbye",
+                "pattern": "goodbye[^\\s]*"
+            },
+            {
+                "name": "good-bye",
+                "pattern": "good-bye[^\\s]*"
+            },
+            {
+                "name": "email",
+                "pattern": "[\\w\\.-]+@[\\w\\.-]+"
+            },
+        ]
   }
 }
