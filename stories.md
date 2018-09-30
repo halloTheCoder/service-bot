@@ -51,6 +51,9 @@
 * log_complain{"date": "tuesday"}
     - slot{"date": "tuesday"}
     - action_set_timeslots
+    - slot{"time1": null}
+    - slot{"time2": null}
+    - slot{"time3": null}
     - action_get_complaint_detail
     - slot{"date": "tuesday"}
     - slot{"requested_slot": "timeslots"}
@@ -62,8 +65,12 @@
 * affirm
     - action_get_complaint_detail
     - slot{"confirmcomplain": true}
+    - slot{"trackid": "TR96517"}
+    - action_store_details
+    - utter_youarewelcome
+    - action_restart
 * goodbye
-    - utter_greet
+    - utter_goodbye
     - action_restart
 
 ## Generated Story 462259937121795223
@@ -116,6 +123,9 @@
 * log_complain{"date": "tuesday"}
     - slot{"date": "tuesday"}
     - action_set_timeslots
+    - slot{"time1": null}
+    - slot{"time2": null}
+    - slot{"time3": null}
     - action_get_complaint_detail
     - slot{"date": "tuesday"}
     - slot{"requested_slot": "timeslots"}
@@ -127,6 +137,10 @@
 * affirm
     - action_get_complaint_detail
     - slot{"confirmcomplain": true}
+    - slot{"trackid": "TR96517"}
+    - action_store_details
+    - utter_youarewelcome
+    - action_restart
 
 ## Generated Story -6935492597364981232
 * greet
@@ -387,6 +401,9 @@
 * log_complain{"date": "tuesday"}
     - slot{"date": "tuesday"}
     - action_set_timeslots
+    - slot{"time1": null}
+    - slot{"time2": null}
+    - slot{"time3": null}
     - action_get_complaint_detail
     - slot{"date": "tuesday"}
     - slot{"requested_slot": "timeslots"}
@@ -465,6 +482,9 @@
 * log_complain{"date": "tuesday"}
     - slot{"date": "tuesday"}
     - action_set_timeslots
+    - slot{"time1": null}
+    - slot{"time2": null}
+    - slot{"time3": null}
     - action_get_complaint_detail
     - slot{"date": "tuesday"}
     - slot{"requested_slot": "timeslots"}
@@ -483,7 +503,9 @@
     - utter_default
 * goodbye
     - utter_goodbye
-    - action_restart## Generated Story 385304095398033263
+    - action_restart
+
+## Generated Story 385304095398033263
 * greet
     - utter_greet
 * log_complain{"appliance": "fridge", "issue": "broken"}
@@ -520,11 +542,104 @@
 * log_complain{"date": "tuseday", "timeslots": "11 - 12"}
     - slot{"date": "tuseday"}
     - slot{"timeslots": "11 - 12"}
+    - action_set_timeslots
+    - slot{"time1": null}
+    - slot{"time2": null}
+    - slot{"time3": null}
     - action_get_complaint_detail
     - slot{"date": "tuseday"}
     - slot{"timeslots": "11 - 12"}
     - slot{"requested_slot": "confirmcomplain"}
 * deny
     - utter_notconfirmed
+    - utter_youarewelcome
+    - action_restart
+
+## Generated Story -5662216199692479777
+* greet
+    - utter_greet
+* log_complain{"appliance": "ac", "issue": "not working"}
+    - slot{"appliance": "ac"}
+    - slot{"issue": "not working"}
+    - action_get_complaint_detail
+    - slot{"requested_slot": "modelnumber"}
+* log_complain{"modelnumber": "pyd22kblts", "serialnumber": "rfaz3347"}
+    - slot{"modelnumber": "pyd22kblts"}
+    - slot{"serialnumber": "rfaz3347"}
+    - action_get_complaint_detail
+    - slot{"modelnumber": "pyd22kblts"}
+    - slot{"serialnumber": "rfaz3347"}
+    - slot{"requested_slot": "name"}
+* log_complain{"name": "Ralph White", "email": "abc@gmail.com"}
+    - slot{"email": "abc@gmail.com"}
+    - slot{"name": "Ralph White"}
+    - action_get_complaint_detail
+    - slot{"name": "Ralph White"}
+    - slot{"email": "abc@gmail.com"}
+    - slot{"requested_slot": "address"}
+* log_complain{"address": "2025 m street , northwest , washington , dc", "pincode": "20036"}
+    - slot{"address": "2025 m street , northwest , washington , dc"}
+    - slot{"pincode": "20036"}
+    - action_get_complaint_detail
+    - slot{"address": "2025 m street , northwest , washington , dc"}
+    - slot{"pincode": "20036"}
+    - slot{"requested_slot": "date"}
+    - action_get_timeslots
+    - slot{"time1": "tuseday\t7-10 pm"}
+    - slot{"time2": "tuseday\t2-5 am"}
+    - slot{"time3": "monday\t5-8 pm"}
+    - utter_ask_time
+* log_complain{"date": "tuesday"}
+    - slot{"date": "tuesday"}
+    - action_set_timeslots
+    - slot{"time1": null}
+    - slot{"time2": null}
+    - slot{"time3": null}
+    - action_get_complaint_detail
+    - slot{"date": "tuesday"}
+    - slot{"requested_slot": "timeslots"}
+* log_complain{"timeslots": "11 - 12 am"}
+    - slot{"timeslots": "11 - 12 am"}
+    - action_get_complaint_detail
+    - slot{"timeslots": "11 - 12 am"}
+    - slot{"requested_slot": "confirmcomplain"}
+* affirm
+    - action_get_complaint_detail
+    - slot{"confirmcomplain": true}
+    - slot{"trackid": "TR91045"}
+    - action_store_details
+    - utter_youarewelcome
+    - action_restart
+
+
+## Generated Story -634541858187501956
+* greet
+    - utter_greet
+* service_modify_time
+    - utter_ask_trackid
+* service_detail{"trackid": "tr96147"}
+    - slot{"trackid": "tr96147"}
+    - utter_ask_new_time
+* service_modify_time{"date": "sunday"}
+    - slot{"date": "sunday"}
+    - utter_ask_modify_time_confirm
+* affirm
+    - action_complain_modify_change_time
+    - utter_youarewelcome
+    - action_restart
+
+## Story20
+* greet
+    - utter_greet
+* service_modify_timeslots
+    - utter_ask_trackid
+* service_detail{"trackid": "tr96147"}
+    - slot{"trackid": "tr96147"}
+    - utter_ask_new_timeslots
+* service_modify_time{"time": "7 - 10 pm"}
+    - slot{"time": "7 - 10 pm"}
+    - utter_ask_modify_timeslots_confirm
+* affirm
+    - action_complain_modify_change_timeslots
     - utter_youarewelcome
     - action_restart
