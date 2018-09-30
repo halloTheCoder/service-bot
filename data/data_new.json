@@ -3667,30 +3667,48 @@
       }
     ],
     "regex_features": [
-            {
-                "name": "pincode",
-                "pattern": "[0-9]{5}"
-            },
-            {
-                "name": "greet",
-                "pattern": "hey[^\\s]*"
-            },
-            {
-                "name": "bye",
-                "pattern": "bye[^\\s]*"
-            },
-            {
-                "name": "goodbye",
-                "pattern": "goodbye[^\\s]*"
-            },
-            {
-                "name": "good-bye",
-                "pattern": "good-bye[^\\s]*"
-            },
-            {
-                "name": "email",
-                "pattern": "[\\w\\.-]+@[\\w\\.-]+"
-            },
-        ]
+      {
+          "name": "pincode",
+          "pattern": "[0-9]{5}"
+      },
+      {
+          "name": "serialnumber",
+          "pattern": "[a-zA-Z]{3,5}[0-9]{3,5}"
+      },
+      {
+          "name": "trackid",
+          "pattern": "[a-zA-Z]{3,5}[0-9]{3,5}"
+      },
+      {
+          "name": "modelnumber",
+          "pattern": "TR[0-9]{5}"
+      },
+      {
+          "name": "greet",
+          "pattern": "hey[^\\s]*"
+      },
+      {
+          "name": "bye",
+          "pattern": "bye[^\\s]*"
+      },
+      {
+          "name": "goodbye",
+          "pattern": "goodbye[^\\s]*"
+      },
+      {
+          "name": "good-bye",
+          "pattern": "good-bye[^\\s]*"
+      },
+      {
+          "name": "email",
+          "pattern": "[\\w\\.-]+@[\\w\\.-]+"
+      }
+    ],
+    "lookup_tables": [
+      {
+        "name": "appliance",
+        "elements": ["fridge", "refrigerator", "dishwasher", "air conditioner", "ac", "microwave", "freezer", "wall oven", "washer", "dryer"]
+      }
+    ]
   }
 }

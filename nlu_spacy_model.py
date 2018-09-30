@@ -33,7 +33,7 @@ def preprocess_text(text, remove_stopwords=True):
         text = text[:-1]
         
     # Clean the text
-    text = re.sub(r"[^A-Za-z0-9^,!.\/'+=@]", " ", text)
+    text = re.sub(r"[^A-Za-z0-9^,!.\/'+=@-:]", " ", text)
     text = re.sub(r"what's", "what is ", text)
     text = re.sub(r"\'s", " ", text)
     text = re.sub(r" n ", " and ", text)

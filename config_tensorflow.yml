@@ -29,4 +29,13 @@ pipeline:
   intent_split_symbol: "+"
   
 - name: "ner_crf"
+  # features: [["low", "title"], ["bias", "suffix3"], ["upper", "pos", "pos2"]]
+  BILOU_flag: true
+  max_iterations: 70
+  L1_c: 0.1
+  L2_c: 0.1
+
 - name: "ner_synonyms"
+# - name: "ner_duckling"
+  # locale: "en_US"
+  # dimensions: ["time"]

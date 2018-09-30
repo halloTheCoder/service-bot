@@ -33,7 +33,7 @@ def preprocess_text(text, remove_stopwords=True):
         text = text[:-1]
         
     # Clean the text
-    text = re.sub(r"[^A-Za-z0-9^,!.\/'+=@]", " ", text)
+    text = re.sub(r"[^A-Za-z0-9^,:!.\/'+=@-]", " ", text)
     text = re.sub(r"what's", "what is ", text)
     text = re.sub(r"\'s", " ", text)
     text = re.sub(r" n ", " and ", text)
@@ -50,11 +50,11 @@ def preprocess_text(text, remove_stopwords=True):
     # text = re.sub(r"\/", " ", text)
     text = re.sub(r"\^", " ^ ", text)
     text = re.sub(r"\+", " + ", text)
-    text = re.sub(r"\-", " - ", text)
+    # text = re.sub(r"\-", " - ", text)
     text = re.sub(r"\=", " = ", text)
     text = re.sub(r"'", " ", text)
     text = re.sub(r"(\d+)(k)", r"\g<1>000", text)
-    text = re.sub(r":", " : ", text)
+    # text = re.sub(r":", " : ", text)
     text = re.sub(r" e g ", " eg ", text)
     text = re.sub(r" b g ", " bg ", text)
     text = re.sub(r" u s ", " american ", text)
@@ -118,5 +118,5 @@ def run_nlu(file):
 
 	
 if __name__ == '__main__':
-	train_nlu('./data/data_new.json', 'config_tensorflow.yml', './models/nlu_tf')
+	# train_nlu('./data/data_new.json', 'config_tensorflow.yml', './models/nlu_tf')
 	run_nlu('all_texts_tf.txt')

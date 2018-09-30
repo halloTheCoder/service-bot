@@ -31,7 +31,7 @@ class CustomFormField(FormField):
         if entity == 'appliance':      ###IMP :: can reduce appliance value to one allowed here
             print('Checking')
             if value not in ['refrigerator', 'fridge', 'freezer', 'dishwasher', 'wall oven', 'microwave',
-                             'washer', 'dryer', 'air conditioner', 'ac']:
+                             'washer', 'dryer', 'air conditioner', 'ac', 'a.c.', 'a.c']:
                 print('error')
                 value = None
         
