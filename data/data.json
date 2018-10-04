@@ -4587,15 +4587,15 @@
     ],
     "entity_synonyms": [
       {
-        "value": "ac",
+        "value": "air conditioner",
         "synonyms": [
-          "air conditioner"
+          "ac"
         ]
       },
       {
-        "value": "fridge",
+        "value": "refrigerator",
         "synonyms": [
-          "refrigerator"
+          "fridge"
         ]
       }
     ],

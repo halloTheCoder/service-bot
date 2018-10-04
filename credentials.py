@@ -1,0 +1,4 @@
+account_sid = "AC2e2824509c87bccf81c1b6bc3efe3e96"
+auth_token = "8a7cf204c2676103b4b7ee5268ae3027"
+twilio_no = "+14089165852"
+SENDGRID_API_KEY = "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"
