@@ -5,4 +5,5 @@ test_spacy.json
 .~lock.complaints.csv#
 x.txt
 credentials.yml
+.ipynb_checkpoints
 
