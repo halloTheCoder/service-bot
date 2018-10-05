@@ -6,4 +6,5 @@ test_spacy.json
 x.txt
 credentials.yml
 .ipynb_checkpoints
-
+credentials.py
+sendgrid.env
