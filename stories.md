@@ -297,26 +297,6 @@
     - action_restart
     - utter_greet
     
-## Generated Story -4885676649294599009
-* greet
-    - utter_greet
-* service_modify
-    - utter_ask_trackid
-* service_detail{"trackid": "tr96147"}
-    - slot{"trackid": "tr96147"}
-    - utter_ask_what_to_modify
-* service_modify_time{"date": "wednesday"}
-    - slot{"date": "wednesday"}
-    - utter_ask_modify_time_confirm
-* affirm
-    - action_complain_modify_change_time
-* log_complain{"timeslots": "3-4"}
-    - slot{"timeslots": "3-4"}
-    - utter_ask_modify_timeslots_confirm
-* affirm
-    - action_complain_modify_change_timeslots
-* goodbye
-    - action_restart
 
 ## Generated Story 5312243617061914185
 * log_complain
@@ -388,6 +368,8 @@
     - slot{"requested_slot": "confirmcomplain"}
 * deny
     - utter_notconfirmed
+    - utter_ask_take_to_homepage
+* affirm
     - utter_youarewelcome
     - action_restart
 
@@ -396,21 +378,6 @@
     - utter_goodbye
     - action_restart
 
-## Generated Story 6459722205106356173
-* greet
-    - utter_greet
-* service_modify
-    - utter_ask_trackid
-* service_detail{"trackid": "tr96545"}
-    - slot{"trackid": "tr96545"}
-    - utter_ask_what_to_modify
-* service_modify_time{"date": "3 june"}
-    - slot{"date": "3 june"}
-    - utter_ask_modify_time_confirm
-* affirm
-    - action_complain_modify_change_time
-    - utter_youarewelcome
-    - action_restart
 
 ## Generated Story -5586181752857983642
 * greet
@@ -551,6 +518,8 @@
     - slot{"requested_slot": "confirmcomplain"}
 * deny
     - utter_notconfirmed
+    - utter_ask_take_to_homepage
+* affirm
     - utter_youarewelcome
     - action_restart
 
@@ -613,6 +582,8 @@
     - slot{"requested_slot": "confirmcomplain"}
 * deny
     - utter_notconfirmed
+    - utter_ask_take_to_homepage
+* affirm
     - utter_youarewelcome
     - action_restart
 
@@ -686,64 +657,6 @@
     - utter_youarewelcome
     - action_restart
 
-
-## Generated Story -634541858187501956
-* greet
-    - utter_greet
-* service_modify_time
-    - utter_ask_trackid
-* service_detail{"trackid": "tr96147"}
-    - slot{"trackid": "tr96147"}
-    - utter_ask_new_time
-* service_modify_time{"date": "sunday"}
-    - slot{"date": "sunday"}
-    - utter_ask_modify_time_confirm
-* affirm
-    - action_complain_modify_change_time
-    - utter_youarewelcome
-    - action_restart
-
-## Story20
-* greet
-    - utter_greet
-* service_modify_timeslots
-    - utter_ask_trackid
-* service_detail{"trackid": "tr96147"}
-    - slot{"trackid": "tr96147"}
-    - utter_ask_new_timeslots
-* service_modify_time{"time": "7 - 10 pm"}
-    - slot{"time": "7 - 10 pm"}
-    - utter_ask_modify_timeslots_confirm
-* affirm
-    - action_complain_modify_change_timeslots
-    - utter_youarewelcome
-    - action_restart
-
-## Generated Story 6731195878888416688
-* service_modify_timeslots
-    - utter_ask_trackid
-* service_detail{"trackid": "tr96147"}
-    - slot{"trackid": "tr96147"}
-    - utter_ask_new_timeslots
-* service_modify_timeslots{"timeslots": "6 - 7 pm"}
-    - slot{"timeslots": "6 - 7 pm"}
-    - utter_ask_modify_timeslots_confirm
-* affirm
-    - action_complain_modify_change_timeslots
-    - utter_youarewelcome
-    - action_restart
-
-## Generated Story 4046339744258699514
-* service_modify_time{"trackid": "tr96147"}
-    - slot{"trackid": "tr96147"}
-    - utter_ask_new_time
-* service_modify_time{"date": "sunday"}
-    - slot{"date": "sunday"}
-    - utter_ask_modify_time_confirm
-* affirm
-    - action_complain_modify_change_time
-    - utter_youarewelcome
-    - action_restart
 
 ## Generated Story 5250014129854198553
 * greet
@@ -848,17 +761,6 @@
     - utter_youarewelcome
     - action_restart
 
-## Generated Story 1789771677819782484
-* service_modify{"trackid": "tr66873"}
-    - slot{"trackid": "tr66873"}
-    - utter_ask_what_to_modify
-* service_modify_timeslots{"timeslots": "3 - 6 pm"}
-    - slot{"timeslots": "3 - 6 pm"}
-    - utter_ask_modify_timeslots_confirm
-* affirm
-    - action_complain_modify_change_timeslots
-    - utter_youarewelcome
-    - action_restart
 
 ## Generated Story -5049449237464951625
 * service_modify_cancel
@@ -942,6 +844,8 @@
     - slot{"requested_slot": "confirmcomplain"}
 * deny
     - utter_notconfirmed
+    - utter_ask_take_to_homepage
+* affirm
     - utter_youarewelcome
     - action_restart
 
@@ -1273,6 +1177,7 @@
     - slot{"name": "ralph white"}
     - utter_ask_confirmcomplain
 * deny
+    - utter_notconfirmed
     - utter_ask_take_to_homepage
 * deny
     - utter_ask_updates
@@ -1367,3 +1272,80 @@
     - utter_youarewelcome
     - action_restart
 
+## Generated Story 4481529603718627494
+* greet
+    - utter_greet
+* log_complain{"appliance": "refrigerator", "issue": "not cooling"}
+    - slot{"appliance": "refrigerator"}
+    - slot{"issue": "not cooling"}
+    - action_get_complaint_detail
+    - slot{"requested_slot": "serialnumber"}
+* log_complain{"serialnumber": "rfaz3347"}
+    - slot{"serialnumber": "rfaz3347"}
+    - action_get_complaint_detail
+    - slot{"modelnumber": "pyd22kblts"}
+    - slot{"serialnumber": "rfaz3347"}
+    - slot{"requested_slot": "name"}
+* log_complain{"name": "emma", "email": "akash.chandra8d@gmail.com", "phonenumber": "8250599363"}
+    - slot{"email": "akash.chandra8d@gmail.com"}
+    - slot{"name": "emma"}
+    - slot{"phonenumber": "8250599363"}
+    - action_get_complaint_detail
+    - slot{"name": "emma"}
+    - slot{"email": "akash.chandra8d@gmail.com"}
+    - slot{"phonenumber": "8250599363"}
+    - slot{"requested_slot": "address"}
+    - action_get_geo_location
+    - slot{"address": "Kharagpur Paschim Medinipur West Bengal 721301 "}
+    - slot{"pincode": "721301"}
+    - utter_ask_confirm_address
+* deny
+    - action_set_geo_location
+    - slot{"address": null}
+    - slot{"pincode": null}
+    - action_get_complaint_detail
+    - slot{"requested_slot": "address"}
+* log_complain{"address": "2025 m street , northwest , washington , dc", "pincode": "20036"}
+    - slot{"address": "2025 m street , northwest , washington , dc"}
+    - slot{"pincode": "20036"}
+    - action_get_complaint_detail
+    - slot{"address": "2025 m street , northwest , washington , dc"}
+    - slot{"pincode": "20036"}
+    - slot{"requested_slot": "date"}
+    - action_get_timeslots
+    - slot{"time1": "tim\tsunday\t5 - 8 pm"}
+    - slot{"time2": "scott\tmonday\t2 - 5 am"}
+    - slot{"time3": "scott\ttuesday\t5 - 8 pm"}
+    - utter_ask_time
+* log_complain{"date": "tuesday", "timeslots": "5 - 8 pm"}
+    - slot{"date": "tuesday"}
+    - slot{"timeslots": "5 - 8 pm"}
+    - action_set_timeslots
+    - slot{"time": null}
+    - action_get_complaint_detail
+    - slot{"date": "tuesday"}
+    - slot{"timeslots": "5 - 8 pm"}
+    - slot{"requested_slot": "confirmcomplain"}
+* affirm
+    - action_get_complaint_detail
+    - slot{"confirmcomplain": true}
+    - slot{"trackid": "TR59159"}
+    - slot{"technician": "scott"}
+    - slot{"time": null}
+    - slot{"time1": null}
+    - slot{"time2": null}
+    - slot{"time3": null}
+    - action_store_details
+    - utter_youarewelcome
+    - action_restart
+
+## Generated Story -3858166260136615615
+* service_modify
+    - utter_ask_trackid
+* service_detail{"trackid": "tr96147"}
+    - slot{"trackid": "tr96147"}
+    - action_complain_modify_check_track_id
+    - utter_ask_what_to_modify
+* service_modify_timeslots
+    - action_complain_modify_get_timeslots
+    - utter_ask_timeslot_change

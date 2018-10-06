@@ -36,6 +36,8 @@ slots:
     type: unfeaturized
   time:
     type: unfeaturized
+  technician:
+    type: text
   confirm_geo_location:
     type: bool
     
@@ -108,7 +110,7 @@ templates:
   utter_ask_address:
     - "Please provide me the neccessary details.Your address with pincode."
   utter_ask_confirm_address:
-    - text: "Please confirm your address :: {address} and pincode :: {pincode}"
+    - text: "Please confirm your address and pincode if geo-location retrieval was successfull ..."
       buttons:
         - title: "Yes"
           payload: "/affirm{confirm_geo_location:True}"
@@ -129,6 +131,16 @@ templates:
         payload: "/log_complain{time:time2}"
       - title: "Select : time3"
         payload: "/log_complain{time:time3}"
+
+  utter_ask_timeslot_change:
+    - text : "Select one out of three ..." 
+      buttons:
+      - title: "Select : time1"
+        payload: "/log_complain{timeslots:time1}"
+      - title : "Select : time2"
+        payload: "/log_complain{timeslots:time2}"
+      - title: "Select : time3"
+        payload: "/log_complain{timeslots:time3}"
   
   utter_ask_confirmcomplain:
     - text: "Do you want to confirm the complain? These are your details: Complaint: {name} , {email} Address: {address} {pincode} Complain : (appliance_type: {appliance}, model_number: {modelnumber}, serial_number: {serialnumber}, issue: {issue}) Date : {date} Time : {timeslots}."
@@ -161,7 +173,7 @@ templates:
   utter_ask_new_time:
     - "What is the new time ??"
   utter_ask_modify_time_confirm:
-    - text: "Do you really want to modify day of your complaint to {date} with track id : {trackid}"
+    - text: "Do you really want to modify day of your complaint with track id : {trackid}"
       buttons:
         - title: "Yes"
           payload: "/affirm"
@@ -169,7 +181,7 @@ templates:
           payload: "/deny"
 
   utter_ask_modify_timeslots_confirm:
-    - text: "Do you really want to modify timeslot of your complaint to {timeslots} with track id : {trackid}"
+    - text: "Do you really want to modify timeslot of your complaint with track id : {trackid}"
       buttons:
         - title: "Yes"
           payload: "/affirm"
@@ -204,6 +216,9 @@ templates:
     - "On it! Please provide your pincode."
   utter_ask_change_phonenumber:
     - "On it! Please provide your phonenumber."
+
+  utter_wrong_track_id:
+    - "Please enter trackid again ....!!!"
 
   # utter_ask_moreupdates: 
   #   - "if you'd like to modify anything else, please tell me what. This is what I currently have: Complaint: {name} , {email} Address: {address} {pincode} Complain : (appliance_type: {appliance}, model_number: {modelnumber}, serial_number: {serialnumber}, issue: {issue}) Date : {date} Time : {timeslots}."
@@ -265,11 +280,16 @@ actions:
   - action_cancel_complain
 
   - utter_provide_servicedetail
+  - action_complain_modify_check_track_id
+  - utter_wrong_track_id
+  
   - utter_ask_what_to_modify
-  - utter_ask_new_time
+  
   - utter_ask_modify_time_confirm
-  - utter_ask_new_timeslots
+  - action_complain_modify_get_time
+  - action_complain_modify_set_time
+
   - utter_ask_modify_timeslots_confirm
-  - action_complain_modify_change_time
-  - action_complain_modify_change_timeslots
-  # - utter_askservicechange
+  - action_complain_modify_get_timeslots
+  - utter_ask_timeslot_change
+  - action_complain_modify_set_timeslots
