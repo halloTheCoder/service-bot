@@ -118,5 +118,5 @@ def run_nlu(file):
 
 	
 if __name__ == '__main__':
-	train_nlu('./data/data.json', 'config_tensorflow.yml', './models/nlu_tf')
+	# train_nlu('./data/data.json', 'config_tensorflow.yml', './models/nlu_tf')
 	run_nlu('all_texts_tf.txt')

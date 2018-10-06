@@ -35,6 +35,20 @@
     - slot{"email": "abc@xyz"}
     - action_get_complaint_detail
     - slot{"email": "abc@xyz"}
+    - slot{"requested_slot": "phonenumber"}
+* log_complain{"phonenumber": "8002331136"}
+    - slot{"phonenumber": "8002331136"}
+    - action_get_complaint_detail
+    - slot{"phonenumber": "8002331136"}
+    - action_get_geo_location
+    - slot{"address": "Kharagpur Paschim Medinipur West Bengal 721301 "}
+    - slot{"pincode": "721301"}
+    - utter_ask_confirm_address
+* affirm
+    - action_set_geo_location
+    - slot{"address": null}
+    - slot{"pincode": null}
+    - action_get_complaint_detail
     - slot{"requested_slot": "address"}
 * log_complain{"address": "132 , my street , kingston , new york   united states", "pincode": "12401"}
     - slot{"address": "132 , my street , kingston , new york   united states"}
@@ -107,6 +121,20 @@
     - action_get_complaint_detail
     - slot{"name": "dev"}
     - slot{"email": "abc@xyz"}
+    - slot{"requested_slot": "phonenumber"}
+* log_complain{"phonenumber": "8002331136"}
+    - slot{"phonenumber": "8002331136"}
+    - action_get_complaint_detail
+    - slot{"phonenumber": "8002331136"}
+    - action_get_geo_location
+    - slot{"address": "Kharagpur Paschim Medinipur West Bengal 721301 "}
+    - slot{"pincode": "721301"}
+    - utter_ask_confirm_address
+* affirm
+    - action_set_geo_location
+    - slot{"address": null}
+    - slot{"pincode": null}
+    - action_get_complaint_detail
     - slot{"requested_slot": "address"}
 * log_complain{"address": "2025 m street , northwest , washington , dc", "pincode": "20036"}
     - slot{"address": "2025 m street , northwest , washington , dc"}
@@ -320,6 +348,20 @@
     - slot{"email": "letme@gmail.com"}
     - action_get_complaint_detail
     - slot{"email": "letme@gmail.com"}
+    - slot{"requested_slot": "phonenumber"}
+* log_complain{"phonenumber": "8002331136"}
+    - slot{"phonenumber": "8002331136"}
+    - action_get_complaint_detail
+    - slot{"phonenumber": "8002331136"}
+    - action_get_geo_location
+    - slot{"address": "Kharagpur Paschim Medinipur West Bengal 721301 "}
+    - slot{"pincode": "721301"}
+    - utter_ask_confirm_address
+* affirm
+    - action_set_geo_location
+    - slot{"address": null}
+    - slot{"pincode": null}
+    - action_get_complaint_detail
     - slot{"requested_slot": "address"}
 * log_complain{"address": "50 water street mystic ct", "pincode": "06355"}
     - slot{"address": "50 water street mystic ct"}
@@ -466,6 +508,20 @@
     - slot{"email": "max@yahoo.com"}
     - action_get_complaint_detail
     - slot{"email": "max@yahoo.com"}
+    - slot{"requested_slot": "phonenumber"}
+* log_complain{"phonenumber": "8002331136"}
+    - slot{"phonenumber": "8002331136"}
+    - action_get_complaint_detail
+    - slot{"phonenumber": "8002331136"}
+    - action_get_geo_location
+    - slot{"address": "Kharagpur Paschim Medinipur West Bengal 721301 "}
+    - slot{"pincode": "721301"}
+    - utter_ask_confirm_address
+* affirm
+    - action_set_geo_location
+    - slot{"address": null}
+    - slot{"pincode": null}
+    - action_get_complaint_detail
     - slot{"requested_slot": "address"}
 * log_complain{"address": "574 new london turnpike norwich ct", "pincode": "06360"}
     - slot{"address": "574 new london turnpike norwich ct"}
@@ -533,6 +589,11 @@
     - slot{"email": "abc@xyz"}
     - action_get_complaint_detail
     - slot{"email": "abc@xyz"}
+    - slot{"requested_slot": "phonenumber"}
+* log_complain{"phonenumber": "8002331136"}
+    - slot{"phonenumber": "8002331136"}
+    - action_get_complaint_detail
+    - slot{"phonenumber": "8002331136"}
     - slot{"requested_slot": "date"}
     - action_get_timeslots
     - slot{"time1": "tuseday\t3-6 pm"}
@@ -576,6 +637,20 @@
     - action_get_complaint_detail
     - slot{"name": "Ralph White"}
     - slot{"email": "abc@gmail.com"}
+    - slot{"requested_slot": "phonenumber"}
+* log_complain{"phonenumber": "8002331136"}
+    - slot{"phonenumber": "8002331136"}
+    - action_get_complaint_detail
+    - slot{"phonenumber": "8002331136"}
+    - action_get_geo_location
+    - slot{"address": "Kharagpur Paschim Medinipur West Bengal 721301 "}
+    - slot{"pincode": "721301"}
+    - utter_ask_confirm_address
+* affirm
+    - action_set_geo_location
+    - slot{"address": null}
+    - slot{"pincode": null}
+    - action_get_complaint_detail
     - slot{"requested_slot": "address"}
 * log_complain{"address": "2025 m street , northwest , washington , dc", "pincode": "20036"}
     - slot{"address": "2025 m street , northwest , washington , dc"}
@@ -710,6 +785,20 @@
     - slot{"email": "dev@gmail.com"}
     - action_get_complaint_detail
     - slot{"email": "dev@gmail.com"}
+    - slot{"requested_slot": "phonenumber"}
+* log_complain{"phonenumber": "8002331136"}
+    - slot{"phonenumber": "8002331136"}
+    - action_get_complaint_detail
+    - slot{"phonenumber": "8002331136"}
+    - action_get_geo_location
+    - slot{"address": "Kharagpur Paschim Medinipur West Bengal 721301 "}
+    - slot{"pincode": "721301"}
+    - utter_ask_confirm_address
+* affirm
+    - action_set_geo_location
+    - slot{"address": null}
+    - slot{"pincode": null}
+    - action_get_complaint_detail
     - slot{"requested_slot": "address"}
 * log_complain{"address": "675 greenview ave . thibodaux , la", "pincode": "70301"}
     - slot{"address": "675 greenview ave . thibodaux , la"}
@@ -810,6 +899,20 @@
     - slot{"email": "dev@gmail.com"}
     - action_get_complaint_detail
     - slot{"email": "dev@gmail.com"}
+    - slot{"requested_slot": "phonenumber"}
+* log_complain{"phonenumber": "8002331136"}
+    - slot{"phonenumber": "8002331136"}
+    - action_get_complaint_detail
+    - slot{"phonenumber": "8002331136"}
+    - action_get_geo_location
+    - slot{"address": "Kharagpur Paschim Medinipur West Bengal 721301 "}
+    - slot{"pincode": "721301"}
+    - utter_ask_confirm_address
+* affirm
+    - action_set_geo_location
+    - slot{"address": null}
+    - slot{"pincode": null}
+    - action_get_complaint_detail
     - slot{"requested_slot": "address"}
 * log_complain{"address": "49 anderson street greensboro , nc", "pincode": "27405"}
     - slot{"address": "49 anderson street greensboro , nc"}
@@ -849,122 +952,7 @@
 ## Story30
 * restart
     - action_restart
-## Generated Story -5867306231925762138
-* greet
-    - utter_greet
-* log_complain{"appliance": "fridge", "issue": "broken"}
-    - slot{"appliance": "fridge"}
-    - slot{"issue": "broken"}
-    - action_get_complaint_detail
-    - slot{"requested_slot": "modelnumber"}
-* log_complain{"email": "abc@gmail.com", "modelnumber": "pyd22kblts", "serialnumber": "rfaz3347", "address": "2025 m street , northwest , washington , dc", "pincode": "20036"}
-    - slot{"address": "2025 m street , northwest , washington , dc"}
-    - slot{"email": "abc@gmail.com"}
-    - slot{"modelnumber": "pyd22kblts"}
-    - slot{"pincode": "20036"}
-    - slot{"serialnumber": "rfaz3347"}
-    - action_get_complaint_detail
-    - slot{"email": "abc@gmail.com"}
-    - slot{"modelnumber": "pyd22kblts"}
-    - slot{"serialnumber": "rfaz3347"}
-    - slot{"address": "2025 m street , northwest , washington , dc"}
-    - slot{"pincode": "20036"}
-    - slot{"requested_slot": "name"}
-    - action_get_complaint_detail
-    - slot{"email": "abc@gmail.com"}
-    - slot{"modelnumber": "pyd22kblts"}
-    - slot{"serialnumber": "rfaz3347"}
-    - slot{"address": "2025 m street , northwest , washington , dc"}
-    - slot{"pincode": "20036"}
-    - slot{"requested_slot": "name"}
-* log_complain{"name": "dev"}
-    - slot{"name": "dev"}
-    - action_get_complaint_detail
-    - slot{"name": "dev"}
-    - slot{"requested_slot": "date"}
-    - action_get_timeslots
-    - slot{"time1": "thursday\t8-11 am"}
-    - slot{"time2": "thursday\t4-7 am"}
-    - slot{"time3": "friday\t4-7 pm"}
-    - utter_ask_time
-* log_complain{"date": "tuesday", "timeslots": "11 - 12 am"}
-    - slot{"date": "tuesday"}
-    - slot{"timeslots": "11 - 12 am"}
-    - action_set_timeslots
-    - slot{"time1": null}
-    - slot{"time2": null}
-    - slot{"time3": null}
-    - action_get_complaint_detail
-    - slot{"date": "tuesday"}
-    - slot{"timeslots": "11 - 12 am"}
-    - slot{"requested_slot": "confirmcomplain"}
-* affirm
-    - action_get_complaint_detail
-    - slot{"confirmcomplain": true}
-    - slot{"trackid": "TR22733"}
-    - action_store_details
-    - utter_youarewelcome
-    - action_restart
 
-## Generated Story -2191617827205605171
-* greet
-    - utter_greet
-* log_complain{"appliance": "fridge", "issue": "broken"}
-    - slot{"appliance": "fridge"}
-    - slot{"issue": "broken"}
-    - action_get_complaint_detail
-    - slot{"requested_slot": "modelnumber"}
-* log_complain{"email": "abc@gmail.com", "modelnumber": "pyd22kblts", "serialnumber": "rfaz3347", "address": "2025 m street , northwest , washington , dc", "pincode": "20036"}
-    - slot{"address": "2025 m street , northwest , washington , dc"}
-    - slot{"email": "abc@gmail.com"}
-    - slot{"modelnumber": "pyd22kblts"}
-    - slot{"pincode": "20036"}
-    - slot{"serialnumber": "rfaz3347"}
-    - action_get_complaint_detail
-    - slot{"email": "abc@gmail.com"}
-    - slot{"modelnumber": "pyd22kblts"}
-    - slot{"serialnumber": "rfaz3347"}
-    - slot{"address": "2025 m street , northwest , washington , dc"}
-    - slot{"pincode": "20036"}
-    - slot{"requested_slot": "name"}
-    - action_get_complaint_detail
-    - slot{"email": "abc@gmail.com"}
-    - slot{"modelnumber": "pyd22kblts"}
-    - slot{"serialnumber": "rfaz3347"}
-    - slot{"address": "2025 m street , northwest , washington , dc"}
-    - slot{"pincode": "20036"}
-    - slot{"requested_slot": "name"}
-* log_complain{"name": "akash chandra"}
-    - slot{"name": "akash chandra"}
-    - action_get_complaint_detail
-    - slot{"name": "akash chandra"}
-    - slot{"requested_slot": "date"}
-    - action_get_timeslots
-    - slot{"time1": "friday\t8-11 am"}
-    - slot{"time2": "friday\t2-5 pm"}
-    - slot{"time3": "friday\t5-8 am"}
-    - utter_ask_time
-* log_complain{"date": "tuesday"}
-    - slot{"date": "tuesday"}
-    - action_set_timeslots
-    - slot{"time1": null}
-    - slot{"time2": null}
-    - slot{"time3": null}
-    - action_get_complaint_detail
-    - slot{"date": "tuesday"}
-    - slot{"requested_slot": "timeslots"}
-* log_complain{"timeslots": "11 - 12 pm"}
-    - slot{"timeslots": "11 - 12 pm"}
-    - action_get_complaint_detail
-    - slot{"timeslots": "11 - 12 pm"}
-    - slot{"requested_slot": "confirmcomplain"}
-* affirm
-    - action_get_complaint_detail
-    - slot{"confirmcomplain": true}
-    - slot{"trackid": "TR59636"}
-    - action_store_details
-    - utter_youarewelcome
-    - action_restart
 
 ## Generated Story 7347670153600515006
 * greet
@@ -993,6 +981,20 @@
     - slot{"email": "akash.chandra8d@gmail.com"}
     - action_get_complaint_detail
     - slot{"email": "akash.chandra8d@gmail.com"}
+    - slot{"requested_slot": "phonenumber"}
+* log_complain{"phonenumber": "8002331136"}
+    - slot{"phonenumber": "8002331136"}
+    - action_get_complaint_detail
+    - slot{"phonenumber": "8002331136"}
+    - action_get_geo_location
+    - slot{"address": "Kharagpur Paschim Medinipur West Bengal 721301 "}
+    - slot{"pincode": "721301"}
+    - utter_ask_confirm_address
+* affirm
+    - action_set_geo_location
+    - slot{"address": null}
+    - slot{"pincode": null}
+    - action_get_complaint_detail
     - slot{"requested_slot": "address"}
 * log_complain{"address": "2025 m street , northwest , washington , dc", "pincode": "20036"}
     - slot{"address": "2025 m street , northwest , washington , dc"}
@@ -1066,6 +1068,20 @@
     - slot{"email": "akash.chandra8d@gmail.com"}
     - action_get_complaint_detail
     - slot{"email": "akash.chandra8d@gmail.com"}
+    - slot{"requested_slot": "phonenumber"}
+* log_complain{"phonenumber": "8002331136"}
+    - slot{"phonenumber": "8002331136"}
+    - action_get_complaint_detail
+    - slot{"phonenumber": "8002331136"}
+    - action_get_geo_location
+    - slot{"address": "Kharagpur Paschim Medinipur West Bengal 721301 "}
+    - slot{"pincode": "721301"}
+    - utter_ask_confirm_address
+* affirm
+    - action_set_geo_location
+    - slot{"address": null}
+    - slot{"pincode": null}
+    - action_get_complaint_detail
     - slot{"requested_slot": "address"}
 * log_complain{"address": "2025 m street , northwest , washington , dc", "pincode": "20036"}
     - slot{"address": "2025 m street , northwest , washington , dc"}
@@ -1134,6 +1150,21 @@
     - action_get_complaint_detail
     - slot{"name": "dev"}
     - slot{"email": "akash.chandra8d@gmail.com"}
+    - slot{"requested_slot": "phonenumber"}
+* log_complain{"phonenumber": "8002331136"}
+    - slot{"phonenumber": "8002331136"}
+    - action_get_complaint_detail
+    - slot{"phonenumber": "8002331136"}
+    - action_get_geo_location
+    - action_get_geo_location
+    - slot{"address": "Kharagpur Paschim Medinipur West Bengal 721301 "}
+    - slot{"pincode": "721301"}
+    - utter_ask_confirm_address
+* affirm
+    - action_set_geo_location
+    - slot{"address": null}
+    - slot{"pincode": null}
+    - action_get_complaint_detail
     - slot{"requested_slot": "address"}
 * log_complain{"address": "2025 m street , northwest , washington , dc", "pincode": "20036"}
     - slot{"address": "2025 m street , northwest , washington , dc"}
@@ -1169,5 +1200,170 @@
     - utter_youarewelcome
     - action_restart
 
-## Generated Story 0
+
+## Generated Story -1908691441644278433
+* greet
+    - utter_greet
+* log_complain{"appliance": "refrigerator", "issue": "not working"}
+    - slot{"appliance": "refrigerator"}
+    - slot{"issue": "not working"}
+    - action_get_complaint_detail
+    - slot{"requested_slot": "serialnumber"}
+* log_complain{"serialnumber": "rfaz3347"}
+    - slot{"serialnumber": "rfaz3347"}
+    - action_get_complaint_detail
+    - slot{"modelnumber": "pyd22kblts"}
+    - slot{"serialnumber": "rfaz3347"}
+    - slot{"requested_slot": "name"}
+* log_complain{"email": "akash.chandra8d@gmail.com", "phonenumber": "8002331136"}
+    - slot{"email": "akash.chandra8d@gmail.com"}
+    - slot{"phonenumber": "8002331136"}
+    - action_get_complaint_detail
+    - slot{"email": "akash.chandra8d@gmail.com"}
+    - slot{"phonenumber": "8002331136"}
+    - slot{"requested_slot": "name"}
+* log_complain{"name": "dev"}
+    - slot{"name": "dev"}
+    - action_get_complaint_detail
+    - slot{"name": "dev"}
+    - slot{"requested_slot": "address"}
+    - action_get_geo_location
+    - slot{"address": "Kharagpur Paschim Medinipur West Bengal 721301 "}
+    - slot{"pincode": "721301"}
+    - utter_ask_confirm_address
+* affirm
+    - action_set_geo_location
+    - slot{"address": null}
+    - slot{"pincode": null}
+    - action_get_complaint_detail
+    - slot{"requested_slot": "address"}
+* log_complain{"address": "2025 m street , northwest , washington , dc", "pincode": "20036"}
+    - slot{"address": "2025 m street , northwest , washington , dc"}
+    - slot{"pincode": "20036"}
+    - action_get_complaint_detail
+    - slot{"address": "2025 m street , northwest , washington , dc"}
+    - slot{"pincode": "20036"}
+    - slot{"requested_slot": "date"}
+    - action_get_timeslots
+    - slot{"time1": "scott\tsunday\t2-5 pm"}
+    - slot{"time2": "scott\tmonday\t6-9 pm"}
+    - slot{"time3": "scott\ttuseday\t3-6 am"}
+    - utter_ask_time
+* log_complain{"date": "tuesday"}
+    - slot{"date": "tuesday"}
+    - action_set_timeslots
+    - slot{"time1": null}
+    - slot{"time2": null}
+    - slot{"time3": null}
+    - slot{"time": null}
+    - action_get_complaint_detail
+    - slot{"date": "tuesday"}
+    - slot{"requested_slot": "timeslots"}
+* log_complain{"timeslots": "10 - 12 pm"}
+    - slot{"timeslots": "10 - 12 pm"}
+    - action_get_complaint_detail
+    - slot{"timeslots": "10 - 12 pm"}
+    - slot{"requested_slot": "confirmcomplain"}
+* deny
+    - utter_notconfirmed
+    - utter_ask_take_to_homepage
+* deny
+    - utter_ask_updates
+* log_complain{"name": "ralph white"}
+    - slot{"name": "ralph white"}
+    - utter_ask_confirmcomplain
+* deny
+    - utter_ask_take_to_homepage
+* deny
+    - utter_ask_updates
+* service_modify_timeslots
+    - action_get_timeslots
+    - slot{"time1": "scott\tsunday\t7-10 pm"}
+    - slot{"time2": "scott\tmonday\t4-7 am"}
+    - slot{"time3": "scott\ttuseday\t2-5 pm"}
+* log_complain{"date": "monday"}
+    - slot{"date": "monday"}
+    - action_set_timeslots
+    - slot{"time1": null}
+    - slot{"time2": null}
+    - slot{"time3": null}
+    - slot{"time": null}
+    - utter_ask_confirmcomplain
+* affirm
+    - action_get_complaint_detail
+    - slot{"confirmcomplain": true}
+    - slot{"trackid": "TR42032"}
+    - slot{"time": null}
+    - action_store_details
+    - utter_youarewelcome
+    - action_restart
+
+## Generated Story -5794393172560610186
+* greet
+    - utter_greet
+* log_complain{"appliance": "refrigerator", "issue": "not working"}
+    - slot{"appliance": "refrigerator"}
+    - slot{"issue": "not working"}
+    - action_get_complaint_detail
+    - slot{"requested_slot": "serialnumber"}
+* log_complain{"serialnumber": "rfaz3347"}
+    - slot{"serialnumber": "rfaz3347"}
+    - action_get_complaint_detail
+    - slot{"modelnumber": "pyd22kblts"}
+    - slot{"serialnumber": "rfaz3347"}
+    - slot{"requested_slot": "name"}
+* log_complain{"email": "akash.chandra8d@gmail.com", "phonenumber": "8002331136"}
+    - slot{"email": "akash.chandra8d@gmail.com"}
+    - slot{"phonenumber": "8002331136"}
+    - action_get_complaint_detail
+    - slot{"email": "akash.chandra8d@gmail.com"}
+    - slot{"phonenumber": "8002331136"}
+    - slot{"requested_slot": "name"}
+* log_complain{"name": "dev"}
+    - slot{"name": "dev"}
+    - action_get_complaint_detail
+    - slot{"name": "dev"}
+    - slot{"requested_slot": "address"}
+    - action_get_geo_location
+    - slot{"address": "Kharagpur Paschim Medinipur West Bengal 721301 "}
+    - slot{"pincode": "721301"}
+    - utter_ask_confirm_address
+* affirm
+    - action_set_geo_location
+    - slot{"address": null}
+    - slot{"pincode": null}
+    - action_get_complaint_detail
+    - slot{"requested_slot": "address"}
+* log_complain{"address": "2025 m street , northwest , washington , dc", "pincode": "20036"}
+    - slot{"address": "2025 m street , northwest , washington , dc"}
+    - slot{"pincode": "20036"}
+    - action_get_complaint_detail
+    - slot{"address": "2025 m street , northwest , washington , dc"}
+    - slot{"pincode": "20036"}
+    - slot{"requested_slot": "date"}
+    - action_get_timeslots
+    - slot{"time1": "scott\tsunday\t8-11 am"}
+    - slot{"time2": "scott\tmonday\t2-5 am"}
+    - slot{"time3": "scott\ttuseday\t9-12 am"}
+    - utter_ask_time
+* log_complain{"date": "tuesday", "timeslots": "11 - 12 am"}
+    - slot{"date": "tuesday"}
+    - slot{"timeslots": "11 - 12 am"}
+    - action_set_timeslots
+    - slot{"time1": null}
+    - slot{"time2": null}
+    - slot{"time3": null}
+    - slot{"time": null}
+    - action_get_complaint_detail
+    - slot{"date": "tuesday"}
+    - slot{"timeslots": "11 - 12 am"}
+    - slot{"requested_slot": "confirmcomplain"}
+* affirm
+    - action_get_complaint_detail
+    - slot{"confirmcomplain": true}
+    - slot{"trackid": "TR41264"}
+    - slot{"time": null}
+    - action_store_details
+    - utter_youarewelcome
+    - action_restart
 

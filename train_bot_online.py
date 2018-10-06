@@ -21,7 +21,7 @@ def run_weather_online(interpreter,
     				  
     data = agent.load_data(training_data_file)
     agent.train(data,
-				batch_size = 4,
+				batch_size = 8,
 				epochs = 300,
 				validation_split = 0.2)				   
     online.run_online_learning(agent)

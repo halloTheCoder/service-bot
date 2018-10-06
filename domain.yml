@@ -21,6 +21,8 @@ slots:
     type: text
   address:
     type: text
+  phonenumber:
+    type: text
     # initial_value: "ad"    # can set initial value using this
   confirmcomplain:
     type: text
@@ -34,8 +36,9 @@ slots:
     type: unfeaturized
   time:
     type: unfeaturized
-
-
+  confirm_geo_location:
+    type: bool
+    
 
 intents:
   - greet
@@ -52,6 +55,7 @@ intents:
   - service_modify_cancel
   - deny
   - affirm
+  - restart
 
 
 entities:
@@ -80,13 +84,13 @@ templates:
         payload: "/service_modify"
       - title: "Cancel Complain"
         payload: "/service_modify_cancel"
-
   utter_goodbye:
     - "Goodbye."
     - "Talk to you later."
     - "Bye bye :("
   utter_default:
     - "I did not understand you."
+
   utter_ask_appliance:
     - "What is your appliance?"
   utter_ask_issue:
@@ -99,13 +103,38 @@ templates:
     - "Could you provide me with your name?"
   utter_ask_email:
     - "Please provide me the neccessary details.Your email."
+  utter_ask_phonenumber:
+    - "Please provide your phonenumber."
   utter_ask_address:
     - "Please provide me the neccessary details.Your address with pincode."
+  utter_ask_confirm_address:
+    - text: "Please confirm your address :: {address} and pincode :: {pincode}"
+      buttons:
+        - title: "Yes"
+          payload: "/affirm{confirm_geo_location:True}"
+        - title: "No"
+          payload: "/deny{confirm_geo_location:False}"
   utter_ask_pincode:
     - "Please provide me the neccessary details.Your pincode."
   utter_ask_timeslots:
     - "PLease select a suitable time slot according to your convinence."
-
+  utter_ask_date:
+    - text: "PLease select a date of the appoinment."
+      buttons:
+      - title: "Monday"
+        payload: "/log_complain{date:monday}"
+      - title: "Tuesday"
+        payload: "/log_complain{date:tuesday}"
+      - title: "Wednesday"
+        payload: "/log_complain{date:wednesday}"
+      - title: "Thursday"
+        payload: "/log_complain{date:thursday}"
+      - title: "Friday"
+        payload: "/log_complain{date:friday}"
+      - title: "Saturday"
+        payload: "/log_complain{date:saturday}"
+      - title: "Sunday"
+        payload: "/log_complain{date:sunday}"
   utter_ask_time:
     - text : "Select one out of three ..." 
       buttons:
@@ -116,33 +145,25 @@ templates:
       - title: "Select : time3"
         payload: "/log_complain{time:time3}"
   
-  utter_ask_date:
-    - "PLease select a date of the appoinment."
-  utter_ask_moreupdates: 
-    - "if you'd like to modify anything else, please tell me what. This is what I currently have: Complaint: {name} , {email} Address: {address} {pincode} Complain : (appliance_type: {appliance}, model_number: {modelnumber}, serial_number: {serialnumber}, issue: {issue}) Date : {date} Time : {timeslots}."
   utter_ask_confirmcomplain:
-    - "Do you want to confirm the complain? These are your details: Complaint: {name} , {email} Address: {address} {pincode} Complain : (appliance_type: {appliance}, model_number: {modelnumber}, serial_number: {serialnumber}, issue: {issue}) Date : {date} Time : {timeslots}."
-      # buttons:
-      #   - title: "Yes"
-      #     payload: "/affirm"
-      #   - title: "No"
-      #     payload: "/deny"
+    - text: "Do you want to confirm the complain? These are your details: Complaint: {name} , {email} Address: {address} {pincode} Complain : (appliance_type: {appliance}, model_number: {modelnumber}, serial_number: {serialnumber}, issue: {issue}) Date : {date} Time : {timeslots}."
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
+
   utter_ask_cancel_complain_confirm:
-    - "Do you really want to delete your complaint with track id : {trackid}"
+    - text: "Do you really want to delete your complaint with track id : {trackid}"
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
+
   utter_youarewelcome:
     - "Thank you for using our service. Taking you to our home page.... :)"
-  utter_ask_change_name:
-    - "Oh on it! Please provide your name."
-  utter_ask_change_email:
-    - "Oh on it! Please provide your email."
-  utter_ask_change_address:
-    - "Oh on it! Please provide your address."
-  utter_ask_change_pincode:
-    - "Oh on it! Please provide your pincode."
-  utter_ask_change_timeslots:
-    - "Oh on it! Please provide the time slots."
-  utter_ask_change_date:
-    - "Oh on it! Please provide the date."
+  
   utter_provide_servicedetail:
     - "Your appointment detail with tracking ID number {trackid} is - Complaint: {name}, {email} Address: {address},
        {pincode} Complain : (appliance_type: {appliance}, model number: {modelnumber}, serial number : {serialnumber}, issue: {issue}) Date : {date} Time : {timeslots}."
@@ -155,14 +176,52 @@ templates:
   utter_ask_new_time:
     - "What is the new time ??"
   utter_ask_modify_time_confirm:
-    - "Do you really want to modify day of your complaint to {date} with track id : {trackid}"
+    - text: "Do you really want to modify day of your complaint to {date} with track id : {trackid}"
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
+
   utter_ask_modify_timeslots_confirm:
-    - "Do you really want to modify timeslot of your complaint to {timeslots} with track id : {trackid}"
+    - text: "Do you really want to modify timeslot of your complaint to {timeslots} with track id : {trackid}"
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
+
   utter_notmodified:
     - "Your request to change the complain details has been dismissed with tracking ID number : {trackid}.\nListening ..."
   utter_ask_new_timeslots:
     - "What is the new timeslot ??"
 
+  utter_ask_take_to_homepage:
+    - text: "Would you like to go to the homepage ?"
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
+  utter_ask_updates:
+    - What would you like to change?
+  utter_ask_change_name:
+    - "On it! Please provide your name."
+  utter_ask_change_email:
+    - "On it! Please provide your email."
+  utter_ask_change_address:
+    - "On it! Please provide your address."
+  utter_ask_change_timeslots:
+    - "On it! Please provide the time slots."
+  utter_ask_change_time:
+    - "On it! Please provide the date."
+  utter_ask_change_pincode:
+    - "On it! Please provide your pincode."
+  utter_ask_change_phonenumber:
+    - "On it! Please provide your phonenumber."
+
+  # utter_ask_moreupdates: 
+  #   - "if you'd like to modify anything else, please tell me what. This is what I currently have: Complaint: {name} , {email} Address: {address} {pincode} Complain : (appliance_type: {appliance}, model_number: {modelnumber}, serial_number: {serialnumber}, issue: {issue}) Date : {date} Time : {timeslots}."
   # utter_modified_timeslots:
   #   - "Your appointment tracking ID number {trackid} time slots has been changed to {timeslots}."
   
@@ -188,21 +247,30 @@ actions:
   - utter_ask_confirmcomplain
   - utter_ask_date
   - utter_notconfirmed
-  - utter_ask_moreupdates
+  - action_get_complaint_detail
+  - action_store_details
+  - utter_ask_time
+  - action_get_timeslots
+  - action_set_timeslots
+
+  - action_get_geo_location
+  - utter_ask_confirm_address
+  - action_set_geo_location
+  
+  - action_validate_pin_code
+
+  - utter_ask_take_to_homepage
+  - utter_ask_updates
   - utter_ask_change_name
   - utter_ask_change_email
   - utter_ask_change_date
   - utter_ask_change_address
   - utter_ask_change_pincode
   - utter_ask_change_timeslots
-  - action_get_complaint_detail
-  - action_store_details
-  - utter_ask_time
-  - action_get_timeslots
-  - action_set_timeslots
-  
-  - utter_ask_trackid
+  - utter_ask_change_time
+  - utter_ask_change_phonenumber
 
+  - utter_ask_trackid
   
   - action_query_detail
   - action_query_time_detail
