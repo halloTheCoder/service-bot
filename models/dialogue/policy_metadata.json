@@ -2,38 +2,50 @@
   "action_fingerprints": {
     "action_listen": {
       "slots": [
-        "issue",
-        "pincode",
         "timeslots",
-        "modelnumber",
-        "appliance",
-        "address",
+        "phonenumber",
+        "date",
         "trackid",
-        "name",
+        "issue",
         "serialnumber",
+        "pincode",
+        "name",
         "time",
+        "modelnumber",
         "email",
-        "date"
+        "address",
+        "appliance"
       ]
-    },
-    "action_restart": {
-      "slots": []
     },
     "action_get_complaint_detail": {
       "slots": [
-        "issue",
-        "pincode",
-        "modelnumber",
+        "confirmcomplain",
         "timeslots",
-        "appliance",
-        "address",
-        "trackid",
-        "name",
-        "serialnumber",
-        "email",
+        "phonenumber",
         "date",
+        "trackid",
+        "issue",
+        "serialnumber",
         "requested_slot",
-        "confirmcomplain"
+        "pincode",
+        "name",
+        "time",
+        "modelnumber",
+        "email",
+        "address",
+        "appliance"
+      ]
+    },
+    "action_get_geo_location": {
+      "slots": [
+        "pincode",
+        "address"
+      ]
+    },
+    "action_set_geo_location": {
+      "slots": [
+        "pincode",
+        "address"
       ]
     },
     "action_get_timeslots": {
@@ -47,16 +59,20 @@
       "slots": [
         "time1",
         "time3",
+        "time",
         "time2"
       ]
     },
-    "utter_greet": {
+    "action_restart": {
       "slots": []
     },
     "action_query_detail": {
       "slots": [
         "trackid"
       ]
+    },
+    "utter_greet": {
+      "slots": []
     },
     "action_cancel_complain": {
       "slots": [
@@ -76,6 +92,6 @@
   "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
   "policy_names": [
     "rasa_core.policies.memoization.MemoizationPolicy",
-    "rasa_core.policies.keras_policy.KerasPolicy"
+    "policy.BotPolicy"
   ]
 }

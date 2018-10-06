@@ -7,6 +7,8 @@ from rasa_core.interpreter import RasaNLUInterpreter
 from rasa_core.training import online
 from rasa_core.utils import EndpointConfig
 
+from policy import BotPolicy
+
 logger = logging.getLogger(__name__)
 
 
@@ -15,7 +17,7 @@ def run_weather_online(interpreter,
                        training_data_file = 'stories.md'):
     action_endpoint = EndpointConfig(url="http://localhost:5055/webhook")						  
     agent = Agent(domain_file,
-                  policies = [MemoizationPolicy(max_history = 4), KerasPolicy()],
+                  policies = [MemoizationPolicy(max_history = 4), BotPolicy()],
                   interpreter = interpreter,
 				          action_endpoint = action_endpoint)
     				  

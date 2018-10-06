@@ -119,22 +119,7 @@ templates:
   utter_ask_timeslots:
     - "PLease select a suitable time slot according to your convinence."
   utter_ask_date:
-    - text: "PLease select a date of the appoinment."
-      buttons:
-      - title: "Monday"
-        payload: "/log_complain{date:monday}"
-      - title: "Tuesday"
-        payload: "/log_complain{date:tuesday}"
-      - title: "Wednesday"
-        payload: "/log_complain{date:wednesday}"
-      - title: "Thursday"
-        payload: "/log_complain{date:thursday}"
-      - title: "Friday"
-        payload: "/log_complain{date:friday}"
-      - title: "Saturday"
-        payload: "/log_complain{date:saturday}"
-      - title: "Sunday"
-        payload: "/log_complain{date:sunday}"
+    - "PLease select a date of the appoinment."
   utter_ask_time:
     - text : "Select one out of three ..." 
       buttons:
