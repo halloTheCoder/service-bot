@@ -393,7 +393,7 @@ class GenerateTrackID(Action):
 
 ##############################################################################################################################
 
-def generate_timeslots(tracker, pin_code, skip_day = None):
+def generate_timeslots(tracker, pin_code, skip_day = None, appliance = None):
     time_slots = []
 
     time_taken_for_diff_appliance = {'refrigerator' : 3, 'fridge' : 3, 'freezer' : 1, 'dishwasher' : 2, 'wall oven' : 1, 'microwave' : 2,
@@ -409,12 +409,16 @@ def generate_timeslots(tracker, pin_code, skip_day = None):
     days_choice = []
     technician_choice = []
     count = 0
+    
     dy = datetime.datetime.today().weekday() + 1
+    dy = (dy + 1)%7
 
-    for j in range(7):
-        if skip_day and j == skip_day:
+    for _ in range(7):
+        if skip_day and dy == skip_day:
+            dy = (dy + 1)%7
             continue
         for i in range(len(technicians)):
+            print(i, dy)
             if technicians[i]['day'][dy] == 0:
                 days_choice.append(dy)                                      ## Storing day information
                 technician_choice.append(i)                                 ## Storing technician information
@@ -427,11 +431,14 @@ def generate_timeslots(tracker, pin_code, skip_day = None):
     if count == 3:
         for i in range(3):
             day = days_choice[i]
-            time_taken = time_taken_for_diff_appliance[tracker.get_slot('appliance')] if tracker.get_slot('appliance') is not None else None
+            
+            time_taken = time_taken_for_diff_appliance[tracker.get_slot('appliance')] if tracker.get_slot('appliance') else None
+            time_taken = time_taken_for_diff_appliance[appliance] if appliance else time_taken
+
             am_pm = random.choice([1, 2])
             time = random.randint(7, 9) if am_pm == 1 else random.randint(1, 7)
         
-            time_slots.append(technician_dict[technician_choice[i]] + "\t" +  day_dict[day] + "\t" + str(time) + " - " + str(time + (time_taken if time_taken is not None else (time + 2))) + (' am' if am_pm == 1 else ' pm'))
+            time_slots.append(technician_dict[technician_choice[i]] + "\t" +  day_dict[day] + "\t" + str(time) + " - " + str(time + (time_taken if time_taken else (time + 2))) + (' am' if am_pm == 1 else ' pm'))
 
 
     # for _ in range(3):
@@ -720,9 +727,9 @@ class ComplainModifyGetTime(Action):
                 day_dict = {'monday' : 0, 'tuesday' : 1, 'wednesday' : 2, 'thursday' : 3 , 'friday' :  4, 'saturday' : 5, 'sunday' : 6}
                 technician_dict = {'scott' : 0, 'larry' : 1, 'tim' : 2}
 
-                pincode, old_technician, old_day = df.loc[idx, 'Pincode'], df.loc[idx, 'Technician'], df.loc[idx, 'Date']
+                pincode, old_technician, old_day, appliance = df.loc[idx, 'Pincode'], df.loc[idx, 'Technician'], df.loc[idx, 'Date'], df.loc[idx, 'Appliance']
 
-                time_slots = generate_timeslots(tracker, pincode, skip_day = day_dict[old_day.lower()])
+                time_slots = generate_timeslots(tracker, pincode, skip_day = day_dict[old_day.lower()], appliance = appliance)
 
                 if time_slots == []:
                     dispatcher.utter_message("All the appoinments are made for the week. Please try to book your complain some other day. We are very sorry for the inconvinence.")
@@ -763,6 +770,10 @@ class ComplainModifySetTime(Action):
         else:
             if any(df.loc[:, 'TrackID'] == track_id.upper()):
                 idx = df.index[df.loc[:, 'TrackID'] == track_id.upper()].tolist()[0]
+                pin_code = df.loc[idx, 'Pincode']
+                
+                day_dict = {'monday' : 0, 'tuesday' : 1, 'wednesday' : 2, 'thursday' : 3 , 'friday' :  4, 'saturday' : 5, 'sunday' : 6}
+                technician_dict = {'scott' : 0, 'larry' : 1, 'tim' : 2}
 
                 time = tracker.get_slot('time')
                 if time is not None:
@@ -782,7 +793,7 @@ class ComplainModifySetTime(Action):
                     df.loc[idx, 'TimeSlots'] = time_slot
                     df.to_csv('complaints.csv', sep = '\t', index = False)
 
-                    dispatcher.utter_message("Your complaint with track id: %s has been successfully updated to %s !!!" % (tracker.get_slot("trackid"), tracker.get_slot("time")))
+                    dispatcher.utter_message("Your complaint with track id: %s has been successfully updated to %s :: %s !!!" % (track_id, day, time_slot))
                     return [SlotSet("time", None), SlotSet("time1", None), SlotSet("time2", None), SlotSet("time3", None)]
 
                 elif tracker.get_slot('date') and tracker.get_slot('timeslots'):
@@ -793,6 +804,10 @@ class ComplainModifySetTime(Action):
 
                     with open('technician.json') as json_file:
                         data = json.load(json_file)
+
+                    time1 = tracker.get_slot("time1")
+                    time2 = tracker.get_slot("time2")
+                    time3 = tracker.get_slot("time3")
 
                     technician1, day1, time_slot1 = time1.split('\t')
                     technician2, day2, time_slot2 = time2.split('\t')
@@ -822,7 +837,7 @@ class ComplainModifySetTime(Action):
                     df.loc[idx, 'TimeSlots'] = time_slot
                     df.to_csv('complaints.csv', sep = '\t', index = False)
 
-                    dispatcher.utter_message("Your complaint with track id: %s has been successfully updated to %s !!!" % (tracker.get_slot("trackid"), tracker.get_slot("time")))
+                    dispatcher.utter_message("Your complaint with track id: %s has been successfully updated to %s :: %s !!!" % (track_id, date, time_slot))
                     return [SlotSet("time", None), SlotSet("time1", None), SlotSet("time2", None), SlotSet("time3", None)]
 
                 else:
@@ -904,4 +919,4 @@ class ComplainModifySetTimeSlots(Action):
                 df.to_csv('complaints.csv', sep = '\t', index = False)
                 dispatcher.utter_message("Your complaint with track id: %s has been successfully updated to %s!!!" % (tracker.get_slot("trackid"), tracker.get_slot('timeslots')))
         
-        return [SlotSet("time1", time1), SlotSet("time2", time2), SlotSet("time3", time3)]
+        return [SlotSet("time1", None), SlotSet("time2", None), SlotSet("time3", None)]
