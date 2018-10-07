@@ -82,6 +82,7 @@ class CustomFormField(FormField):
 
                 elif not tracker.get_slot('appliance'):
                     events_custom.extend([SlotSet("appliance", df.loc[idx, 'Product Line'].lower())]) 
+                    dispatcher.utter_message("For model number %s appliance %s added from database !!!" % (value, df.loc[idx, 'Product Line'].lower()))
 
                 if tracker.get_slot('serialnumber') and not tracker.get_slot('serialnumber').upper() in [df.loc[i, 'Serial Number'] for i in idx_lis]:
                     dispatcher.utter_message("For model number %s serial number %s does not match !!!" % (value, tracker.get_slot('serialnumber')))
@@ -108,7 +109,8 @@ class CustomFormField(FormField):
                 elif not tracker.get_slot('modelnumber'):
                     print('Adding modelnumber given serialnumber')
                     events_custom.extend([SlotSet('modelnumber', df.loc[idx, 'Model Number'].lower())])     
-                
+                    dispatcher.utter_message("For serial number %s model number %s added from database !!!" % (value, df.loc[idx, 'Model Number'].lower()))
+
                 if tracker.get_slot('appliance') and not df.loc[idx, 'Product Line'].lower() == tracker.get_slot('appliance'):
                     dispatcher.utter_message("For serial number %s appliance %s does not match !!!" % (value, tracker.get_slot('appliance')))
                     value = None
@@ -116,6 +118,7 @@ class CustomFormField(FormField):
                 elif not tracker.get_slot('appliance'):
                     print('Adding appliance given serialnumber')
                     events_custom.extend([SlotSet('appliance', df.loc[idx, 'Product Line'].lower())]) 
+                    dispatcher.utter_message("For serial number %s appliance %s added from database !!!" % (value, df.loc[idx, 'Product Line'].lower()))
                 
 
         if entity == 'pincode':
@@ -532,7 +535,7 @@ class SetGeoLocationAddress(Action):
 
     def run(self, dispatcher, tracker, domain):
         ### see intent
-        print(tracker)
+        print(tracker.latest_message)
         confirm = tracker.latest_message.intent["name"]
         if confirm:
             return []

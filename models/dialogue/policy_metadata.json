@@ -3,37 +3,57 @@
     "action_listen": {
       "slots": [
         "timeslots",
+        "appliance",
+        "pincode",
         "phonenumber",
-        "date",
+        "email",
         "trackid",
         "issue",
-        "serialnumber",
-        "pincode",
-        "name",
-        "time",
         "modelnumber",
-        "email",
         "address",
-        "appliance"
+        "serialnumber",
+        "date",
+        "name"
       ]
+    },
+    "action_complain_modify_get_timeslots": {
+      "slots": [
+        "time1",
+        "time3",
+        "time2"
+      ]
+    },
+    "action_complain_modify_set_timeslots": {
+      "slots": [
+        "time1",
+        "time3",
+        "time2"
+      ]
+    },
+    "action_restart": {
+      "slots": []
     },
     "action_get_complaint_detail": {
       "slots": [
-        "confirmcomplain",
         "timeslots",
-        "phonenumber",
-        "date",
-        "trackid",
-        "issue",
-        "serialnumber",
-        "requested_slot",
+        "appliance",
         "pincode",
-        "name",
+        "phonenumber",
+        "email",
+        "time2",
+        "trackid",
+        "requested_slot",
+        "confirmcomplain",
+        "issue",
         "time",
         "modelnumber",
-        "email",
+        "time1",
         "address",
-        "appliance"
+        "serialnumber",
+        "technician",
+        "date",
+        "name",
+        "time3"
       ]
     },
     "action_get_geo_location": {
@@ -63,8 +83,10 @@
         "time2"
       ]
     },
-    "action_restart": {
-      "slots": []
+    "action_complain_modify_check_track_id": {
+      "slots": [
+        "trackid"
+      ]
     },
     "action_query_detail": {
       "slots": [
@@ -77,6 +99,21 @@
     "action_cancel_complain": {
       "slots": [
         "trackid"
+      ]
+    },
+    "action_complain_modify_get_time": {
+      "slots": [
+        "time1",
+        "time3",
+        "time2"
+      ]
+    },
+    "action_complain_modify_set_time": {
+      "slots": [
+        "time1",
+        "time2",
+        "time3",
+        "time"
       ]
     },
     "utter_goodbye": {

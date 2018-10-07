@@ -996,7 +996,7 @@
         "entities": []
       },
       {
-        "text": "what is complain date?",
+        "text": "what is complain day?",
         "intent": "service_query_time",
         "entities": []
       },
@@ -1260,7 +1260,7 @@
         "entities": []
       },
       {
-        "text": "change date",
+        "text": "change date ",
         "intent": "service_modify_time",
         "entities": []
       },
@@ -1355,7 +1355,7 @@
         "entities": []
       },
       {
-        "text": "change day",
+        "text": "change appointment",
         "intent": "service_modify_time",
         "entities": []
       },
@@ -2580,7 +2580,7 @@
         "entities": []
       },
       {
-        "text": "show date",
+        "text": "show day",
         "intent": "service_query_time",
         "entities": []
       },
@@ -2590,7 +2590,7 @@
         "entities": []
       },
       {
-        "text": "provide date ",
+        "text": "provide day",
         "intent": "service_query_time",
         "entities": []
       },
@@ -2605,12 +2605,12 @@
         "entities": []
       },
       {
-        "text": "show date of appointment",
+        "text": "show day of appointment",
         "intent": "service_query_time",
         "entities": []
       },
       {
-        "text": "tell date of appointment",
+        "text": "tell day of appointment",
         "intent": "service_query_time",
         "entities": []
       },
@@ -2620,7 +2620,7 @@
         "entities": []
       },
       {
-        "text": "what is my appointment date ?",
+        "text": "what is my appointment day ?",
         "intent": "service_query_time",
         "entities": []
       },
@@ -2657,8 +2657,8 @@
         "entities": [
           {
             "start": 37,
-            "end": 43,
-            "value": "tr56733",
+            "end": 44,
+            "value": "tr50010",
             "entity": "trackid"
           }
         ]
@@ -4838,82 +4838,82 @@
       },
       {
         "text": "change name",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": []
       },
       {
         "text": "modify name",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": []
       },
       {
         "text": "update name",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": []
       },
       {
         "text": "change email",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": []
       },
       {
         "text": "update email",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": []
       },
       {
         "text": "modify email",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": []
       },
       {
         "text": "update address",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": []
       },
       {
         "text": "modify address",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": []
       },
       {
         "text": "change address",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": []
       },
       {
         "text": "update pincode",
-        "intent": "log_complain",
+        "intent": "ask_notupdates",
         "entities": []
       },
       {
         "text": "change pincode",
-        "intent": "log_complain",
+        "intent": "ask_notupdates",
         "entities": []
       },
       {
         "text": "modify pincode",
-        "intent": "log_complain",
+        "intent": "ask_notupdates",
         "entities": []
       },
       {
         "text": "update phone number",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": []
       },
       {
         "text": "change phone number",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": []
       },
       {
         "text": "modify phone number",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": []
       },
       {
         "text": "change phone number to 8597546555",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 23,
@@ -4925,7 +4925,7 @@
       },
       {
         "text": "modify phone number to 7894585967",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 23,
@@ -4937,7 +4937,7 @@
       },
       {
         "text": "update phone number to 9708518477",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 23,
@@ -4949,7 +4949,7 @@
       },
       {
         "text": "modify pincode to 20036",
-        "intent": "log_complain",
+        "intent": "ask_notupdates",
         "entities": [
           {
             "start": 18,
@@ -4961,7 +4961,7 @@
       },
       {
         "text": "update pincode to 80003",
-        "intent": "log_complain",
+        "intent": "ask_notupdates",
         "entities": [
           {
             "start": 18,
@@ -4973,7 +4973,7 @@
       },
       {
         "text": "change pincode to 34135",
-        "intent": "log_complain",
+        "intent": "ask_notupdates",
         "entities": [
           {
             "start": 18,
@@ -4985,7 +4985,7 @@
       },
       {
         "text": "update address to 49 Anderson Street Greensboro, NC",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 18,
@@ -4997,7 +4997,7 @@
       },
       {
         "text": "set new address to 49 Anderson Street Greensboro, NC",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 19,
@@ -5009,7 +5009,7 @@
       },
       {
         "text": "select new address as 675 Greenview Ave. Thibodaux, LA",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 22,
@@ -5021,7 +5021,7 @@
       },
       {
         "text": "modify address to 233 River Road New London CT",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 18,
@@ -5033,7 +5033,7 @@
       },
       {
         "text": "change address to 104 Thomaston Road Preston CT",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 18,
@@ -5045,7 +5045,7 @@
       },
       {
         "text": "set new pincode to 06360",
-        "intent": "log_complain",
+        "intent": "ask_notupdates",
         "entities": [
           {
             "start": 19,
@@ -5057,7 +5057,7 @@
       },
       {
         "text": "select new pincode as 06351",
-        "intent": "log_complain",
+        "intent": "ask_notupdates",
         "entities": [
           {
             "start": 22,
@@ -5069,7 +5069,7 @@
       },
       {
         "text": "set new phone number to 9089786756",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 24,
@@ -5081,7 +5081,7 @@
       },
       {
         "text": "select new phone number as 2342324567",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 27,
@@ -5093,7 +5093,7 @@
       },
       {
         "text": "set new email to warner@gmail.com",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 17,
@@ -5105,7 +5105,7 @@
       },
       {
         "text": "select new email as errie@yahoo.com",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 20,
@@ -5117,7 +5117,7 @@
       },
       {
         "text": "modify email to linda@gmail.com",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 16,
@@ -5129,7 +5129,7 @@
       },
       {
         "text": "change email to yahoo@gmail.com",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 16,
@@ -5141,7 +5141,7 @@
       },
       {
         "text": "update email to as@gmail.com",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 16,
@@ -5153,7 +5153,7 @@
       },
       {
         "text": "change name to shane",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 15,
@@ -5165,7 +5165,7 @@
       },
       {
         "text": "modify name to susie",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 15,
@@ -5177,7 +5177,7 @@
       },
       {
         "text": "update name to priti",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 15,
@@ -5189,7 +5189,7 @@
       },
       {
         "text": "set new name to prachi",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 16,
@@ -5201,7 +5201,7 @@
       },
       {
         "text": "select new name as rachel",
-        "intent": "log_complain",
+        "intent": "ask_updates",
         "entities": [
           {
             "start": 19,
@@ -5210,6 +5210,147 @@
             "entity": "name"
           }
         ]
+      },
+      {
+        "text": "book complain",
+        "intent": "log_complain",
+        "entities": []
+      },
+      {
+        "text": "show timeslots",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "give time slots",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "provide time slots",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "inform time slots",
+        "intent": "service_query_timeslots",
+        "entities": []
+      },
+      {
+        "text": "show day with tracking id tr65746",
+        "intent": "service_query_time",
+        "entities": [
+          {
+            "start": 26,
+            "end": 33,
+            "value": "tr65746",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "provide date of appointment ",
+        "intent": "service_query_time",
+        "entities": []
+      },
+      {
+        "text": "provide date of appointment tr45622",
+        "intent": "service_query_time",
+        "entities": [
+          {
+            "start": 28,
+            "end": 35,
+            "value": "tr45622",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "appointment day track id tr56773",
+        "intent": "service_query_time",
+        "entities": [
+          {
+            "start": 25,
+            "end": 32,
+            "value": "tr56773",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "give date of appointment track id tr11234",
+        "intent": "service_query_time",
+        "entities": [
+          {
+            "start": 34,
+            "end": 41,
+            "value": "tr11234",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "show time slots with track id tr54674",
+        "intent": "service_query_timeslots",
+        "entities": [
+          {
+            "start": 30,
+            "end": 37,
+            "value": "tr54674",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "provide timeslots track id tr54644",
+        "intent": "service_query_timeslots",
+        "entities": [
+          {
+            "start": 27,
+            "end": 34,
+            "value": "tr54644",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "show time with track id tr09090",
+        "intent": "service_query_timeslots",
+        "entities": [
+          {
+            "start": 24,
+            "end": 31,
+            "value": "tr09090",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "inform timeslots with track id tr45563",
+        "intent": "service_query_timeslots",
+        "entities": [
+          {
+            "start": 31,
+            "end": 38,
+            "value": "tr45563",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "book complain",
+        "intent": "log_complain",
+        "entities": []
+      },
+      {
+        "text": "service query",
+        "intent": "service_query",
+        "entities": []
+      },
+      {
+        "text": "service details query",
+        "intent": "service_query",
+        "entities": []
       }
     ],
     "entity_synonyms": [

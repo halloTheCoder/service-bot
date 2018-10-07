@@ -24,14 +24,14 @@ def train_dialogue(domain_file = 'domain.yml',
 	data = agent.load_data(training_data_file)	
 	agent.train(
 				data,
-				epochs = 300,
+				epochs = 70,
 				batch_size = 8,
 				validation_split = 0.2)
 				
 	agent.persist(model_path)
 	return agent
 	
-def run_weather_bot(serve_forever=True):
+def run_service_bot(serve_forever=True):
 	interpreter = RasaNLUInterpreter('./models/nlu_tf/default/service_nlu')
 	action_endpoint = EndpointConfig(url="http://localhost:5055/webhook")
 	agent = Agent.load('./models/dialogue', interpreter=interpreter, action_endpoint=action_endpoint)
@@ -41,4 +41,4 @@ def run_weather_bot(serve_forever=True):
 	
 if __name__ == '__main__':
 	train_dialogue()
-	run_weather_bot()
+	run_service_bot()
