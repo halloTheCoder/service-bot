@@ -2990,3 +2990,78 @@
     - utter_youarewelcome
     - action_restart
 
+## Generated Story -59986106139642475
+* service_modify_time
+    - utter_ask_trackid
+* service_detail{"trackid": "tr96147"}
+    - slot{"trackid": "tr96147"}
+    - action_complain_modify_check_track_id
+    - utter_ask_modify_time_confirm
+* affirm
+    - action_complain_modify_get_time
+    - slot{"time1": "larry\ttuesday\t7 - 10 am"}
+    - slot{"time2": "larry\twednesday\t8 - 11 am"}
+    - slot{"time3": "larry\tfriday\t6 - 9 pm"}
+    - utter_ask_time
+* log_complain{"date": "wednesday", "timeslots": "8 - 11 am"}
+    - slot{"date": "wednesday"}
+    - slot{"timeslots": "8 - 11 am"}
+    - action_complain_modify_set_time
+    - slot{"time": null}
+    - slot{"time1": null}
+    - slot{"time2": null}
+    - slot{"time3": null}
+    - utter_ask_take_to_homepage
+* affirm
+    - utter_youarewelcome
+    - action_restart
+
+## Generated Story 3119121034525452737
+* service_modify{"trackid": "tr96147"}
+    - slot{"trackid": "tr96147"}
+    - action_complain_modify_check_track_id
+    - utter_ask_what_to_modify
+* service_modify_time
+    - utter_ask_modify_time_confirm
+* affirm
+    - action_complain_modify_get_time
+    - slot{"time1": "larry\ttuesday\t8 - 11 am"}
+    - slot{"time2": "larry\tthursday\t7 - 10 am"}
+    - slot{"time3": "larry\tfriday\t7 - 10 am"}
+    - utter_ask_time
+* log_complain{"date": "tuesday", "timeslots": "8 - 11 am"}
+    - slot{"date": "tuesday"}
+    - slot{"timeslots": "8 - 11 am"}
+    - action_complain_modify_set_time
+    - slot{"time": null}
+    - slot{"time1": null}
+    - slot{"time2": null}
+    - slot{"time3": null}
+    - utter_ask_take_to_homepage
+* deny
+    - utter_ask_what_to_modify
+* service_modify_timeslots
+    - utter_ask_modify_timeslots_confirm
+* affirm
+    - action_complain_modify_get_timeslots
+    - slot{"time1": "2 - 5 pm"}
+    - slot{"time2": "7 - 10 am"}
+    - slot{"time3": "3 - 6 pm"}
+    - utter_ask_timeslot_change
+* log_complain{"timeslots": "7 - 10 am"}
+    - slot{"timeslots": "7 - 10 am"}
+    - action_complain_modify_set_timeslots
+    - slot{"time1": null}
+    - slot{"time2": null}
+    - slot{"time3": null}
+    - utter_ask_take_to_homepage
+* deny
+    - utter_ask_what_to_modify
+* service_modify_time
+    - utter_ask_modify_time_confirm
+* deny
+    - utter_ask_take_to_homepage
+* affirm
+    - utter_youarewelcome
+    - action_restart
+

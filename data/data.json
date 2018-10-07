@@ -1190,9 +1190,16 @@
         "entities": []
       },
       {
-        "text": "change time slots",
+        "text": "change time slots of appointment tr54666",
         "intent": "service_modify_timeslots",
-        "entities": []
+        "entities": [
+          {
+            "start": 33,
+            "end": 40,
+            "value": "tr54666",
+            "entity": "trackid"
+          }
+        ]
       },
       {
         "text": "change time slots of complain",
@@ -1265,7 +1272,7 @@
         "entities": []
       },
       {
-        "text": "change date of complain",
+        "text": "change date of service",
         "intent": "service_modify_time",
         "entities": []
       },
@@ -1285,9 +1292,16 @@
         "entities": []
       },
       {
-        "text": "change date",
+        "text": "change date of service tr67999",
         "intent": "service_modify_time",
-        "entities": []
+        "entities": [
+          {
+            "start": 23,
+            "end": 30,
+            "value": "tr67999",
+            "entity": "trackid"
+          }
+        ]
       },
       {
         "text": "reschedule date",
@@ -1295,14 +1309,28 @@
         "entities": []
       },
       {
-        "text": "modify date",
+        "text": "modify day with track id tr12345",
         "intent": "service_modify_time",
-        "entities": []
+        "entities": [
+          {
+            "start": 25,
+            "end": 32,
+            "value": "tr12345",
+            "entity": "trackid"
+          }
+        ]
       },
       {
-        "text": "update date",
+        "text": "update appointment day with tracking id tr54732",
         "intent": "service_modify_time",
-        "entities": []
+        "entities": [
+          {
+            "start": 40,
+            "end": 47,
+            "value": "tr54732",
+            "entity": "trackid"
+          }
+        ]
       },
       {
         "text": "change date",
@@ -1356,7 +1384,7 @@
       },
       {
         "text": "change appointment",
-        "intent": "service_modify_time",
+        "intent": "service_modify",
         "entities": []
       },
       {
@@ -5351,6 +5379,246 @@
         "text": "service details query",
         "intent": "service_query",
         "entities": []
+      },
+      {
+        "text": "change date of appointment track id tr45262",
+        "intent": "service_modify_time",
+        "entities": [
+          {
+            "start": 36,
+            "end": 43,
+            "value": "tr45262",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "modify date of service with tracking id tr54673",
+        "intent": "service_modify_time",
+        "entities": [
+          {
+            "start": 40,
+            "end": 47,
+            "value": "tr54673",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "update date with track id tr65783",
+        "intent": "service_modify_time",
+        "entities": [
+          {
+            "start": 26,
+            "end": 33,
+            "value": "tr65783",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "reschedule day with track id tr67890 ",
+        "intent": "service_modify_time",
+        "entities": [
+          {
+            "start": 29,
+            "end": 36,
+            "value": "tr67890",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "change day of appointment tr56226",
+        "intent": "service_modify_time",
+        "entities": [
+          {
+            "start": 26,
+            "end": 33,
+            "value": "tr56226",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "modify day appointment tr23455",
+        "intent": "service_modify_time",
+        "entities": [
+          {
+            "start": 23,
+            "end": 30,
+            "value": "tr23455",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "change time slots of service tr78888",
+        "intent": "service_modify_timeslots",
+        "entities": [
+          {
+            "start": 29,
+            "end": 36,
+            "value": "tr78888",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "update time slots of appointment with track id tr67773 ",
+        "intent": "service_modify_timeslots",
+        "entities": [
+          {
+            "start": 47,
+            "end": 54,
+            "value": "tr67773",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "modify time of appointment with track id tr12342",
+        "intent": "service_modify_timeslots",
+        "entities": [
+          {
+            "start": 41,
+            "end": 48,
+            "value": "tr12342",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "update time slots with track id tr77744",
+        "intent": "service_modify_timeslots",
+        "entities": [
+          {
+            "start": 32,
+            "end": 39,
+            "value": "tr77744",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "update time of appointment tr56774",
+        "intent": "service_modify_timeslots",
+        "entities": [
+          {
+            "start": 27,
+            "end": 34,
+            "value": "tr56774",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "modify time slots of appointment with tracking id tr56733",
+        "intent": "service_modify_timeslots",
+        "entities": [
+          {
+            "start": 50,
+            "end": 57,
+            "value": "tr56733",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "modify time slots with track id tr51234",
+        "intent": "service_modify_timeslots",
+        "entities": [
+          {
+            "start": 32,
+            "end": 39,
+            "value": "tr51234",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "alter time slots with track id tr56622",
+        "intent": "service_modify_timeslots",
+        "entities": [
+          {
+            "start": 31,
+            "end": 38,
+            "value": "tr56622",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "modify time slot of service tr56633",
+        "intent": "service_modify_timeslots",
+        "entities": [
+          {
+            "start": 28,
+            "end": 35,
+            "value": "tr56633",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "modify day with track id tr67733",
+        "intent": "service_modify_time",
+        "entities": [
+          {
+            "start": 25,
+            "end": 32,
+            "value": "tr67733",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "update day of service tr68379",
+        "intent": "service_modify_time",
+        "entities": [
+          {
+            "start": 22,
+            "end": 29,
+            "value": "tr68379",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "change day of service with track id tr72572",
+        "intent": "service_modify_time",
+        "entities": [
+          {
+            "start": 36,
+            "end": 43,
+            "value": "tr72572",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "modify time with track id tr68268",
+        "intent": "service_modify_timeslots",
+        "entities": [
+          {
+            "start": 26,
+            "end": 33,
+            "value": "tr68268",
+            "entity": "trackid"
+          }
+        ]
+      },
+      {
+        "text": "change of time tr45663",
+        "intent": "service_modify_timeslots",
+        "entities": [
+          {
+            "start": 15,
+            "end": 22,
+            "value": "tr45663",
+            "entity": "trackid"
+          }
+        ]
       }
     ],
     "entity_synonyms": [
