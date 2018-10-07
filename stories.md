@@ -3065,3 +3065,27 @@
     - utter_youarewelcome
     - action_restart
 
+## Generated Story 3901267614806205793
+* service_modify_time{"trackid": "tr96147"}
+    - slot{"trackid": "tr96147"}
+    - action_complain_modify_check_track_id
+    - utter_ask_modify_time_confirm
+* affirm
+    - action_complain_modify_get_time
+    - slot{"time1": "tim\twednesday\t2 - 5 pm"}
+    - slot{"time2": "larry\tthursday\t7 - 10 am"}
+    - slot{"time3": "larry\tfriday\t7 - 10 am"}
+    - utter_ask_time
+* log_complain{"date": "thursday", "timeslots": "7 - 10 am"}
+    - slot{"date": "thursday"}
+    - slot{"timeslots": "7 - 10 am"}
+    - action_complain_modify_set_time
+    - slot{"time": null}
+    - slot{"time1": null}
+    - slot{"time2": null}
+    - slot{"time3": null}
+    - utter_ask_take_to_homepage
+* affirm
+    - utter_youarewelcome
+    - action_restart
+
