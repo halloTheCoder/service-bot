@@ -3089,3 +3089,188 @@
     - utter_youarewelcome
     - action_restart
 
+## Generated Story -5486825631731423975
+* service_modify_timeslots{"trackid": "tr96147"}
+    - slot{"trackid": "tr96147"}
+    - action_complain_modify_check_track_id
+    - utter_ask_modify_timeslots_confirm
+* affirm
+    - action_complain_modify_get_timeslots
+    - slot{"time1": "9 - 12 am"}
+    - slot{"time2": "9 - 12 am"}
+    - slot{"time3": "3 - 6 pm"}
+    - utter_ask_timeslot_change
+* log_complain{"timeslots": "9 - 12 am"}
+    - slot{"timeslots": "9 - 12 am"}
+    - action_complain_modify_set_timeslots
+    - slot{"time1": null}
+    - slot{"time2": null}
+    - slot{"time3": null}
+    - utter_ask_take_to_homepage
+* deny
+    - utter_ask_what_to_modify
+* service_modify_time
+    - utter_ask_modify_time_confirm
+* affirm
+    - action_complain_modify_get_time
+    - slot{"time1": "larry\tmonday\t7 - 10 pm"}
+    - slot{"time2": "tim\ttuesday\t8 - 11 am"}
+    - slot{"time3": "tim\twednesday\t1 - 4 pm"}
+    - utter_ask_time
+* log_complain{"date": "wednesday", "timeslots": "1 - 4 pm"}
+    - slot{"date": "wednesday"}
+    - slot{"timeslots": "1 - 4 pm"}
+    - action_complain_modify_set_time
+    - slot{"time": null}
+    - slot{"time1": null}
+    - slot{"time2": null}
+    - slot{"time3": null}
+    - utter_ask_take_to_homepage
+* affirm
+    - utter_youarewelcome
+    - action_restart
+
+## Generated Story 4486674973035060790
+* greet
+    - utter_greet
+* log_complain
+    - action_get_complaint_detail
+    - slot{"requested_slot": "serialnumber"}
+* log_complain{"serialnumber": "rfaz3347"}
+    - slot{"serialnumber": "rfaz3347"}
+    - action_get_complaint_detail
+    - slot{"modelnumber": "pyd22kblts"}
+    - slot{"appliance": "refrigerator"}
+    - slot{"serialnumber": "rfaz3347"}
+    - slot{"requested_slot": "issue"}
+* log_complain{"issue": "not working"}
+    - slot{"issue": "not working"}
+    - action_get_complaint_detail
+    - slot{"issue": "not working"}
+    - slot{"requested_slot": "name"}
+* log_complain{"email": "akash.chandra8d@gmail.com", "phonenumber": "8250599363"}
+    - slot{"email": "akash.chandra8d@gmail.com"}
+    - slot{"phonenumber": "8250599363"}
+    - action_get_complaint_detail
+    - slot{"email": "akash.chandra8d@gmail.com"}
+    - slot{"phonenumber": "8250599363"}
+    - slot{"requested_slot": "name"}
+* log_complain{"name": "dev"}
+    - slot{"name": "dev"}
+    - action_get_complaint_detail
+    - slot{"name": "dev"}
+    - slot{"requested_slot": "address"}
+    - action_get_geo_location
+    - slot{"address": "Kharagpur Paschim Medinipur West Bengal 721301 "}
+    - slot{"pincode": "721301"}
+    - utter_ask_confirm_address
+* deny
+    - action_set_geo_location
+    - slot{"address": null}
+    - slot{"pincode": null}
+    - action_get_complaint_detail
+    - slot{"requested_slot": "address"}
+* log_complain{"address": "2025 m street , northwest , washington , dc", "pincode": "20036"}
+    - slot{"address": "2025 m street , northwest , washington , dc"}
+    - slot{"pincode": "20036"}
+    - action_get_complaint_detail
+    - slot{"address": "2025 m street , northwest , washington , dc"}
+    - slot{"pincode": "20036"}
+    - slot{"requested_slot": "date"}
+    - action_get_timeslots
+    - slot{"time1": "larry\tmonday\t7 - 10 am"}
+    - slot{"time2": "tim\ttuesday\t4 - 7 pm"}
+    - slot{"time3": "larry\tthursday\t5 - 8 pm"}
+    - utter_ask_time
+* log_complain{"date": "tuesday", "timeslots": "4 - 7 pm"}
+    - slot{"date": "tuesday"}
+    - slot{"timeslots": "4 - 7 pm"}
+    - action_set_timeslots
+    - slot{"time": null}
+    - action_get_complaint_detail
+    - slot{"date": "tuesday"}
+    - slot{"timeslots": "4 - 7 pm"}
+    - slot{"requested_slot": "confirmcomplain"}
+* affirm
+    - action_get_complaint_detail
+    - slot{"confirmcomplain": true}
+    - slot{"trackid": "TR33838"}
+    - slot{"technician": "tim"}
+    - slot{"time": null}
+    - slot{"time1": null}
+    - slot{"time2": null}
+    - slot{"time3": null}
+    - action_store_details
+    - utter_youarewelcome
+    - action_restart
+
+## Generated Story -4780789759003665707
+* greet
+    - utter_greet
+* log_complain{"appliance": "refrigerator", "issue": "broken"}
+    - slot{"appliance": "refrigerator"}
+    - slot{"issue": "broken"}
+    - action_get_complaint_detail
+    - slot{"requested_slot": "serialnumber"}
+* log_complain{"serialnumber": "rfaz3347"}
+    - slot{"serialnumber": "rfaz3347"}
+    - action_get_complaint_detail
+    - slot{"modelnumber": "pyd22kblts"}
+    - slot{"serialnumber": "rfaz3347"}
+    - slot{"requested_slot": "name"}
+* log_complain{"email": "akash.chandra8d@gmail.com", "phonenumber": "8250599363"}
+    - slot{"email": "akash.chandra8d@gmail.com"}
+    - slot{"phonenumber": "8250599363"}
+    - action_get_complaint_detail
+    - slot{"email": "akash.chandra8d@gmail.com"}
+    - slot{"phonenumber": "8250599363"}
+    - slot{"requested_slot": "name"}
+* log_complain{"name": "dev"}
+    - slot{"name": "dev"}
+    - action_get_complaint_detail
+    - slot{"name": "dev"}
+    - slot{"requested_slot": "address"}
+    - action_get_geo_location
+    - slot{"address": "Kharagpur Paschim Medinipur West Bengal 721301 "}
+    - slot{"pincode": "721301"}
+    - utter_ask_confirm_address
+* deny
+    - action_set_geo_location
+    - slot{"address": null}
+    - slot{"pincode": null}
+    - action_get_complaint_detail
+    - slot{"requested_slot": "address"}
+* log_complain{"address": "2025 m street , northwest , washington , dc", "pincode": "20036"}
+    - slot{"address": "2025 m street , northwest , washington , dc"}
+    - slot{"pincode": "20036"}
+    - action_get_complaint_detail
+    - slot{"address": "2025 m street , northwest , washington , dc"}
+    - slot{"pincode": "20036"}
+    - slot{"requested_slot": "date"}
+    - action_get_timeslots
+    - slot{"time1": "tim\tmonday\t4 - 7 pm"}
+    - slot{"time2": "larry\tthursday\t8 - 11 am"}
+    - slot{"time3": "scott\tfriday\t2 - 5 pm"}
+    - utter_ask_time
+* log_complain{"date": "monday", "timeslots": "4 - 7 pm"}
+    - slot{"date": "monday"}
+    - slot{"timeslots": "4 - 7 pm"}
+    - action_set_timeslots
+    - slot{"time": null}
+    - action_get_complaint_detail
+    - slot{"date": "monday"}
+    - slot{"timeslots": "4 - 7 pm"}
+    - slot{"requested_slot": "confirmcomplain"}
+* affirm
+    - action_get_complaint_detail
+    - slot{"confirmcomplain": true}
+    - slot{"trackid": "TR39567"}
+    - slot{"technician": "tim"}
+    - slot{"time": null}
+    - slot{"time1": null}
+    - slot{"time2": null}
+    - slot{"time3": null}
+    - action_store_details
+    - utter_youarewelcome
+    - action_restart
+

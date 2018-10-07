@@ -128,21 +128,21 @@ templates:
     - text : "Select one out of three ..." 
       buttons:
       - title: "Select : time1"
-        payload: "/log_complain{time:time1}"
+        payload: '/log_complain{"time": "time1"}'
       - title : "Select : time2"
-        payload: "/log_complain{time:time2}"
+        payload: '/log_complain{"time": "time2"}'
       - title: "Select : time3"
-        payload: "/log_complain{time:time3}"
+        payload: '/log_complain{"time": "time3"}'
 
   utter_ask_timeslot_change:
     - text : "Select one out of three ..." 
       buttons:
       - title: "Select : time1"
-        payload: "/log_complain{timeslots:time1}"
+        payload: '/log_complain{"timeslots": "time1"}'
       - title : "Select : time2"
-        payload: "/log_complain{timeslots:time2}"
+        payload: '/log_complain{"timeslots": "time2"}'
       - title: "Select : time3"
-        payload: "/log_complain{timeslots:time3}"
+        payload: '/log_complain{"timeslots": "time3"}'
   
   utter_ask_confirmcomplain:
     - text: "Do you want to confirm the complain? These are your details: Complaint: {name} , {email} Address: {address} {pincode} Complain : (appliance_type: {appliance}, model_number: {modelnumber}, serial_number: {serialnumber}, issue: {issue}) Date : {date} Time : {timeslots}."
