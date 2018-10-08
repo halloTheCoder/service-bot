@@ -83,7 +83,7 @@ templates:
       - title: "Book Complain"
         payload: "/log_complain"
       - title : "Show complain detail"
-        payload: "/service_query_time"
+        payload: "/service_query"
       - title: "Modify Complain"
         payload: "/service_modify"
       - title: "Cancel Complain"

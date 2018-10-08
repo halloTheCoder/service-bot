@@ -281,7 +281,7 @@ templates:
   - buttons:
     - payload: /log_complain
       title: Book Complain
-    - payload: /service_query_time
+    - payload: /service_query
       title: Show complain detail
     - payload: /service_modify
       title: Modify Complain
